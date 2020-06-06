@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[31,)"
+#issueTrackerURL=""
+[[mods]]
+modId="crumbs"
+version="${file.jarVersion}"
+displayName="Crumbs"
+#updateJSONURL=""
+#displayURL=""
+#logoFile=""
+credits=""
+authors="Trikzon, Qbert"
+description='''
+Why Wood Crumby?
+'''

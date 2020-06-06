@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "crumbs:block/cracked_basalt",
+        "top": "crumbs:block/cracked_basalt",
+        "side": "crumbs:block/cracked_basalt"
+    }
+}

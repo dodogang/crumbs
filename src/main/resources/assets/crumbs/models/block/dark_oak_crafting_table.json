@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "crumbs:block/dark_oak_crafting_table_top",
+        "side": "crumbs:block/dark_oak_crafting_table"
+    }
+}

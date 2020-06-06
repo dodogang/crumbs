@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=y": {
+            "model": "crumbs:block/bundled_dark_oak_logs"
+        },
+        "axis=z": {
+            "model": "crumbs:block/bundled_dark_oak_logs",
+            "x": 90
+        },
+        "axis=x": {
+            "model": "crumbs:block/bundled_dark_oak_logs",
+            "x": 90,
+            "y": 90
+        }
+    }
+}

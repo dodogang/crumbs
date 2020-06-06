@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "crumbs:block/crimson_tile_slab"
+        },
+        "type=top": {
+            "model": "crumbs:block/crimson_tile_slab_top"
+        },
+        "type=double": {
+            "model": "crumbs:block/crimson_tile"
+        }
+    }
+}

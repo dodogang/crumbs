@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "crumbs:block/bundled_birch_logs_top",
+        "side": "crumbs:block/bundled_birch_logs"
+    }
+}

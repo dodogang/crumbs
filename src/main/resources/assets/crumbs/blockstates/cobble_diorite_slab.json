@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "crumbs:block/cobble_diorite_slab"
+        },
+        "type=top": {
+            "model": "crumbs:block/cobble_diorite_slab_top"
+        },
+        "type=double": {
+            "model": "crumbs:block/cobble_diorite"
+        }
+    }
+}

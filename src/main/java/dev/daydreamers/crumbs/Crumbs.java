@@ -28,16 +28,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(Crumbs.MOD_ID)
-public class Crumbs
-{
+public class Crumbs {
     public static final String MOD_ID = "crumbs";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
-    public static final ItemGroup ITEM_GROUP = new ItemGroup(MOD_ID)
-    {
+    public static final ItemGroup ITEM_GROUP = new ItemGroup(MOD_ID) {
         @Override
-        public ItemStack createIcon()
-        {
+        public ItemStack createIcon() {
             return new ItemStack(BUNDLED_OAK_LOGS.get());
         }
     };
@@ -52,27 +49,21 @@ public class Crumbs
     public static RegistryObject<Block> CRIMSON_BARREL;
     public static RegistryObject<Block> WARPED_BARREL;
 
-    private final DeferredRegister<Block> BLOCKS =
-            new DeferredRegister<>(ForgeRegistries.BLOCKS, MOD_ID);
-    private final DeferredRegister<Item> ITEMS =
-            new DeferredRegister<>(ForgeRegistries.ITEMS, MOD_ID);
+    private final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, MOD_ID);
+    private final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, MOD_ID);
 
-    private final Item.Properties DEF_PROPS =
-            new Item.Properties().group(ITEM_GROUP);
+    private final Item.Properties DEF_PROPS = new Item.Properties().group(ITEM_GROUP);
 
-    public Crumbs()
-    {
+    public Crumbs() {
         register();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
+    private void setup(final FMLCommonSetupEvent event) {
         CrumbsBarrelBlock.registerAsPointOfInterest();
     }
 
-    private void register()
-    {
+    private void register() {
         BUNDLED_OAK_LOGS = registerBlock("bundled_oak_logs",
                 new RotatedPillarBlock(Block.Properties.from(Blocks.OAK_LOG))
         );
@@ -476,20 +467,16 @@ public class Crumbs
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
-    private RegistryObject<Block> registerBlock(String name, Block block)
-    {
+    private RegistryObject<Block> registerBlock(String name, Block block) {
         return registerBlock(name, block, DEF_PROPS);
     }
 
-    private RegistryObject<Block> registerBlock
-            (String name, Block block, Item.Properties props)
-    {
+    private RegistryObject<Block> registerBlock(String name, Block block, Item.Properties props) {
         registerItem(name, new BlockItem(block, props));
         return BLOCKS.register(name, () -> block);
     }
 
-    private RegistryObject<Item> registerItem(String name, Item item)
-    {
+    private RegistryObject<Item> registerItem(String name, Item item) {
         return ITEMS.register(name, () -> item);
     }
 }

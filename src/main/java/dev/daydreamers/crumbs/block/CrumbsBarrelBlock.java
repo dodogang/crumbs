@@ -33,10 +33,9 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class CrumbsBarrelBlock extends BarrelBlock
-{
-    public CrumbsBarrelBlock(Block.Properties properties)
-    {
+public class CrumbsBarrelBlock extends BarrelBlock {
+
+    public CrumbsBarrelBlock(Block.Properties properties) {
         super(properties);
     }
 
@@ -45,8 +44,7 @@ public class CrumbsBarrelBlock extends BarrelBlock
      * To get around hard coded == Blocks.BARREL
      */
     @Override
-    public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand)
-    {
+    public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
         TileEntity te = worldIn.getTileEntity(pos);
         if (te == null || te.getWorld() == null) return;
         if (te instanceof BarrelTileEntity) {

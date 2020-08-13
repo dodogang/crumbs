@@ -24,17 +24,14 @@ public class CrumbsWorkbenchContainer extends WorkbenchContainer
     private final IWorldPosCallable worldPosCallable;
     private final Block block;
 
-    public CrumbsWorkbenchContainer(int id, PlayerInventory playerInventoryIn,
-                                    IWorldPosCallable pos, Block block)
-    {
+    public CrumbsWorkbenchContainer(int id, PlayerInventory playerInventoryIn, IWorldPosCallable pos, Block block) {
         super(id, playerInventoryIn, pos);
         worldPosCallable = pos;
         this.block = block;
     }
 
     @Override
-    public boolean canInteractWith(PlayerEntity playerIn)
-    {
+    public boolean canInteractWith(PlayerEntity playerIn) {
         return isWithinUsableDistance(this.worldPosCallable, playerIn, block);
     }
 }

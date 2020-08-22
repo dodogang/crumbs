@@ -11,11 +11,11 @@
  * Date: 2020-06-06 "v0.0.2 First Commit"
  * Revision:
  */
-package dev.daydreamers.crumbs;
+package net.dodogang.crumbs;
 
-import dev.daydreamers.crumbs.block.CrumbsBarrelBlock;
-import dev.daydreamers.crumbs.block.CrumbsCraftingTableBlock;
-import dev.daydreamers.crumbs.block.PebbleBlock;
+import net.dodogang.crumbs.block.CrumbsBarrelBlock;
+import net.dodogang.crumbs.block.CrumbsCraftingTableBlock;
+import net.dodogang.crumbs.block.PebbleBlock;
 import net.minecraft.block.*;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;

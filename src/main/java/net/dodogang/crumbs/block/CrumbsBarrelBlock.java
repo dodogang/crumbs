@@ -11,14 +11,13 @@
  * Date: 2020-06-06 "v0.0.2 First Commit"
  * Revision:
  */
-package dev.daydreamers.crumbs.block;
+package net.dodogang.crumbs.block;
 
+import net.dodogang.crumbs.Crumbs;
 import com.google.common.collect.ImmutableSet;
-import dev.daydreamers.crumbs.Crumbs;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.tileentity.BarrelTileEntity;
 import net.minecraft.tileentity.ChestTileEntity;
 import net.minecraft.tileentity.TileEntity;

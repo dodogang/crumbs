@@ -11,7 +11,7 @@
  * Date: 2020-06-06 "v0.0.2 First Commit"
  * Revision:
  */
-package dev.daydreamers.crumbs.container;
+package net.dodogang.crumbs.container;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;

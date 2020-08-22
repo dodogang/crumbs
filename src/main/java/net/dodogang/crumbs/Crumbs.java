@@ -1,7 +1,7 @@
 package net.dodogang.crumbs;
 
-import net.dodogang.crumbs.block.CrumbsBarrelBlock;
-import net.dodogang.crumbs.block.CrumbsCraftingTableBlock;
+import net.dodogang.crumbs.block.CBarrelBlock;
+import net.dodogang.crumbs.block.CCraftingTableBlock;
 import net.dodogang.crumbs.block.PebbleBlock;
 import net.minecraft.block.*;
 import net.minecraft.item.*;
@@ -47,7 +47,7 @@ public class Crumbs {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        CrumbsBarrelBlock.registerAsPointOfInterest();
+        CBarrelBlock.registerAsPointOfInterest();
     }
 
     private void register() {
@@ -202,47 +202,47 @@ public class Crumbs {
         );
 
         registerBlock("spruce_crafting_table",
-                new CrumbsCraftingTableBlock(Block.Properties.from(Blocks.SPRUCE_PLANKS))
+                new CCraftingTableBlock(Block.Properties.from(Blocks.SPRUCE_PLANKS))
         );
         registerBlock("birch_crafting_table",
-                new CrumbsCraftingTableBlock(Block.Properties.from(Blocks.BIRCH_PLANKS))
+                new CCraftingTableBlock(Block.Properties.from(Blocks.BIRCH_PLANKS))
         );
         registerBlock("jungle_crafting_table",
-                new CrumbsCraftingTableBlock(Block.Properties.from(Blocks.JUNGLE_PLANKS))
+                new CCraftingTableBlock(Block.Properties.from(Blocks.JUNGLE_PLANKS))
         );
         registerBlock("acacia_crafting_table",
-                new CrumbsCraftingTableBlock(Block.Properties.from(Blocks.ACACIA_PLANKS))
+                new CCraftingTableBlock(Block.Properties.from(Blocks.ACACIA_PLANKS))
         );
         registerBlock("dark_oak_crafting_table",
-                new CrumbsCraftingTableBlock(Block.Properties.from(Blocks.DARK_OAK_PLANKS))
+                new CCraftingTableBlock(Block.Properties.from(Blocks.DARK_OAK_PLANKS))
         );
         registerBlock("crimson_crafting_table",
-                new CrumbsCraftingTableBlock(Block.Properties.from(Blocks.OAK_PLANKS))
+                new CCraftingTableBlock(Block.Properties.from(Blocks.OAK_PLANKS))
         );
         registerBlock("warped_crafting_table",
-                new CrumbsCraftingTableBlock(Block.Properties.from(Blocks.OAK_PLANKS))
+                new CCraftingTableBlock(Block.Properties.from(Blocks.OAK_PLANKS))
         );
 
         OAK_BARREL = registerBlock("oak_barrel",
-            new CrumbsBarrelBlock(Block.Properties.from(Blocks.OAK_PLANKS))
+            new CBarrelBlock(Block.Properties.from(Blocks.OAK_PLANKS))
         );
         BIRCH_BARREL = registerBlock("birch_barrel",
-                new CrumbsBarrelBlock(Block.Properties.from(Blocks.BIRCH_PLANKS))
+                new CBarrelBlock(Block.Properties.from(Blocks.BIRCH_PLANKS))
         );
         JUNGLE_BARREL = registerBlock("jungle_barrel",
-                new CrumbsBarrelBlock(Block.Properties.from(Blocks.JUNGLE_PLANKS))
+                new CBarrelBlock(Block.Properties.from(Blocks.JUNGLE_PLANKS))
         );
         ACACIA_BARREL = registerBlock("acacia_barrel",
-                new CrumbsBarrelBlock(Block.Properties.from(Blocks.ACACIA_PLANKS))
+                new CBarrelBlock(Block.Properties.from(Blocks.ACACIA_PLANKS))
         );
         DARK_OAK_BARREL = registerBlock("dark_oak_barrel",
-                new CrumbsBarrelBlock(Block.Properties.from(Blocks.DARK_OAK_PLANKS))
+                new CBarrelBlock(Block.Properties.from(Blocks.DARK_OAK_PLANKS))
         );
         CRIMSON_BARREL = registerBlock("crimson_barrel",
-                new CrumbsBarrelBlock(Block.Properties.from(Blocks.OAK_PLANKS))
+                new CBarrelBlock(Block.Properties.from(Blocks.OAK_PLANKS))
         );
         WARPED_BARREL = registerBlock("warped_barrel",
-                new CrumbsBarrelBlock(Block.Properties.from(Blocks.OAK_PLANKS))
+                new CBarrelBlock(Block.Properties.from(Blocks.OAK_PLANKS))
         );
 
         registerBlock("glowing_granite",

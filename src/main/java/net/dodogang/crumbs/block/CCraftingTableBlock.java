@@ -1,6 +1,6 @@
 package net.dodogang.crumbs.block;
 
-import net.dodogang.crumbs.container.CrumbsWorkbenchContainer;
+import net.dodogang.crumbs.container.CWorkbenchContainer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CraftingTableBlock;
@@ -12,11 +12,11 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
-public class CrumbsCraftingTableBlock extends CraftingTableBlock {
+public class CCraftingTableBlock extends CraftingTableBlock {
 
     private static final ITextComponent field_220271_a = new TranslationTextComponent("container.crafting");
 
-    public CrumbsCraftingTableBlock(Block.Properties properties) {
+    public CCraftingTableBlock(Block.Properties properties) {
         super(properties);
     }
 
@@ -24,7 +24,7 @@ public class CrumbsCraftingTableBlock extends CraftingTableBlock {
     public INamedContainerProvider getContainer(BlockState state, World worldIn, BlockPos pos) {
         return new SimpleNamedContainerProvider(
                 (inventory, callPos, p_220270_4_) ->
-                        new CrumbsWorkbenchContainer(
+                        new CWorkbenchContainer(
                                 inventory, callPos,
                                 IWorldPosCallable.of(worldIn, pos), this
                         ),

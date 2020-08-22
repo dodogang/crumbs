@@ -19,9 +19,9 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class CrumbsBarrelBlock extends BarrelBlock {
+public class CBarrelBlock extends BarrelBlock {
 
-    public CrumbsBarrelBlock(Block.Properties properties) {
+    public CBarrelBlock(Block.Properties properties) {
         super(properties);
     }
 

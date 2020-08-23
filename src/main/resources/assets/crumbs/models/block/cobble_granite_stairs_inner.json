@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "crumbs:block/cobble_granite",
-        "top": "crumbs:block/cobble_granite",
-        "side": "crumbs:block/cobble_granite"
-    }
-}

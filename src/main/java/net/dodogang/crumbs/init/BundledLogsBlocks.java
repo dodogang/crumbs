@@ -1,9 +1,17 @@
 package net.dodogang.crumbs.init;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.RegistryObject;
 
@@ -38,7 +46,45 @@ public class BundledLogsBlocks {
     public static void stripLogsOnRightClick(PlayerInteractEvent.RightClickBlock event) {
         if (!(event.getItemStack().getItem() instanceof AxeItem)) return;
 
-        // TODO: Logs need to be strip-able
-        System.out.println("Hello");
+        World world = event.getWorld();
+        BlockPos pos = event.getPos();
+        BlockState blockState = world.getBlockState(pos);
+        Block log = blockState.getBlock();
+        Block strippedLog = null;
+
+        if (log.equals(OAK.get())) {
+            strippedLog = STRIPPED_OAK.get();
+        } else if (log.equals(BIRCH.get())) {
+            strippedLog = STRIPPED_BIRCH.get();
+        } else if (log.equals(SPRUCE.get())) {
+            strippedLog = STRIPPED_SPRUCE.get();
+        } else if (log.equals(JUNGLE.get())) {
+            strippedLog = STRIPPED_JUNGLE.get();
+        } else if (log.equals(ACACIA.get())) {
+            strippedLog = STRIPPED_ACACIA.get();
+        } else if (log.equals(DARK_OAK.get())) {
+            strippedLog = STRIPPED_DARK_OAK.get();
+        }
+//        else if (log.equals(CRIMSON.get())) {
+//            strippedLog = STRIPPED_CRIMSON.get();
+//        } else if (log.equals(WARPED.get())) {
+//            strippedLog = STRIPPED_WARPED.get();
+//        }
+        if (strippedLog == null) return;
+
+        PlayerEntity player = event.getPlayer();
+        world.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
+        player.swingArm(event.getHand());
+        if (!world.isRemote) {
+            world.setBlockState(pos, strippedLog.getDefaultState()
+                .with(RotatedPillarBlock.AXIS, blockState.get(RotatedPillarBlock.AXIS)), 11);
+            if (player != null) {
+                event.getItemStack().damageItem(1, player, playerEntity -> {
+                    playerEntity.sendBreakAnimation(event.getHand());
+                });
+            }
+        }
+
+        event.setCancellationResult(ActionResultType.CONSUME);
     }
 }

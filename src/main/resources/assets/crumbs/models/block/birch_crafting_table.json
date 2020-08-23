@@ -1,7 +1,12 @@
 {
-    "parent": "block/cube_column",
+    "parent": "block/cube",
     "textures": {
-        "end": "crumbs:block/birch_crafting_table_top",
-        "side": "crumbs:block/birch_crafting_table"
+        "particle": "crumbs:block/birch_crafting_table_side",
+        "down": "crumbs:block/birch_tile",
+        "up": "crumbs:block/birch_crafting_table_top",
+        "north": "crumbs:block/birch_crafting_table",
+        "east": "crumbs:block/birch_crafting_table_side",
+        "south": "crumbs:block/birch_crafting_table",
+        "west": "crumbs:block/birch_crafting_table_side"
     }
 }

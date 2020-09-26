@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/cube_bottom_top",
+    "textures": {
+        "bottom": "crumbs:block/oak_barrel_bottom",
+        "top": "crumbs:block/oak_barrel_top",
+        "side": "crumbs:block/oak_barrel_side"
+    }
+}

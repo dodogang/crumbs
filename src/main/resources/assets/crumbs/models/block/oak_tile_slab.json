@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/slab",
+    "textures": {
+        "bottom": "crumbs:block/oak_tile",
+        "top": "crumbs:block/oak_tile",
+        "side": "crumbs:block/oak_tile"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=y": {
+            "model": "crumbs:block/stripped_spruce_bundled_log"
+        },
+        "axis=z": {
+            "model": "crumbs:block/stripped_spruce_bundled_log",
+            "x": 90
+        },
+        "axis=x": {
+            "model": "crumbs:block/stripped_spruce_bundled_log",
+            "x": 90,
+            "y": 90
+        }
+    }
+}

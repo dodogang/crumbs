@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+        "bottom": "crumbs:block/ridged_birch_planks",
+        "top": "crumbs:block/ridged_birch_planks",
+        "side": "crumbs:block/ridged_birch_planks"
+    }
+}

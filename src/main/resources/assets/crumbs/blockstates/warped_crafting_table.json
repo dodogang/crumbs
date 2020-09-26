@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "crumbs:block/warped_crafting_table"
+        }
+    }
+}

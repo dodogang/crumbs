@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/cube_column",
+    "textures": {
+        "end": "crumbs:block/oak_bundled_log_top",
+        "side": "crumbs:block/oak_bundled_log"
+    }
+}

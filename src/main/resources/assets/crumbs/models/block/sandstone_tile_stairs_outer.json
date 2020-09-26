@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/outer_stairs",
+    "textures": {
+        "bottom": "crumbs:block/sandstone_tile",
+        "top": "crumbs:block/sandstone_tile",
+        "side": "crumbs:block/sandstone_tile"
+    }
+}

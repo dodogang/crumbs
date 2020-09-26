@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "crumbs:block/polished_basalt_slab"
+        },
+        "type=top": {
+            "model": "crumbs:block/polished_basalt_slab_top"
+        },
+        "type=double": {
+            "model": "crumbs:block/polished_basalt"
+        }
+    }
+}

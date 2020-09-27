@@ -1,11 +1,16 @@
 package net.dodogang.crumbs.init;
 
+import com.google.common.collect.ImmutableMap;
+
 import net.dodogang.crumbs.Crumbs;
 import net.dodogang.crumbs.block.*;
 import net.dodogang.crumbs.block.vanilla.*;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.block.SignBlock;
@@ -13,7 +18,12 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 
 public class CrumbsBlocks {
@@ -180,6 +190,17 @@ public class CrumbsBlocks {
 
     public CrumbsBlocks() {
         // TODO barrel point of interests
+
+        new ImmutableMap.Builder<Block, Block>()
+            .put(OAK_BUNDLED_LOG, STRIPPED_OAK_BUNDLED_LOG)
+            .put(DARK_OAK_BUNDLED_LOG, STRIPPED_DARK_OAK_BUNDLED_LOG)
+            .put(ACACIA_BUNDLED_LOG, STRIPPED_ACACIA_BUNDLED_LOG)
+            .put(BIRCH_BUNDLED_LOG, STRIPPED_BIRCH_BUNDLED_LOG)
+            .put(JUNGLE_BUNDLED_LOG, STRIPPED_JUNGLE_BUNDLED_LOG)
+            .put(SPRUCE_BUNDLED_LOG, STRIPPED_SPRUCE_BUNDLED_LOG)
+            .put(WARPED_BUNDLED_STEM, STRIPPED_WARPED_BUNDLED_STEM)
+            .put(CRIMSON_BUNDLED_STEM, STRIPPED_CRIMSON_BUNDLED_STEM)
+            .build().forEach((base, result) -> addStripping(base, result));
     }
 
     private static Block registerCopy(String id, Block base) {
@@ -227,6 +248,29 @@ public class CrumbsBlocks {
         return register(id, new Block(FabricBlockSettings.copy(base).luminance((state) -> {
             return 15;
         })));
+    }
+
+    private void addStripping(Block base, Block result) {
+        UseBlockCallback.EVENT.register((player, world, hand, hit) -> {
+            if (player.getStackInHand(hand).getItem().isIn(FabricToolTags.AXES) && world.getBlockState(hit.getBlockPos()).getBlock() == base) {
+                BlockPos blockPos = hit.getBlockPos();
+                BlockState blockState = world.getBlockState(blockPos);
+
+                world.playSound(player, blockPos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                if (!world.isClient) {
+                    world.setBlockState(blockPos, result.getDefaultState().with(PillarBlock.AXIS, blockState.get(PillarBlock.AXIS)),
+                            11);
+                    if (!player.isCreative()) {
+                        ItemStack stack = player.getStackInHand(hand);
+                        stack.damage(1, player, ((p) -> p.sendToolBreakStatus(hand)));
+                    }
+                }
+
+                return ActionResult.SUCCESS;
+            }
+
+            return ActionResult.PASS;
+        });
     }
 
     public static Block register(String id, Block block, boolean registerItem) {

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "lit=true": { "model": "crumbs:block/birch_lantern" },
+        "lit=false": { "model": "crumbs:block/birch_lantern_off" }
+    }
+}

@@ -9,6 +9,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+@SuppressWarnings("InstantiationOfUtilityClass")
 public class CRegistry {
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Crumbs.MOD_ID);
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Crumbs.MOD_ID);
@@ -19,8 +20,9 @@ public class CRegistry {
     private static final WoodBlocks WOOD_BLOCKS = new WoodBlocks();
     private static final CraftingTableBlocks CRAFTING_TABLE_BLOCKS = new CraftingTableBlocks();
     private static final BarrelBlocks BARREL_BLOCKS = new BarrelBlocks();
+    private static final LanternBlocks LANTERN_BLOCKS = new LanternBlocks();
     private static final StoneBlocks STONE_BLOCKS = new StoneBlocks();
-    private static final PebbleBlocks PEBBLE_BLOCKS = new PebbleBlocks();
+//    private static final PebbleBlocks PEBBLE_BLOCKS = new PebbleBlocks();
     private static final SandBlocks SAND_BLOCKS = new SandBlocks();
 
 

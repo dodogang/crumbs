@@ -4,19 +4,19 @@ import net.minecraft.block.*;
 import net.minecraftforge.fml.RegistryObject;
 
 public class StoneBlocks {
-    public static final RegistryObject<Block> GLOWING_GRANITE = createGlowing("granite", Blocks.GRANITE);
+//  public static final RegistryObject<Block> GLOWING_GRANITE = createGlowing("granite", Blocks.GRANITE);
     public static final RegistryObject<Block> COBBLED_GRANITE = create("cobbled_granite", Blocks.GRANITE);
     public static final RegistryObject<Block> CHISELED_GRANITE = create("chiseled_granite", Blocks.GRANITE);
     public static final RegistryObject<Block> BORDERED_GRANITE = create("bordered_granite", Blocks.GRANITE);
     public static final RegistryObject<Block> CRACKED_GRANITE = create("cracked_granite", Blocks.GRANITE);
 
-    public static final RegistryObject<Block> GLOWING_DIORITE = createGlowing("diorite", Blocks.DIORITE);
+// public static final RegistryObject<Block> GLOWING_DIORITE = createGlowing("diorite", Blocks.DIORITE);
     public static final RegistryObject<Block> COBBLED_DIORITE = create("cobbled_diorite", Blocks.DIORITE);
     public static final RegistryObject<Block> CHISELED_DIORITE = create("chiseled_diorite", Blocks.DIORITE);
     public static final RegistryObject<Block> BORDERED_DIORITE = create("bordered_diorite", Blocks.DIORITE);
     public static final RegistryObject<Block> CRACKED_DIORITE = create("cracked_diorite", Blocks.DIORITE);
 
-    public static final RegistryObject<Block> GLOWING_ANDESITE = createGlowing("andesite", Blocks.ANDESITE);
+//  public static final RegistryObject<Block> GLOWING_ANDESITE = createGlowing("andesite", Blocks.ANDESITE);
     public static final RegistryObject<Block> COBBLED_ANDESITE = create("cobbled_andesite", Blocks.ANDESITE);
     public static final RegistryObject<Block> CHISELED_ANDESITE = create("chiseled_andesite", Blocks.ANDESITE);
     public static final RegistryObject<Block> BORDERED_ANDESITE = create("bordered_andesite", Blocks.ANDESITE);
@@ -46,11 +46,6 @@ public class StoneBlocks {
     public static final RegistryObject<Block> COBBLED_DIORITE_STAIRS = createStairs("cobbled_diorite", Blocks.DIORITE);
     public static final RegistryObject<Block> COBBLED_ANDESITE_STAIRS = createStairs("cobbled_andesite", Blocks.ANDESITE);
 //    public static final RegistryObject<Block> COBBLED_BASALT_STAIRS = createStairs("cobbled_basalt", Blocks.BASALT);
-
-    public static final RegistryObject<Block> CRACKED_GRANITE_WALL = createWall("cracked_granite", Blocks.GRANITE);
-    public static final RegistryObject<Block> CRACKED_DIORITE_WALL = createWall("cracked_diorite", Blocks.DIORITE);
-    public static final RegistryObject<Block> CRACKED_ANDESITE_WALL = createWall("cracked_andesite", Blocks.ANDESITE);
-//    public static final RegistryObject<Block> CRACKED_BASALT_WALL = createWall("cracked_basalt", Blocks.BASALT);
 
     public static final RegistryObject<Block> CRACKED_GRANITE_SLAB = createSlab("cracked_granite", Blocks.GRANITE);
     public static final RegistryObject<Block> CRACKED_DIORITE_SLAB = createSlab("cracked_diorite", Blocks.DIORITE);

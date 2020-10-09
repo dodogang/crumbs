@@ -4,11 +4,11 @@ import net.minecraft.block.*;
 import net.minecraftforge.fml.RegistryObject;
 
 public class SandBlocks {
-    public static final RegistryObject<Block> GLOWING = createGlowing("sand", Blocks.SAND);
+ //   public static final RegistryObject<Block> GLOWING = createGlowing("sand", Blocks.SAND);
     public static final RegistryObject<Block> TILE = create("sandstone_tile", Blocks.SANDSTONE);
     public static final RegistryObject<Block> LARGE_TILE = create("large_sandstone_tile", Blocks.SANDSTONE);
 
-    public static final RegistryObject<Block> RED_GLOWING = createGlowing("red_sand", Blocks.RED_SAND);
+// public static final RegistryObject<Block> RED_GLOWING = createGlowing("red_sand", Blocks.RED_SAND);
     public static final RegistryObject<Block> RED_TILE = create("red_sandstone_tile", Blocks.RED_SANDSTONE);
     public static final RegistryObject<Block> RED_LARGE_TILE = create("large_red_sandstone_tile", Blocks.RED_SANDSTONE);
 

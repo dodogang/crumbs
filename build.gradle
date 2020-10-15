@@ -14,9 +14,9 @@ if (System.env.CI == "true") {
     branch = System.env.GITHUB_REF
     branch = branch.substring(branch.lastIndexOf("/") + 1)
 
-    version = "${project.mod_version}-fabric+a${System.env.GITHUB_RUN_NUMBER}.${branch}"
+    version = "${project.mod_version}+a${System.env.GITHUB_RUN_NUMBER}.${branch}-fabric"
 } else {
-    version = "${project.mod_version}-fabric+${project.minecraft_version}"
+    version = "${project.mod_version}+${project.minecraft_version}-fabric"
 }
 
 minecraft {}

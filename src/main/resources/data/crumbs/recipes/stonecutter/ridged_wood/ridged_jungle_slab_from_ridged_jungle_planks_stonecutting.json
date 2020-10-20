@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "crumbs:ridged_jungle_planks"
+    },
+    "result": "crumbs:ridged_jungle_slab",
+    "count": 2
+}

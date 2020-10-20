@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "crumbs:cobbled_diorite"
+    },
+    "result": "crumbs:cobbled_diorite_wall",
+    "count": 1
+}

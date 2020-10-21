@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "crumbs:cracked_granite"
+        }
+    },
+    "result": {
+        "item": "crumbs:cracked_granite_stairs",
+        "count": 4
+    }
+}

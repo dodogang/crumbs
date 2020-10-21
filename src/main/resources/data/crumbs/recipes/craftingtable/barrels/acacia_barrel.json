@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#_#",
+        "# #",
+        "#_#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:acacia_planks"
+        },
+        "_": {
+            "item": "minecraft:acacia_slab"
+        }
+    },
+    "result": {
+        "item": "crumbs:acacia_barrel",
+        "count": 1
+    }
+}

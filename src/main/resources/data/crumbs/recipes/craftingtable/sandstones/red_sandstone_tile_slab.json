@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "crumbs:red_sandstone_tile"
+        }
+    },
+    "result": {
+        "item": "crumbs:red_sandstone_tile_slab",
+        "count": 6
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "crumbs:ridged_jungle_planks"
+        }
+    },
+    "result": {
+        "item": "crumbs:ridged_jungle_slab",
+        "count": 6
+    }
+}

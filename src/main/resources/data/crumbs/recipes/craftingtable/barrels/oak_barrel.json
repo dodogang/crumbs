@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#_#",
+        "# #",
+        "#_#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:oak_planks"
+        },
+        "_": {
+            "item": "minecraft:oak_slab"
+        }
+    },
+    "result": {
+        "item": "crumbs:oak_barrel",
+        "count": 1
+    }
+}

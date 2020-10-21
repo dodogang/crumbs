@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#R#",
+        "#L#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:oak_planks"
+        },
+        "R": {
+            "item": "minecraft:redstone_lamp"
+        },
+        "L": {
+            "item": "minecraft:lever"
+        }
+    },
+    "result": {
+        "item": "crumbs:oak_lantern",
+        "count": 1
+    }
+}

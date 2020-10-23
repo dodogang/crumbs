@@ -23,6 +23,7 @@ public class WoodLanternBlock extends Block {
         setDefaultState(this.getDefaultState().with(LIT, false));
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public int getLightValue(BlockState state) {
         return state.get(LIT) ? super.getLightValue(state) : 0;

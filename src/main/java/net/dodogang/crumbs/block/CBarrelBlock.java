@@ -1,6 +1,5 @@
 package net.dodogang.crumbs.block;
 
-import net.dodogang.crumbs.Crumbs;
 import com.google.common.collect.ImmutableSet;
 import net.dodogang.crumbs.init.BarrelBlocks;
 import net.minecraft.block.BarrelBlock;
@@ -15,6 +14,7 @@ import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.village.PointOfInterestType;
+import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.ArrayList;
@@ -67,15 +67,16 @@ public class CBarrelBlock extends BarrelBlock {
      * To get around hard coded == Blocks.BARREL
      */
     private void playSound(BarrelTileEntity te, BlockState state) {
-        if (te.getWorld() == null) return;
+        World world = te.getWorld();
+        if (world == null) return;
         Vec3i vec3i = state.get(BarrelBlock.PROPERTY_FACING).getDirectionVec();
         double d0 = (double)te.getPos().getX() + 0.5D + (double)vec3i.getX() / 2.0D;
         double d1 = (double)te.getPos().getY() + 0.5D + (double)vec3i.getY() / 2.0D;
         double d2 = (double)te.getPos().getZ() + 0.5D + (double)vec3i.getZ() / 2.0D;
-        te.getWorld().playSound(
-                null, d0, d1, d2, SoundEvents.BLOCK_BARREL_CLOSE,
-                SoundCategory.BLOCKS, 0.5F,
-                te.getWorld().rand.nextFloat() * 0.1F + 0.9F
+        world.playSound(
+            null, d0, d1, d2, SoundEvents.BLOCK_BARREL_CLOSE,
+            SoundCategory.BLOCKS, 0.5F,
+            world.rand.nextFloat() * 0.1F + 0.9F
         );
     }
 

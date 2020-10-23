@@ -55,9 +55,9 @@ public class StoneBlocks {
 
     public StoneBlocks() {}
 
-    private static RegistryObject<Block> createGlowing(String stone, Block from) {
-        return CRegistry.registerBlock("glowing_" + stone, new Block(Block.Properties.from(from).lightValue(15)));
-    }
+    // private static RegistryObject<Block> createGlowing(String stone, Block from) {
+    //     return CRegistry.registerBlock("glowing_" + stone, new Block(Block.Properties.from(from).lightValue(15)));
+    // }
 
     private static RegistryObject<Block> create(String name, Block from) {
         return CRegistry.registerBlock(name, new Block(Block.Properties.from(from)));

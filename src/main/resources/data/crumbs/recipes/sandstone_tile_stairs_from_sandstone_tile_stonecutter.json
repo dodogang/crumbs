@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "crumbs:sandstone_tile"
+    },
+    "result": "crumbs:sandstone_tile_stairs",
+    "count": 1
+}

@@ -1,15 +1,32 @@
-modLoader="javafml"
-loaderVersion="[31,)"
-#issueTrackerURL=""
+modLoader = "javafml"
+loaderVersion = "[31,)"
+license = "https://github.com/dodogang/crumbs/blob/HEAD/LICENSE"
 [[mods]]
-modId="crumbs"
-version="${file.jarVersion}"
-displayName="Crumbs"
-#updateJSONURL=""
-#displayURL=""
-#logoFile=""
-credits=""
-authors="Trikzon, Qbert"
+
+modId = "crumbs"
+displayName = "Crumbs"
 description='''
-Why Wood Crumby?
+    Why wood crumby?
 '''
+authors = "Dodo Gang"
+logoFile="pack.png"
+
+version = "${file.jarVersion}"
+# A URL to query for updates for this mod. See the JSON update specification <here>
+updateJSONURL="https://dodogang.net/data/update/crumbs.json"
+
+displayURL="https://crumbs.dodogang.net"
+issueTrackerURL = "https://github.com/dodogang/crumbs/issues"
+
+[[dependencies.crumbs]]
+    modId="forge"
+    mandatory=true
+    versionRange="[31.2.0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.crumbs]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"

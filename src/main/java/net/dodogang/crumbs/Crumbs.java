@@ -1,11 +1,15 @@
 package net.dodogang.crumbs;
 
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.dodogang.crumbs.block.vanilla.PublicBarrelBlock;
+import net.dodogang.crumbs.block.CrumbsBarrelBlock;
 import net.dodogang.crumbs.init.*;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -30,8 +34,15 @@ public class Crumbs {
 
         new CrumbsBlocks();
 
-        MinecraftForge.EVENT_BUS.addListener(CrumbsBlocks::addStrippingFunctionality);
-        PublicBarrelBlock.registerAsPointOfInterest();
+        IEventBus eventBus = MinecraftForge.EVENT_BUS;
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        eventBus.addListener(CrumbsBlocks::addStrippingFunctionality);
+
+        modEventBus.addGenericListener(Block.class, CrumbsBlocks::registerBlocks);
+        modEventBus.addGenericListener(Item.class, CrumbsBlocks::registerBlockItems);
+
+        CrumbsBarrelBlock.registerAsPointOfInterest();
 
         log("Initialized");
     }

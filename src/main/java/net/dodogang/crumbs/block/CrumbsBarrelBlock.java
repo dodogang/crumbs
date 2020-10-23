@@ -1,4 +1,4 @@
-package net.dodogang.crumbs.block.vanilla;
+package net.dodogang.crumbs.block;
 
 import com.google.common.collect.ImmutableSet;
 
@@ -21,8 +21,8 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class PublicBarrelBlock extends BarrelBlock {
-    public PublicBarrelBlock(Block.Properties properties) {
+public class CrumbsBarrelBlock extends BarrelBlock {
+    public CrumbsBarrelBlock(Block.Properties properties) {
         super(properties);
     }
 

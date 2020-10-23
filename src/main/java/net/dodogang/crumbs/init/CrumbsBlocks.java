@@ -3,11 +3,8 @@ package net.dodogang.crumbs.init;
 import com.google.common.collect.ImmutableMap;
 
 import net.dodogang.crumbs.Crumbs;
-import net.dodogang.crumbs.block.CrumbsBlock;
-import net.dodogang.crumbs.block.WoodLanternBlock;
-import net.dodogang.crumbs.block.vanilla.PublicBarrelBlock;
-import net.dodogang.crumbs.block.vanilla.PublicCraftingTableBlock;
-import net.dodogang.crumbs.block.vanilla.PublicStairsBlock;
+import net.dodogang.crumbs.block.*;
+import net.dodogang.crumbs.block.vanilla.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -26,12 +23,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = Crumbs.MOD_ID)
 public class CrumbsBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Crumbs.MOD_ID);
     public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Crumbs.MOD_ID);
@@ -192,17 +186,17 @@ public class CrumbsBlocks {
     public static final Block SANDSTONE_TILE_STAIRS = registerStairs("sandstone_tile", Blocks.SANDSTONE);
     public static final Block RED_SANDSTONE_TILE_STAIRS = registerStairs("red_sandstone_tile", Blocks.RED_SANDSTONE);
 
-    @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> registry) {
         for (CrumbsBlock crumbsBlock : CrumbsBlock.getAll()) {
             registry.getRegistry().register(crumbsBlock.getBlock().setRegistryName(new ResourceLocation(Crumbs.MOD_ID, crumbsBlock.getId())));
         }
     }
-    @SubscribeEvent
     public static void registerBlockItems(RegistryEvent.Register<Item> registry) {
-        CrumbsBlock[] crumbsBlocks = CrumbsBlock.getAll();
-        for (int i = 0; i < crumbsBlocks.length; i++) {
-            Block block = crumbsBlocks[i].getBlock(); registry.getRegistry().register(new BlockItem(block, new Item.Properties().group(Crumbs.ITEM_GROUP)).setRegistryName(block.getRegistryName()));
+        for (CrumbsBlock crumbsBlock : CrumbsBlock.getAll()) {
+            Block block = crumbsBlock.getBlock();
+            registry.getRegistry().register(new BlockItem(
+                    block, new Item.Properties().group(Crumbs.ITEM_GROUP)).setRegistryName(block.getRegistryName()
+            ));
         }
     }
 
@@ -229,9 +223,7 @@ public class CrumbsBlocks {
                     player.swingArm(event.getHand());
                     if (!world.isRemote) {
                         world.setBlockState(pos, result.getDefaultState().with(RotatedPillarBlock.AXIS, blockState.get(RotatedPillarBlock.AXIS)), 11);
-                        if (player != null) {
-                            event.getItemStack().damageItem(1, player, playerEntity -> playerEntity.sendBreakAnimation(event.getHand()));
-                        }
+                        event.getItemStack().damageItem(1, player, playerEntity -> playerEntity.sendBreakAnimation(event.getHand()));
                     }
                 }
             });
@@ -243,25 +235,25 @@ public class CrumbsBlocks {
         return register(id, new Block(Block.Properties.from(base)));
     }
     private static Block registerCraftingTable(String id, Block base) {
-        return register(id + "_crafting_table", new PublicCraftingTableBlock(Block.Properties.from(base)));
+        return register(id + "_crafting_table", new CrumbsCraftingTableBlock(Block.Properties.from(base)));
     }
     private static Block registerWoodLantern(String id, Block base) {
         return register(id + "_lantern", new WoodLanternBlock(Block.Properties.from(base)));
     }
     // private static Block registerPebbles(String id, Block base) {
-        //  return register(id + "_lantern", new PebblesBlock(Block.Properties.from(base).hardnessAndResistance(0.0F)));
+        //  return register(id + "_pebbles", new PebblesBlock(Block.Properties.from(base).hardnessAndResistance(0.0F)));
     // }
     private static Block registerSlab(String id, Block base) {
         return register(id + "_slab", new SlabBlock(Block.Properties.from(base)));
     }
     private static Block registerStairs(String id, Block base) {
-        return register(id + "_stairs", new PublicStairsBlock(() -> base.getDefaultState(), Block.Properties.from(base)));
+        return register(id + "_stairs", new PublicStairsBlock(base::getDefaultState, Block.Properties.from(base)));
     }
     private static Block registerWall(String id, Block base) {
         return register(id + "_wall", new WallBlock(Block.Properties.from(base)));
     }
     private static Block registerBarrel(String id, Block base) {
-        return register(id + "_barrel", new PublicBarrelBlock(Block.Properties.from(base)));
+        return register(id + "_barrel", new CrumbsBarrelBlock(Block.Properties.from(base)));
     }
     private static Block registerPillarBlock(String id, Block base) {
         return register(id, new RotatedPillarBlock(Block.Properties.from(base)));

@@ -1,11 +1,11 @@
 package net.dodogang.crumbs.block;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 import net.minecraft.block.Block;
 
 public class CrumbsBlock {
-    private static CrumbsBlock[] ALL = new CrumbsBlock[]{};
+    private static ArrayList<CrumbsBlock> ALL = new ArrayList<>();
 
     private String id;
     private Block block;
@@ -14,8 +14,7 @@ public class CrumbsBlock {
         this.id = id;
         this.block = block;
 
-        ALL = Arrays.copyOf(ALL, ALL.length + 1);
-        ALL[ALL.length - 1] = this;
+        ALL.add(this);
     }
 
     public String getId() {
@@ -25,7 +24,7 @@ public class CrumbsBlock {
         return block;
     }
 
-    public static CrumbsBlock[] getAll() {
+    public static ArrayList<CrumbsBlock> getAll() {
         return ALL;
     }
 }

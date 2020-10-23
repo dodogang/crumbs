@@ -1,5 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
+    "group": "crumbs:cobbled_stone_wall",
     "pattern": [
       "###",
       "###"

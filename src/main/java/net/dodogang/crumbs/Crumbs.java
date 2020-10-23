@@ -8,7 +8,6 @@ import net.dodogang.crumbs.block.vanilla.PublicBarrelBlock;
 import net.dodogang.crumbs.init.*;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 
@@ -22,7 +21,7 @@ public class Crumbs {
     public static final ItemGroup ITEM_GROUP = new ItemGroup(MOD_ID) {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(Items.BREAD);
+            return new ItemStack(CrumbsBlocks.OAK_BUNDLED_LOG);
         }
     };
 

@@ -18,8 +18,8 @@ import net.minecraft.world.World;
 public class WoodLanternBlock extends Block {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
-    public WoodLanternBlock(Block from) {
-        super(Block.Properties.from(from).lightValue(15));
+    public WoodLanternBlock(Block.Properties properties) {
+        super(properties.lightValue(15));
         setDefaultState(this.getDefaultState().with(LIT, false));
     }
 

@@ -1,4 +1,4 @@
-package net.dodogang.crumbs.block;
+package net.dodogang.crumbs.block.vanilla;
 
 import net.dodogang.crumbs.container.CWorkbenchContainer;
 import net.minecraft.block.Block;
@@ -12,11 +12,11 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
-public class CCraftingTableBlock extends CraftingTableBlock {
+public class PublicCraftingTableBlock extends CraftingTableBlock {
 
     private static final ITextComponent field_220271_a = new TranslationTextComponent("container.crafting");
 
-    public CCraftingTableBlock(Block.Properties properties) {
+    public PublicCraftingTableBlock(Block.Properties properties) {
         super(properties);
     }
 

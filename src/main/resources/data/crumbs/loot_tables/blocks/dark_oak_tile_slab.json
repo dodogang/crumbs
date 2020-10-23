@@ -12,7 +12,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "crumbs:dark_tile_slab",
+                  "block": "crumbs:dark_oak_tile_slab",
                   "properties": {
                     "type": "double"
                   }

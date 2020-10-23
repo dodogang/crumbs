@@ -1,7 +1,8 @@
-package net.dodogang.crumbs.block;
+package net.dodogang.crumbs.block.vanilla;
 
 import com.google.common.collect.ImmutableSet;
-import net.dodogang.crumbs.init.BarrelBlocks;
+
+import net.dodogang.crumbs.init.CrumbsBlocks;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -20,9 +21,8 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class CBarrelBlock extends BarrelBlock {
-
-    public CBarrelBlock(Block.Properties properties) {
+public class PublicBarrelBlock extends BarrelBlock {
+    public PublicBarrelBlock(Block.Properties properties) {
         super(properties);
     }
 
@@ -85,13 +85,13 @@ public class CBarrelBlock extends BarrelBlock {
         final ArrayList<BlockState> barrels = new ArrayList<>();
         final ArrayList<BlockState> modBarrels = new ArrayList<>();
         barrels.addAll(PointOfInterestType.FISHERMAN.blockStates);
-        modBarrels.addAll(PointOfInterestType.getAllStates(BarrelBlocks.OAK.get()));
-        modBarrels.addAll(PointOfInterestType.getAllStates(BarrelBlocks.BIRCH.get()));
-        modBarrels.addAll(PointOfInterestType.getAllStates(BarrelBlocks.JUNGLE.get()));
-        modBarrels.addAll(PointOfInterestType.getAllStates(BarrelBlocks.ACACIA.get()));
-        modBarrels.addAll(PointOfInterestType.getAllStates(BarrelBlocks.DARK_OAK.get()));
-//        modBarrels.addAll(PointOfInterestType.getAllStates(BarrelBlocks.CRIMSON.get()));
-//        modBarrels.addAll(PointOfInterestType.getAllStates(BarrelBlocks.WARPED.get()));
+        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.OAK_BARREL));
+        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.BIRCH_BARREL));
+        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.JUNGLE_BARREL));
+        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.ACACIA_BARREL));
+        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.DARK_OAK_BARREL));
+//        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.CRIMSON_BARREL));
+//        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.WARPED_BARREL));
 
         // Copied from PointOfInterestType#registerBlockStates
         // Edited to allow adding blocks to a PointOfInterest so villagers use them

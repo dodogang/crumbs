@@ -27,9 +27,18 @@ repositories {
     }
 }
 
-version = '0.0.3'
-group = project.maven_group // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = project.maven_group
 archivesBaseName = project.archives_base_name
+
+if (System.env.CI == "true") {
+    def branch
+    branch = System.env.GITHUB_REF
+    branch = branch.substring(branch.lastIndexOf("/") + 1)
+
+    version = "${project.mod_version}+a${System.env.GITHUB_RUN_NUMBER}.${branch}-forge"
+} else {
+    version = "${project.mod_version}+${project.minecraft_version}-forge"
+}
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 

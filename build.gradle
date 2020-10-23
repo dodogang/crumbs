@@ -28,13 +28,13 @@ repositories {
 }
 
 version = '0.0.3'
-group = 'dev.daydreamers.crumbs' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'crumbs'
+group = project.maven_group // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = project.archives_base_name
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
 minecraft {
-    mappings channel: 'snapshot', version: '20200813-1.15.1'
+    mappings channel: project.mappings_channel, version: project.mappings_version
     
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -49,7 +49,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                crumbs {
                     source sourceSets.main
                 }
             }
@@ -65,7 +65,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                crumbs {
                     source sourceSets.main
                 }
             }
@@ -80,10 +80,10 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/')
+            args '--mod', 'crumbs', '--all', '--output', file('src/generated/resources/')
 
             mods {
-                examplemod {
+                crumbs {
                     source sourceSets.main
                 }
             }
@@ -92,21 +92,21 @@ minecraft {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.15.2-31.2.36'
+    minecraft "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
 
-    runtimeOnly fg.deobf("mezz.jei:jei-1.15.2:6.0.3.15")
+    runtimeOnly fg.deobf("mezz.jei:jei-${project.minecraft_version}:${project.jei_version}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
 jar {
     manifest {
         attributes([
-            "Specification-Title": "examplemod",
-            "Specification-Vendor": "examplemodsareus",
+            "Specification-Title": "crumbs",
+            "Specification-Vendor": "dodogang",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemodsareus",
+            "Implementation-Vendor" :"dodogang",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
             "FMLAT": "src/main/resources/META-INF/accesstransformer.cfg"
         ])

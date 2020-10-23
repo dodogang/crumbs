@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:oak_planks"
-    },
-    "result": "crumbs:oak_tiles",
-    "count": 1
-}

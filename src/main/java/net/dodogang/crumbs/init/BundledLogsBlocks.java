@@ -37,7 +37,7 @@ public class BundledLogsBlocks {
 
     private static RegistryObject<Block> create(String adjective, Block from) {
         return CRegistry.registerBlock(
-                "bundled_" + adjective + "_logs",
+                adjective + "_bundled_log",
                 new RotatedPillarBlock(Block.Properties.from(from))
         );
     }

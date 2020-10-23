@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "crumbs:block/bundled_stripped_jungle_logs_top",
-        "side": "crumbs:block/bundled_stripped_jungle_logs"
-    }
-}

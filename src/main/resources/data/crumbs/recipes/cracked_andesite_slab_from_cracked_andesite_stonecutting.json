@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "crumbs:cracked_andesite"
+    },
+    "result": "crumbs:cracked_andesite_slab",
+    "count": 2
+}

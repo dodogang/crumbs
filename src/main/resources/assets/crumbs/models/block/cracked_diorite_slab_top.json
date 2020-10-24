@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:block/slab_top",
+    "parent": "block/slab_top",
     "textures": {
         "bottom": "crumbs:block/cracked_diorite",
         "top": "crumbs:block/cracked_diorite",

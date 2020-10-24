@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:granite"
+    },
+    "result": "crumbs:cracked_granite",
+    "count": 1
+}

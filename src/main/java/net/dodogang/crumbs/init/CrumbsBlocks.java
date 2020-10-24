@@ -68,23 +68,23 @@ public class CrumbsBlocks {
     public static final Block CRIMSON_TILE_SLAB = registerSlab(CRIMSON_TILE);
     public static final Block WARPED_TILE_SLAB = registerSlab(WARPED_TILE);
 
-    public static final Block RIDGED_OAK_PLANKS = registerCopy("ridged_oak_planks", Blocks.OAK_PLANKS);
-    public static final Block RIDGED_SPRUCE_PLANKS = registerCopy("ridged_spruce_planks", Blocks.SPRUCE_PLANKS);
-    public static final Block RIDGED_BIRCH_PLANKS = registerCopy("ridged_birch_planks", Blocks.BIRCH_PLANKS);
-    public static final Block RIDGED_JUNGLE_PLANKS = registerCopy("ridged_jungle_planks", Blocks.JUNGLE_PLANKS);
-    public static final Block RIDGED_ACACIA_PLANKS = registerCopy("ridged_acacia_planks", Blocks.ACACIA_PLANKS);
-    public static final Block RIDGED_DARK_OAK_PLANKS = registerCopy("ridged_dark_oak_planks", Blocks.DARK_OAK_PLANKS);
-    public static final Block RIDGED_CRIMSON_PLANKS = registerCopy("ridged_crimson_planks", Blocks.WARPED_PLANKS);
-    public static final Block RIDGED_WARPED_PLANKS = registerCopy("ridged_warped_planks", Blocks.WARPED_PLANKS);
+    public static final Block REINFORCED_OAK_PLANKS = registerCopy("reinforced_oak_planks", Blocks.OAK_PLANKS);
+    public static final Block REINFORCED_SPRUCE_PLANKS = registerCopy("reinforced_spruce_planks", Blocks.SPRUCE_PLANKS);
+    public static final Block REINFORCED_BIRCH_PLANKS = registerCopy("reinforced_birch_planks", Blocks.BIRCH_PLANKS);
+    public static final Block REINFORCED_JUNGLE_PLANKS = registerCopy("reinforced_jungle_planks", Blocks.JUNGLE_PLANKS);
+    public static final Block REINFORCED_ACACIA_PLANKS = registerCopy("reinforced_acacia_planks", Blocks.ACACIA_PLANKS);
+    public static final Block REINFORCED_DARK_OAK_PLANKS = registerCopy("reinforced_dark_oak_planks", Blocks.DARK_OAK_PLANKS);
+    public static final Block REINFORCED_CRIMSON_PLANKS = registerCopy("reinforced_crimson_planks", Blocks.WARPED_PLANKS);
+    public static final Block REINFORCED_WARPED_PLANKS = registerCopy("reinforced_warped_planks", Blocks.WARPED_PLANKS);
 
-    public static final Block RIDGED_OAK_SLAB = registerSlab("ridged_oak", RIDGED_OAK_PLANKS);
-    public static final Block RIDGED_SPRUCE_SLAB = registerSlab("ridged_spruce", RIDGED_SPRUCE_PLANKS);
-    public static final Block RIDGED_BIRCH_SLAB = registerSlab("ridged_birch", RIDGED_BIRCH_PLANKS);
-    public static final Block RIDGED_JUNGLE_SLAB = registerSlab("ridged_jungle", RIDGED_JUNGLE_PLANKS);
-    public static final Block RIDGED_ACACIA_SLAB = registerSlab("ridged_acacia", RIDGED_ACACIA_PLANKS);
-    public static final Block RIDGED_DARK_OAK_SLAB = registerSlab("ridged_dark_oak", RIDGED_DARK_OAK_PLANKS);
-    public static final Block RIDGED_CRIMSON_SLAB = registerSlab("ridged_crimson", RIDGED_CRIMSON_PLANKS);
-    public static final Block RIDGED_WARPED_SLAB = registerSlab("ridged_warped", RIDGED_WARPED_PLANKS);
+    public static final Block REINFORCED_OAK_SLAB = registerSlab("reinforced_oak", REINFORCED_OAK_PLANKS);
+    public static final Block REINFORCED_SPRUCE_SLAB = registerSlab("reinforced_spruce", REINFORCED_SPRUCE_PLANKS);
+    public static final Block REINFORCED_BIRCH_SLAB = registerSlab("reinforced_birch", REINFORCED_BIRCH_PLANKS);
+    public static final Block REINFORCED_JUNGLE_SLAB = registerSlab("reinforced_jungle", REINFORCED_JUNGLE_PLANKS);
+    public static final Block REINFORCED_ACACIA_SLAB = registerSlab("reinforced_acacia", REINFORCED_ACACIA_PLANKS);
+    public static final Block REINFORCED_DARK_OAK_SLAB = registerSlab("reinforced_dark_oak", REINFORCED_DARK_OAK_PLANKS);
+    public static final Block REINFORCED_CRIMSON_SLAB = registerSlab("reinforced_crimson", REINFORCED_CRIMSON_PLANKS);
+    public static final Block REINFORCED_WARPED_SLAB = registerSlab("reinforced_warped", REINFORCED_WARPED_PLANKS);
 
     public static final Block SPRUCE_CRAFTING_TABLE = registerCraftingTable("spruce", Blocks.SPRUCE_PLANKS);
     public static final Block BIRCH_CRAFTING_TABLE = registerCraftingTable("birch", Blocks.BIRCH_PLANKS);
@@ -102,27 +102,36 @@ public class CrumbsBlocks {
     public static final Block CRIMSON_BARREL = registerBarrel("crimson", Blocks.CRIMSON_PLANKS);
     public static final Block WARPED_BARREL = registerBarrel("warped", Blocks.WARPED_PLANKS);
 
+    public static final Block OAK_LANTERN = registerWoodLantern("oak", Blocks.OAK_PLANKS);
+    public static final Block SPRUCE_LANTERN = registerWoodLantern("spruce", Blocks.SPRUCE_PLANKS);
+    public static final Block BIRCH_LANTERN = registerWoodLantern("birch", Blocks.BIRCH_PLANKS);
+    public static final Block JUNGLE_LANTERN = registerWoodLantern("jungle", Blocks.JUNGLE_PLANKS);
+    public static final Block ACACIA_LANTERN = registerWoodLantern("acacia", Blocks.ACACIA_PLANKS);
+    public static final Block DARK_OAK_LANTERN = registerWoodLantern("dark_oak", Blocks.DARK_OAK_PLANKS);
+    public static final Block CRIMSON_LANTERN = registerWoodLantern("crimson", Blocks.CRIMSON_PLANKS);
+    public static final Block WARPED_LANTERN = registerWoodLantern("warped", Blocks.WARPED_PLANKS);
+
     // STONE BLOCKS
 
-    public static final Block GLOWING_GRANITE = registerLight15("glowing_granite", Blocks.GRANITE);
+    // public static final Block GLOWING_GRANITE = registerLight15("glowing_granite", Blocks.GRANITE);
     public static final Block COBBLED_GRANITE = registerCopy("cobbled_granite", Blocks.GRANITE);
     public static final Block CHISELED_GRANITE = registerCopy("chiseled_granite", Blocks.GRANITE);
     public static final Block BORDERED_GRANITE = registerCopy("bordered_granite", Blocks.GRANITE);
     public static final Block CRACKED_GRANITE = registerCopy("cracked_granite", Blocks.GRANITE);
 
-    public static final Block GLOWING_DIORITE = registerLight15("glowing_diorite", Blocks.DIORITE);
+    // public static final Block GLOWING_DIORITE = registerLight15("glowing_diorite", Blocks.DIORITE);
     public static final Block COBBLED_DIORITE = registerCopy("cobbled_diorite", Blocks.DIORITE);
     public static final Block CHISELED_DIORITE = registerCopy("chiseled_diorite", Blocks.DIORITE);
     public static final Block BORDERED_DIORITE = registerCopy("bordered_diorite", Blocks.DIORITE);
     public static final Block CRACKED_DIORITE = registerCopy("cracked_diorite", Blocks.DIORITE);
 
-    public static final Block GLOWING_ANDESITE = registerLight15("glowing_andesite", Blocks.ANDESITE);
+    // public static final Block GLOWING_ANDESITE = registerLight15("glowing_andesite", Blocks.ANDESITE);
     public static final Block COBBLED_ANDESITE = registerCopy("cobbled_andesite", Blocks.ANDESITE);
     public static final Block CHISELED_ANDESITE = registerCopy("chiseled_andesite", Blocks.ANDESITE);
     public static final Block BORDERED_ANDESITE = registerCopy("bordered_andesite", Blocks.ANDESITE);
     public static final Block CRACKED_ANDESITE = registerCopy("cracked_andesite", Blocks.ANDESITE);
 
-    public static final Block GLOWING_BASALT = registerLight15("glowing_basalt", Blocks.BASALT);
+    // public static final Block GLOWING_BASALT = registerLight15("glowing_basalt", Blocks.BASALT);
     public static final Block COBBLED_BASALT = registerCopy("cobbled_basalt", Blocks.BASALT);
     public static final Block POLISHED_BASALT = registerCopy("polished_basalt", Blocks.BASALT);
     public static final Block CHISELED_BASALT = registerCopy("chiseled_basalt", Blocks.BASALT);
@@ -164,18 +173,18 @@ public class CrumbsBlocks {
 
     // PEBBLES BLOCKS
 
-    public static final Block GRANITE_PEBBLES = registerPebble(Blocks.GRANITE);
-    public static final Block DIORITE_PEBBLES = registerPebble(Blocks.DIORITE);
-    public static final Block ANDESITE_PEBBLES = registerPebble(Blocks.ANDESITE);
-    public static final Block BASALT_PEBBLES = registerPebble(Blocks.BASALT);
+    // public static final Block GRANITE_PEBBLES = registerPebble(Blocks.GRANITE);
+    // public static final Block DIORITE_PEBBLES = registerPebble(Blocks.DIORITE);
+    // public static final Block ANDESITE_PEBBLES = registerPebble(Blocks.ANDESITE);
+    // public static final Block BASALT_PEBBLES = registerPebble(Blocks.BASALT);
 
     // SAND BLOCKS
 
-    public static final Block GLOWING_SAND = registerLight15("glowing_sand", Blocks.SAND);
+    // public static final Block GLOWING_SAND = registerLight15("glowing_sand", Blocks.SAND);
     public static final Block SANDSTONE_TILE = registerCopy("sandstone_tile", Blocks.SANDSTONE);
     public static final Block LARGE_SANDSTONE_TILE = registerCopy("large_sandstone_tile", Blocks.SANDSTONE);
 
-    public static final Block GLOWING_RED_SAND = registerLight15("glowing_red_sand", Blocks.RED_SAND);
+    // public static final Block GLOWING_RED_SAND = registerLight15("glowing_red_sand", Blocks.RED_SAND);
     public static final Block RED_SANDSTONE_TILE = registerCopy("red_sandstone_tile", Blocks.RED_SANDSTONE);
     public static final Block LARGE_RED_SANDSTONE_TILE = registerCopy("large_red_sandstone_tile", Blocks.RED_SANDSTONE);
 
@@ -231,12 +240,12 @@ public class CrumbsBlocks {
         return registerWall(Registry.BLOCK.getId(base).getPath(), base);
     }
 
-    private static Block registerPebble(String id, Block base) {
-        return register(id + "_pebbles", new PebblesBlock(FabricBlockSettings.copy(base)));
-    }
-    private static Block registerPebble(Block base) {
-        return registerPebble(Registry.BLOCK.getId(base).getPath(), base);
-    }
+    // private static Block registerPebble(String id, Block base) {
+    //     return register(id + "_pebbles", new PebblesBlock(FabricBlockSettings.copy(base)));
+    // }
+    // private static Block registerPebble(Block base) {
+    //     return registerPebble(Registry.BLOCK.getId(base).getPath(), base);
+    // }
 
     private static Block registerCraftingTable(String id, Block base) {
         return register(id + "_crafting_table", new PublicCraftingTableBlock(FabricBlockSettings.copy(base)));
@@ -244,11 +253,14 @@ public class CrumbsBlocks {
     private static Block registerBarrel(String id, Block base) {
         return register(id + "_barrel", new BarrelBlock(FabricBlockSettings.copy(base)));
     }
-    private static Block registerLight15(String id, Block base) {
-        return register(id, new Block(FabricBlockSettings.copy(base).luminance((state) -> {
-            return 15;
-        })));
+    private static Block registerWoodLantern(String id, Block base) {
+        return register(id + "_lantern", new WoodLanternBlock(FabricBlockSettings.copy(base)));
     }
+    // private static Block registerLight15(String id, Block base) {
+    //     return register(id, new Block(FabricBlockSettings.copy(base).luminance((state) -> {
+    //         return 15;
+    //     })));
+    // }
 
     private void addStripping(Block base, Block result) {
         UseBlockCallback.EVENT.register((player, world, hand, hit) -> {

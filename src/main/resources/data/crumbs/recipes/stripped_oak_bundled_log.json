@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "crumbs:stripped_bundled_log",
+    "pattern": [
+        "##"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:stripped_oak_log"
+        }
+    },
+    "result": {
+        "item": "crumbs:stripped_oak_bundled_log",
+        "count": 2
+    }
+}

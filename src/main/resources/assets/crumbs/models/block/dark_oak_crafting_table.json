@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:block/cube",
+    "parent": "block/cube",
     "textures": {
         "particle": "crumbs:block/dark_oak_crafting_table_side",
         "down": "crumbs:block/dark_oak_tile",

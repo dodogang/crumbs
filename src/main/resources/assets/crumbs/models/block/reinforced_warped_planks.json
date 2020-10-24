@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "crumbs:block/reinforced_warped_planks"
+    }
+}

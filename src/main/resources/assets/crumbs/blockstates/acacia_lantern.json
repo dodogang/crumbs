@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "lit=true": { "model": "crumbs:block/acacia_lantern" },
+        "lit=false": { "model": "crumbs:block/acacia_lantern_off" }
+    }
+}

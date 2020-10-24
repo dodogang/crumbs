@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:red_nether_brick_slab"
+    }
+  },
+  "result": {
+    "item": "crumbs:chiseled_red_nether_bricks"
+  }
+}

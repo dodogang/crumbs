@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#N",
+        "N#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:warped_roots"
+        },
+        "N": {
+            "item": "minecraft:nether_brick"
+        }
+    },
+    "result": {
+        "item": "crumbs:warped_nether_bricks",
+        "count": 1
+    }
+}

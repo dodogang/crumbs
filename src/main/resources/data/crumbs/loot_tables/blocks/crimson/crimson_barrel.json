@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#_#",
+        "# #",
+        "#_#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:crimson_planks"
+        },
+        "_": {
+            "item": "minecraft:crimson_slab"
+        }
+    },
+    "result": {
+        "item": "crumbs:crimson_barrel",
+        "count": 1
+    }
+}

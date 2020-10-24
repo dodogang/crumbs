@@ -16,6 +16,11 @@
         "crumbs:cobbled_granite_slab",
         "crumbs:cobbled_diorite_slab",
         "crumbs:cobbled_andesite_slab",
+        "crumbs:cobbled_basalt_slab",
+        "crumbs:cracked_granite_slab",
+        "crumbs:cracked_diorite_slab",
+        "crumbs:cracked_andesite_slab",
+        "crumbs:cracked_basalt_slab",
         "crumbs:sandstone_tile_slab",
         "crumbs:red_sandstone_tile_slab"
     ]

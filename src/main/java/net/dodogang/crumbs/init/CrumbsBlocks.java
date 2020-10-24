@@ -26,6 +26,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+@SuppressWarnings("unused")
 public class CrumbsBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Crumbs.MOD_ID);
     public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Crumbs.MOD_ID);
@@ -70,23 +71,23 @@ public class CrumbsBlocks {
     // public static final Block CRIMSON_TILE_SLAB = registerSlab("crimson_tile", Blocks.WARPED_PLANKS);
     // public static final Block WARPED_TILE_SLAB = registerSlab("warped_tile", Blocks.WARPED_PLANKS);
 
-    public static final Block RIDGED_OAK_PLANKS = registerCopy("ridged_oak_planks", Blocks.OAK_PLANKS);
-    public static final Block RIDGED_SPRUCE_PLANKS = registerCopy("ridged_spruce_planks", Blocks.SPRUCE_PLANKS);
-    public static final Block RIDGED_BIRCH_PLANKS = registerCopy("ridged_birch_planks", Blocks.BIRCH_PLANKS);
-    public static final Block RIDGED_JUNGLE_PLANKS = registerCopy("ridged_jungle_planks", Blocks.JUNGLE_PLANKS);
-    public static final Block RIDGED_ACACIA_PLANKS = registerCopy("ridged_acacia_planks", Blocks.ACACIA_PLANKS);
-    public static final Block RIDGED_DARK_OAK_PLANKS = registerCopy("ridged_dark_oak_planks", Blocks.DARK_OAK_PLANKS);
-    // public static final Block RIDGED_CRIMSON_PLANKS = registerCopy("ridged_crimson_planks", Blocks.WARPED_PLANKS);
-    // public static final Block RIDGED_WARPED_PLANKS = registerCopy("ridged_warped_planks", Blocks.WARPED_PLANKS);
+    public static final Block REINFORCED_OAK_PLANKS = registerCopy("reinforced_oak_planks", Blocks.OAK_PLANKS);
+    public static final Block REINFORCED_SPRUCE_PLANKS = registerCopy("reinforced_spruce_planks", Blocks.SPRUCE_PLANKS);
+    public static final Block REINFORCED_BIRCH_PLANKS = registerCopy("reinforced_birch_planks", Blocks.BIRCH_PLANKS);
+    public static final Block REINFORCED_JUNGLE_PLANKS = registerCopy("reinforced_jungle_planks", Blocks.JUNGLE_PLANKS);
+    public static final Block REINFORCED_ACACIA_PLANKS = registerCopy("reinforced_acacia_planks", Blocks.ACACIA_PLANKS);
+    public static final Block REINFORCED_DARK_OAK_PLANKS = registerCopy("reinforced_dark_oak_planks", Blocks.DARK_OAK_PLANKS);
+    // public static final Block REINFORCED_CRIMSON_PLANKS = registerCopy("reinforced_crimson_planks", Blocks.WARPED_PLANKS);
+    // public static final Block REINFORCED_WARPED_PLANKS = registerCopy("reinforced_warped_planks", Blocks.WARPED_PLANKS);
 
-    public static final Block RIDGED_OAK_SLAB = registerSlab("ridged_oak", Blocks.OAK_PLANKS);
-    public static final Block RIDGED_SPRUCE_SLAB = registerSlab("ridged_spruce", Blocks.SPRUCE_PLANKS);
-    public static final Block RIDGED_BIRCH_SLAB = registerSlab("ridged_birch", Blocks.BIRCH_PLANKS);
-    public static final Block RIDGED_JUNGLE_SLAB = registerSlab("ridged_jungle", Blocks.JUNGLE_PLANKS);
-    public static final Block RIDGED_ACACIA_SLAB = registerSlab("ridged_acacia", Blocks.ACACIA_PLANKS);
-    public static final Block RIDGED_DARK_OAK_SLAB = registerSlab("ridged_dark_oak", Blocks.DARK_OAK_PLANKS);
-    // public static final Block RIDGED_CRIMSON_SLAB = registerSlab("ridged_crimson", Blocks.WARPED_PLANKS);
-    // public static final Block RIDGED_WARPED_SLAB = registerSlab("ridged_warped", Blocks.WARPED_PLANKS);
+    public static final Block REINFORCED_OAK_SLAB = registerSlab("reinforced_oak", Blocks.OAK_PLANKS);
+    public static final Block REINFORCED_SPRUCE_SLAB = registerSlab("reinforced_spruce", Blocks.SPRUCE_PLANKS);
+    public static final Block REINFORCED_BIRCH_SLAB = registerSlab("reinforced_birch", Blocks.BIRCH_PLANKS);
+    public static final Block REINFORCED_JUNGLE_SLAB = registerSlab("reinforced_jungle", Blocks.JUNGLE_PLANKS);
+    public static final Block REINFORCED_ACACIA_SLAB = registerSlab("reinforced_acacia", Blocks.ACACIA_PLANKS);
+    public static final Block REINFORCED_DARK_OAK_SLAB = registerSlab("reinforced_dark_oak", Blocks.DARK_OAK_PLANKS);
+    // public static final Block REINFORCED_CRIMSON_SLAB = registerSlab("reinforced_crimson", Blocks.WARPED_PLANKS);
+    // public static final Block REINFORCED_WARPED_SLAB = registerSlab("reinforced_warped", Blocks.WARPED_PLANKS);
 
     public static final Block SPRUCE_CRAFTING_TABLE = registerCraftingTable("spruce", Blocks.SPRUCE_PLANKS);
     public static final Block BIRCH_CRAFTING_TABLE = registerCraftingTable("birch", Blocks.BIRCH_PLANKS);

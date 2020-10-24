@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab_top",
-    "textures": {
-        "bottom": "crumbs:block/ridged_crimson_planks",
-        "top": "crumbs:block/ridged_crimson_planks",
-        "side": "crumbs:block/ridged_crimson_planks"
-    }
-}

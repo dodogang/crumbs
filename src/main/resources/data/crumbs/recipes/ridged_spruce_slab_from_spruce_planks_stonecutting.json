@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:spruce_planks"
-    },
-    "result": "crumbs:ridged_spruce_slab",
-    "count": 2
-}

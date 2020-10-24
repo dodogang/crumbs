@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "crumbs:block/reinforced_birch_slab"
+        },
+        "type=top": {
+            "model": "crumbs:block/reinforced_birch_slab_top"
+        },
+        "type=double": {
+            "model": "crumbs:block/reinforced_birch_planks"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "crumbs:block/reinforced_dark_oak_planks",
+        "top": "crumbs:block/reinforced_dark_oak_planks",
+        "side": "crumbs:block/reinforced_dark_oak_planks"
+    }
+}

@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "crumbs:ridged_acacia_planks"
-    },
-    "result": "crumbs:ridged_acacia_slab",
-    "count": 2
-}

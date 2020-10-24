@@ -1,23 +1,20 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "###",
-        "#R#",
-        "#L#"
+        "#_#",
+        "# #",
+        "#_#"
     ],
     "key": {
         "#": {
             "item": "minecraft:warped_planks"
         },
-        "R": {
-            "item": "minecraft:redstone_lamp"
-        },
-        "L": {
-            "item": "minecraft:lever"
+        "_": {
+            "item": "minecraft:warped_slab"
         }
     },
     "result": {
-        "item": "crumbs:warped_lantern",
+        "item": "crumbs:warped_barrel",
         "count": 1
     }
 }

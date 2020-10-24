@@ -1,8 +1,8 @@
 {
     "parent": "block/slab_top",
     "textures": {
-        "bottom": "crumbs:block/reinforced_spruce",
-        "top": "crumbs:block/reinforced_spruce",
-        "side": "crumbs:block/reinforced_spruce"
+        "bottom": "crumbs:block/reinforced_spruce_planks",
+        "top": "crumbs:block/reinforced_spruce_planks",
+        "side": "crumbs:block/reinforced_spruce_planks"
     }
 }

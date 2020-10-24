@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "lit=true": { "model": "crumbs:block/warped_lantern" },
+        "lit=false": { "model": "crumbs:block/warped_lantern_off" }
+    }
+}

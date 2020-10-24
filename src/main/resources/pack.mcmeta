@@ -1,6 +1,6 @@
 {
     "pack": {
         "description": { "translate": "mod.crumbs.description" },
-        "pack_format": 5
+        "pack_format": 6
     }
 }

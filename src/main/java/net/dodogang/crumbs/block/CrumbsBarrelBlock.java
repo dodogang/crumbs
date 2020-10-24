@@ -13,7 +13,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3i;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.village.PointOfInterestType;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -27,49 +27,38 @@ public class CrumbsBarrelBlock extends BarrelBlock {
     }
 
     /**
-     * Copied from BarrelTileEntity.java and BarrelBlock.java
-     * To get around hard coded == Blocks.BARREL
+     * Copied from BarrelTileEntity.java and BarrelBlock.java To get around hard
+     * coded == Blocks.BARREL
      */
     @Override
     public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
         TileEntity te = worldIn.getTileEntity(pos);
-        if (te == null || te.getWorld() == null) return;
+        if (te == null || te.getWorld() == null)
+            return;
         if (te instanceof BarrelTileEntity) {
             int i = te.getPos().getX();
             int j = te.getPos().getY();
             int k = te.getPos().getZ();
-            int numPlayersUsing = ChestTileEntity.calculatePlayersUsing(
-                    te.getWorld(),
-                    (BarrelTileEntity) te,
-                    i, j, k
-            );
+            int numPlayersUsing = ChestTileEntity.calculatePlayersUsing(te.getWorld(), (BarrelTileEntity) te, i, j, k);
             if (numPlayersUsing > 0) {
-                te.getWorld().getPendingBlockTicks().scheduleTick(
-                        te.getPos(), te.getBlockState().getBlock(), 5
-                );
+                te.getWorld().getPendingBlockTicks().scheduleTick(te.getPos(), te.getBlockState().getBlock(), 5);
             } else {
                 if (state.get(BarrelBlock.PROPERTY_OPEN)) {
-                    playSound(
-                            (BarrelTileEntity) te, state
-                    );
-                    te.getWorld().setBlockState(
-                            te.getPos(),
-                            state.with(BarrelBlock.PROPERTY_OPEN, false),
-                            3
-                    );
+                    playSound((BarrelTileEntity) te, state);
+                    te.getWorld().setBlockState(te.getPos(), state.with(BarrelBlock.PROPERTY_OPEN, false), 3);
                 }
             }
         }
     }
 
     /**
-     * Copied from BarrelTileEntity.java
-     * To get around hard coded == Blocks.BARREL
+     * Copied from BarrelTileEntity.java To get around hard coded == Blocks.BARREL
      */
     private void playSound(BarrelTileEntity te, BlockState state) {
         World world = te.getWorld();
-        if (world == null) return;
-        Vec3i vec3i = state.get(BarrelBlock.PROPERTY_FACING).getDirectionVec();
+        if (world == null)
+            return;
+        Vector3i vec3i = state.get(BarrelBlock.PROPERTY_FACING).getDirectionVec();
         double d0 = (double)te.getPos().getX() + 0.5D + (double)vec3i.getX() / 2.0D;
         double d1 = (double)te.getPos().getY() + 0.5D + (double)vec3i.getY() / 2.0D;
         double d2 = (double)te.getPos().getZ() + 0.5D + (double)vec3i.getZ() / 2.0D;
@@ -80,8 +69,7 @@ public class CrumbsBarrelBlock extends BarrelBlock {
         );
     }
 
-    public static void registerAsPointOfInterest()
-    {
+    public static void registerAsPointOfInterest() {
         final ArrayList<BlockState> barrels = new ArrayList<>();
         final ArrayList<BlockState> modBarrels = new ArrayList<>();
         barrels.addAll(PointOfInterestType.FISHERMAN.blockStates);

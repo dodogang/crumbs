@@ -22,7 +22,7 @@ public class Crumbs {
     public static final String MOD_ID = "crumbs";
     public static final String MOD_NAME = "Crumbs";
 
-    public static final ItemGroup ITEM_GROUP = new ItemGroup(MOD_ID) {
+    public static final ItemGroup ITEM_GROUP = new ItemGroup(MOD_ID + ".item_group") {
         @Override
         public ItemStack createIcon() {
             return new ItemStack(CrumbsBlocks.OAK_BUNDLED_LOG);

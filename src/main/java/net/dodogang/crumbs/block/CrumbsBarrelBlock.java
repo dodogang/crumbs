@@ -78,8 +78,8 @@ public class CrumbsBarrelBlock extends BarrelBlock {
         modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.JUNGLE_BARREL));
         modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.ACACIA_BARREL));
         modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.DARK_OAK_BARREL));
-//        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.CRIMSON_BARREL));
-//        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.WARPED_BARREL));
+        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.CRIMSON_BARREL));
+        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.WARPED_BARREL));
 
         // Copied from PointOfInterestType#registerBlockStates
         // Edited to allow adding blocks to a PointOfInterest so villagers use them

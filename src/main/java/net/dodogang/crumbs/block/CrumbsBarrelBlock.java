@@ -2,7 +2,7 @@ package net.dodogang.crumbs.block;
 
 import com.google.common.collect.ImmutableSet;
 
-import net.dodogang.crumbs.init.CrumbsBlocks;
+import net.dodogang.crumbs.mixin.PointOfInterestTypeAccessor;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -22,8 +22,12 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class CrumbsBarrelBlock extends BarrelBlock {
+    public static final ArrayList<BlockState> modBarrels = new ArrayList<>();
+
     public CrumbsBarrelBlock(Block.Properties properties) {
         super(properties);
+
+        modBarrels.addAll(PointOfInterestType.getAllStates(this));
     }
 
     /**
@@ -69,33 +73,23 @@ public class CrumbsBarrelBlock extends BarrelBlock {
         );
     }
 
-    public static void registerAsPointOfInterest() {
-        final ArrayList<BlockState> barrels = new ArrayList<>();
-        final ArrayList<BlockState> modBarrels = new ArrayList<>();
-        barrels.addAll(PointOfInterestType.FISHERMAN.blockStates);
-        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.OAK_BARREL));
-        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.BIRCH_BARREL));
-        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.JUNGLE_BARREL));
-        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.ACACIA_BARREL));
-        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.DARK_OAK_BARREL));
-        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.CRIMSON_BARREL));
-        modBarrels.addAll(PointOfInterestType.getAllStates(CrumbsBlocks.WARPED_BARREL));
-
+    public static void registerPointsOfInterest() {
         // Copied from PointOfInterestType#registerBlockStates
-        // Edited to allow adding blocks to a PointOfInterest so villagers use them
+        // Edited to allow adding blocks to a POI
         modBarrels.forEach((modBarrel) -> {
-            PointOfInterestType pointofinteresttype =
-                    PointOfInterestType.POIT_BY_BLOCKSTATE.put(
-                            modBarrel, PointOfInterestType.FISHERMAN
-                    );
-            if (pointofinteresttype != null) {
+            PointOfInterestType pointOfInterestType = PointOfInterestTypeAccessor.getBlockStateToPointOfInterest()
+                    .put(modBarrel, PointOfInterestType.FISHERMAN);
+            if (pointOfInterestType != null) {
                 throw Util.pauseDevMode(new IllegalStateException(
                         String.format("%s is defined in too many tags", modBarrel)
                 ));
             }
         });
+        PointOfInterestTypeAccessor fishermanAccessor = (PointOfInterestTypeAccessor) PointOfInterestType.FISHERMAN;
 
-        barrels.addAll(modBarrels);
-        PointOfInterestType.FISHERMAN.blockStates = ImmutableSet.copyOf(barrels);
+        ArrayList<BlockState> blockStates = new ArrayList<>(fishermanAccessor.getBlockStates());
+        blockStates.addAll(modBarrels);
+
+        fishermanAccessor.setBlockStates(ImmutableSet.copyOf(blockStates));
     }
 }

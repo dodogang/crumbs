@@ -13,7 +13,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class CrumbsCraftingTableBlock extends CraftingTableBlock {
-    private static final ITextComponent field_220271_a = new TranslationTextComponent("container.crafting");
+    private static final ITextComponent CONTAINER_NAME = new TranslationTextComponent("container.crafting");
 
     public CrumbsCraftingTableBlock(Block.Properties properties) {
         super(properties);
@@ -24,10 +24,9 @@ public class CrumbsCraftingTableBlock extends CraftingTableBlock {
         return new SimpleNamedContainerProvider(
                 (inventory, callPos, p_220270_4_) ->
                         new CrumbsWorkbenchContainer(
-                                inventory, callPos,
-                                IWorldPosCallable.of(worldIn, pos), this
+                                inventory, callPos, IWorldPosCallable.of(worldIn, pos), this
                         ),
-                field_220271_a
+                CONTAINER_NAME
         );
     }
 }

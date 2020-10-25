@@ -32,8 +32,6 @@ public class Crumbs {
     public Crumbs() {
         log("Initializing");
 
-        new CrumbsBlocks();
-
         IEventBus eventBus = MinecraftForge.EVENT_BUS;
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -42,7 +40,9 @@ public class Crumbs {
         modEventBus.addGenericListener(Block.class, CrumbsBlocks::registerBlocks);
         modEventBus.addGenericListener(Item.class, CrumbsBlocks::registerBlockItems);
 
-        CrumbsBarrelBlock.registerAsPointOfInterest();
+        new CrumbsBlocks();
+
+        CrumbsBarrelBlock.registerPointsOfInterest();
 
         log("Initialized");
     }

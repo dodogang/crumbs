@@ -39,6 +39,7 @@ dependencies {
     // modRuntime "com.github.jellysquid3:phosphor-fabric:mc${project.minecraft_version}-v${project.phosphor_version}"
     // modRuntime "com.github.jellysquid3:sodium-fabric:mc${project.minecraft_version}-${project.sodium_version}"
     // modRuntime "com.github.joaoh1:OkZoomer:${project.okzoomer_version}.${project.minecraft_version}"
+    modRuntime "me.shedaniel:RoughlyEnoughItems:${project.rei_version}"
 }
 
 processResources {

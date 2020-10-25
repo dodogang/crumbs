@@ -3,7 +3,6 @@
     "package": "net.dodogang.crumbs.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
-        "ScreenHandlerMixin"
     ],
     "client": [],
     "injectors": {

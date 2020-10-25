@@ -237,7 +237,7 @@ public class CrumbsBlocks {
         return register(id + "_crafting_table", new CrumbsCraftingTableBlock(FabricBlockSettings.copy(base)));
     }
     private static Block registerBarrel(String id, Block base) {
-        return register(id + "_barrel", new BarrelBlock(FabricBlockSettings.copy(base)));
+        return register(id + "_barrel", new CrumbsBarrelBlock(FabricBlockSettings.copy(base)));
     }
     private static Block registerWoodLantern(String id, Block base) {
         return register(id + "_lantern", new WoodLanternBlock(FabricBlockSettings.copy(base)));

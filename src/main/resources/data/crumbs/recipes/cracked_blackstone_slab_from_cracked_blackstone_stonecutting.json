@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "crumbs:cracked_blackstone"
+    },
+    "result": "crumbs:cracked_blackstone_slab",
+    "count": 2
+}

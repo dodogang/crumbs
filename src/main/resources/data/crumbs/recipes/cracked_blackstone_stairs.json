@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "crumbs:cracked_stone_stairs",
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "crumbs:cracked_blackstone"
+        }
+    },
+    "result": {
+        "item": "crumbs:cracked_blackstone_stairs",
+        "count": 4
+    }
+}

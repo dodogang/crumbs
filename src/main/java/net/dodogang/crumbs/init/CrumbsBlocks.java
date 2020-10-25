@@ -104,73 +104,51 @@ public class CrumbsBlocks {
 
     // STONE BLOCKS
 
-    // public static final Block GLOWING_GRANITE = registerLight15("glowing_granite", Blocks.GRANITE);
     public static final Block COBBLED_GRANITE = registerCopy("cobbled_granite", Blocks.GRANITE);
     public static final Block CHISELED_GRANITE = registerCopy("chiseled_granite", Blocks.GRANITE);
     public static final Block BORDERED_GRANITE = registerCopy("bordered_granite", Blocks.GRANITE);
     public static final Block CRACKED_GRANITE = registerCopy("cracked_granite", Blocks.GRANITE);
 
-    // public static final Block GLOWING_DIORITE = registerLight15("glowing_diorite", Blocks.DIORITE);
     public static final Block COBBLED_DIORITE = registerCopy("cobbled_diorite", Blocks.DIORITE);
     public static final Block CHISELED_DIORITE = registerCopy("chiseled_diorite", Blocks.DIORITE);
     public static final Block BORDERED_DIORITE = registerCopy("bordered_diorite", Blocks.DIORITE);
     public static final Block CRACKED_DIORITE = registerCopy("cracked_diorite", Blocks.DIORITE);
 
-    // public static final Block GLOWING_ANDESITE = registerLight15("glowing_andesite", Blocks.ANDESITE);
     public static final Block COBBLED_ANDESITE = registerCopy("cobbled_andesite", Blocks.ANDESITE);
     public static final Block CHISELED_ANDESITE = registerCopy("chiseled_andesite", Blocks.ANDESITE);
     public static final Block BORDERED_ANDESITE = registerCopy("bordered_andesite", Blocks.ANDESITE);
     public static final Block CRACKED_ANDESITE = registerCopy("cracked_andesite", Blocks.ANDESITE);
 
-    // public static final Block GLOWING_BASALT = registerLight15("glowing_basalt", Blocks.BASALT);
-    public static final Block COBBLED_BASALT = registerCopy("cobbled_basalt", Blocks.BASALT);
-    public static final Block POLISHED_BASALT = registerCopy("polished_basalt", Blocks.BASALT);
-    public static final Block CHISELED_BASALT = registerCopy("chiseled_basalt", Blocks.BASALT);
-    public static final Block BORDERED_BASALT = registerCopy("bordered_basalt", Blocks.BASALT);
-    public static final Block CRACKED_BASALT = registerCopy("cracked_basalt", Blocks.BASALT);
-
-    public static final Block POLISHED_BASALT_SLAB = registerSlab(POLISHED_BASALT);
-    public static final Block POLISHED_BASALT_STAIRS = registerStairs(POLISHED_BASALT);
+    public static final Block BORDERED_BLACKSTONE = registerCopy("bordered_blackstone", Blocks.BLACKSTONE);
+    public static final Block CRACKED_BLACKSTONE = registerCopy("cracked_blackstone", Blocks.BLACKSTONE);
 
     public static final Block COBBLED_GRANITE_WALL = registerWall(COBBLED_GRANITE);
     public static final Block COBBLED_DIORITE_WALL = registerWall(COBBLED_DIORITE);
     public static final Block COBBLED_ANDESITE_WALL = registerWall(COBBLED_ANDESITE);
-    public static final Block COBBLED_BASALT_WALL = registerWall(COBBLED_BASALT);
 
     public static final Block COBBLED_GRANITE_SLAB = registerSlab(COBBLED_GRANITE);
     public static final Block COBBLED_DIORITE_SLAB = registerSlab(COBBLED_DIORITE);
     public static final Block COBBLED_ANDESITE_SLAB = registerSlab(COBBLED_ANDESITE);
-    public static final Block COBBLED_BASALT_SLAB = registerSlab(COBBLED_BASALT);
 
     public static final Block COBBLED_GRANITE_STAIRS = registerStairs(COBBLED_GRANITE);
     public static final Block COBBLED_DIORITE_STAIRS = registerStairs(COBBLED_DIORITE);
     public static final Block COBBLED_ANDESITE_STAIRS = registerStairs(COBBLED_ANDESITE);
-    public static final Block COBBLED_BASALT_STAIRS = registerStairs(COBBLED_BASALT);
 
     public static final Block CRACKED_GRANITE_SLAB = registerSlab(CRACKED_GRANITE);
     public static final Block CRACKED_DIORITE_SLAB = registerSlab(CRACKED_DIORITE);
     public static final Block CRACKED_ANDESITE_SLAB = registerSlab(CRACKED_ANDESITE);
-    public static final Block CRACKED_BASALT_SLAB = registerSlab(CRACKED_BASALT);
+    public static final Block CRACKED_BLACKSTONE_SLAB = registerSlab(CRACKED_BLACKSTONE);
 
     public static final Block CRACKED_GRANITE_STAIRS = registerStairs(CRACKED_GRANITE);
     public static final Block CRACKED_DIORITE_STAIRS = registerStairs(CRACKED_DIORITE);
     public static final Block CRACKED_ANDESITE_STAIRS = registerStairs(CRACKED_ANDESITE);
-    public static final Block CRACKED_BASALT_STAIRS = registerStairs(CRACKED_BASALT);
-
-    // PEBBLES BLOCKS
-
-    // public static final Block GRANITE_PEBBLES = registerPebble(Blocks.GRANITE);
-    // public static final Block DIORITE_PEBBLES = registerPebble(Blocks.DIORITE);
-    // public static final Block ANDESITE_PEBBLES = registerPebble(Blocks.ANDESITE);
-    // public static final Block BASALT_PEBBLES = registerPebble(Blocks.BASALT);
+    public static final Block CRACKED_BLACKSTONE_STAIRS = registerStairs(CRACKED_BLACKSTONE);
 
     // SAND BLOCKS
 
-    // public static final Block GLOWING_SAND = registerLight15("glowing_sand", Blocks.SAND);
     public static final Block SANDSTONE_TILE = registerCopy("sandstone_tile", Blocks.SANDSTONE);
     public static final Block LARGE_SANDSTONE_TILE = registerCopy("large_sandstone_tile", Blocks.SANDSTONE);
 
-    // public static final Block GLOWING_RED_SAND = registerLight15("glowing_red_sand", Blocks.RED_SAND);
     public static final Block RED_SANDSTONE_TILE = registerCopy("red_sandstone_tile", Blocks.RED_SANDSTONE);
     public static final Block LARGE_RED_SANDSTONE_TILE = registerCopy("large_red_sandstone_tile", Blocks.RED_SANDSTONE);
 

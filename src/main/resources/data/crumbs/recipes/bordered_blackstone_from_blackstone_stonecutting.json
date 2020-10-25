@@ -1,8 +1,8 @@
 {
     "type": "minecraft:stonecutting",
     "ingredient": {
-        "item": "minecraft:dark_oak_planks"
+        "item": "minecraft:blackstone"
     },
-    "result": "crumbs:dark_oak_tile",
+    "result": "crumbs:bordered_blackstone",
     "count": 1
 }

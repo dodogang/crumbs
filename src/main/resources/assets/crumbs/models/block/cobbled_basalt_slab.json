@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "crumbs:block/cobbled_basalt",
-        "top": "crumbs:block/cobbled_basalt",
-        "side": "crumbs:block/cobbled_basalt"
-    }
-}

@@ -3,6 +3,6 @@
     "ingredient": {
         "item": "minecraft:crimson_planks"
     },
-    "result": "crumbs:crimson_tile",
+    "result": "crumbs:reinforced_crimson_planks",
     "count": 1
 }

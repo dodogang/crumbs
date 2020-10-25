@@ -68,23 +68,14 @@ public class CrumbsBlocks {
     public static final Block CRIMSON_TILE_SLAB = registerSlab(CRIMSON_TILE);
     public static final Block WARPED_TILE_SLAB = registerSlab(WARPED_TILE);
 
-    public static final Block REINFORCED_OAK_PLANKS = registerCopy("reinforced_oak_planks", Blocks.OAK_PLANKS);
-    public static final Block REINFORCED_SPRUCE_PLANKS = registerCopy("reinforced_spruce_planks", Blocks.SPRUCE_PLANKS);
-    public static final Block REINFORCED_BIRCH_PLANKS = registerCopy("reinforced_birch_planks", Blocks.BIRCH_PLANKS);
-    public static final Block REINFORCED_JUNGLE_PLANKS = registerCopy("reinforced_jungle_planks", Blocks.JUNGLE_PLANKS);
-    public static final Block REINFORCED_ACACIA_PLANKS = registerCopy("reinforced_acacia_planks", Blocks.ACACIA_PLANKS);
-    public static final Block REINFORCED_DARK_OAK_PLANKS = registerCopy("reinforced_dark_oak_planks", Blocks.DARK_OAK_PLANKS);
-    public static final Block REINFORCED_CRIMSON_PLANKS = registerCopy("reinforced_crimson_planks", Blocks.WARPED_PLANKS);
-    public static final Block REINFORCED_WARPED_PLANKS = registerCopy("reinforced_warped_planks", Blocks.WARPED_PLANKS);
-
-    public static final Block REINFORCED_OAK_SLAB = registerSlab("reinforced_oak", REINFORCED_OAK_PLANKS);
-    public static final Block REINFORCED_SPRUCE_SLAB = registerSlab("reinforced_spruce", REINFORCED_SPRUCE_PLANKS);
-    public static final Block REINFORCED_BIRCH_SLAB = registerSlab("reinforced_birch", REINFORCED_BIRCH_PLANKS);
-    public static final Block REINFORCED_JUNGLE_SLAB = registerSlab("reinforced_jungle", REINFORCED_JUNGLE_PLANKS);
-    public static final Block REINFORCED_ACACIA_SLAB = registerSlab("reinforced_acacia", REINFORCED_ACACIA_PLANKS);
-    public static final Block REINFORCED_DARK_OAK_SLAB = registerSlab("reinforced_dark_oak", REINFORCED_DARK_OAK_PLANKS);
-    public static final Block REINFORCED_CRIMSON_SLAB = registerSlab("reinforced_crimson", REINFORCED_CRIMSON_PLANKS);
-    public static final Block REINFORCED_WARPED_SLAB = registerSlab("reinforced_warped", REINFORCED_WARPED_PLANKS);
+    public static final Block REINFORCED_OAK_PLANKS = registerPillarBlock("reinforced_oak_planks", Blocks.OAK_PLANKS);
+    public static final Block REINFORCED_SPRUCE_PLANKS = registerPillarBlock("reinforced_spruce_planks", Blocks.SPRUCE_PLANKS);
+    public static final Block REINFORCED_BIRCH_PLANKS = registerPillarBlock("reinforced_birch_planks", Blocks.BIRCH_PLANKS);
+    public static final Block REINFORCED_JUNGLE_PLANKS = registerPillarBlock("reinforced_jungle_planks", Blocks.JUNGLE_PLANKS);
+    public static final Block REINFORCED_ACACIA_PLANKS = registerPillarBlock("reinforced_acacia_planks", Blocks.ACACIA_PLANKS);
+    public static final Block REINFORCED_DARK_OAK_PLANKS = registerPillarBlock("reinforced_dark_oak_planks", Blocks.DARK_OAK_PLANKS);
+    public static final Block REINFORCED_CRIMSON_PLANKS = registerPillarBlock("reinforced_crimson_planks", Blocks.CRIMSON_PLANKS);
+    public static final Block REINFORCED_WARPED_PLANKS = registerPillarBlock("reinforced_warped_planks", Blocks.WARPED_PLANKS);
 
     public static final Block SPRUCE_CRAFTING_TABLE = registerCraftingTable("spruce", Blocks.SPRUCE_PLANKS);
     public static final Block BIRCH_CRAFTING_TABLE = registerCraftingTable("birch", Blocks.BIRCH_PLANKS);
@@ -155,11 +146,6 @@ public class CrumbsBlocks {
     public static final Block COBBLED_DIORITE_STAIRS = registerStairs(COBBLED_DIORITE);
     public static final Block COBBLED_ANDESITE_STAIRS = registerStairs(COBBLED_ANDESITE);
     public static final Block COBBLED_BASALT_STAIRS = registerStairs(COBBLED_BASALT);
-
-    public static final Block CRACKED_GRANITE_WALL = registerWall(CRACKED_GRANITE);
-    public static final Block CRACKED_DIORITE_WALL = registerWall(CRACKED_DIORITE);
-    public static final Block CRACKED_ANDESITE_WALL = registerWall(CRACKED_ANDESITE);
-    public static final Block CRACKED_BASALT_WALL = registerWall(CRACKED_BASALT);
 
     public static final Block CRACKED_GRANITE_SLAB = registerSlab(CRACKED_GRANITE);
     public static final Block CRACKED_DIORITE_SLAB = registerSlab(CRACKED_DIORITE);

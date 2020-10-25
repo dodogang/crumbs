@@ -1,3 +1,19 @@
 {
-    "parent": "crumbs:block/acacia_lantern_off"
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "crumbs:acacia_lantern"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ]
+        }
+    ]
 }

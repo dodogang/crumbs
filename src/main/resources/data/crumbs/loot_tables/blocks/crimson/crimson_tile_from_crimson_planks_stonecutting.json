@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:crimson_planks"
-    },
-    "result": "crumbs:crimson_tiles",
-    "count": 1
-}

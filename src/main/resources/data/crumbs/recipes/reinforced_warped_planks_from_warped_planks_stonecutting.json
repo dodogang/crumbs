@@ -3,6 +3,6 @@
     "ingredient": {
         "item": "minecraft:warped_planks"
     },
-    "result": "crumbs:warped_tile",
+    "result": "crumbs:reinforced_warped_planks",
     "count": 1
 }

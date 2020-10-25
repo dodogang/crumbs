@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab_top",
-    "textures": {
-        "bottom": "crumbs:block/ridged_oak_planks",
-        "top": "crumbs:block/ridged_oak_planks",
-        "side": "crumbs:block/ridged_oak_planks"
-    }
-}

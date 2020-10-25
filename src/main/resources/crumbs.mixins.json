@@ -3,6 +3,7 @@
     "package": "net.dodogang.crumbs.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
+        "PointOfInterestTypeAccessor"
     ],
     "client": [],
     "injectors": {

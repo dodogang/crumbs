@@ -1,5 +1,6 @@
 package net.dodogang.crumbs;
 
+import net.dodogang.crumbs.block.CrumbsBarrelBlock;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,6 +28,8 @@ public class Crumbs implements ModInitializer {
         log("Initializing");
 
         new CrumbsBlocks();
+
+        CrumbsBarrelBlock.registerPointsOfInterest();
 
         log("Initialized");
     }

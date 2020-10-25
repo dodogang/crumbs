@@ -1,5 +1,7 @@
 package net.dodogang.crumbs.block;
 
+import com.google.common.collect.ImmutableSet;
+import net.dodogang.crumbs.mixin.PointOfInterestTypeAccessor;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BarrelBlockEntity;
@@ -8,15 +10,25 @@ import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
+import net.minecraft.world.poi.PointOfInterestType;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class CrumbsBarrelBlock extends BarrelBlock {
+    public static final ArrayList<BlockState> modBarrels = new ArrayList<>();
+
     public CrumbsBarrelBlock(Settings settings) {
         super(settings);
+
+        modBarrels.addAll(
+                // Copied from PointOfInterestType#getAllStatesOf because it is private
+                ImmutableSet.copyOf(this.getStateManager().getStates())
+        );
     }
 
     /**
@@ -59,5 +71,25 @@ public class CrumbsBarrelBlock extends BarrelBlock {
                 SoundCategory.BLOCKS, 0.5F,
                 world.random.nextFloat() * 0.1F + 0.9F
         );
+    }
+
+    public static void registerPointsOfInterest() {
+        // Copied from PointOfInterestType#setup
+        // Edited to allow adding blocks to a POI
+        modBarrels.forEach((modBarrel) -> {
+            PointOfInterestType pointOfInterestType = PointOfInterestTypeAccessor.getBlockStateToPointOfInterest()
+                    .put(modBarrel, PointOfInterestType.FISHERMAN);
+            if (pointOfInterestType != null) {
+                throw Util.throwOrPause(new IllegalStateException(
+                        String.format("%s is defined in too many tags", modBarrel)
+                ));
+            }
+        });
+        PointOfInterestTypeAccessor fishermanAccessor = (PointOfInterestTypeAccessor) PointOfInterestType.FISHERMAN;
+
+        ArrayList<BlockState> blockStates = new ArrayList<>(fishermanAccessor.getBlockStates());
+        blockStates.addAll(modBarrels);
+
+        fishermanAccessor.setBlockStates(ImmutableSet.copyOf(blockStates));
     }
 }

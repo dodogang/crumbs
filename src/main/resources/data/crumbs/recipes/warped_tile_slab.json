@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "crumbs:wooden_tile_slab",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "crumbs:warped_tile"
+        }
+    },
+    "result": {
+        "item": "crumbs:warped_tile_slab",
+        "count": 6
+    }
+}

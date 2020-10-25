@@ -150,11 +150,6 @@ public class CrumbsBlocks {
     public static final Block CRACKED_ANDESITE_SLAB = registerSlab("cracked_andesite", Blocks.ANDESITE);
     public static final Block CRACKED_BASALT_SLAB = registerSlab("cracked_basalt", Blocks.BASALT);
 
-    public static final Block CRACKED_GRANITE_WALL = registerWall("cracked_granite", Blocks.GRANITE);
-    public static final Block CRACKED_DIORITE_WALL = registerWall("cracked_diorite", Blocks.DIORITE);
-    public static final Block CRACKED_ANDESITE_WALL = registerWall("cracked_andesite", Blocks.ANDESITE);
-    public static final Block CRACKED_BASALT_WALL = registerWall("cracked_basalt", Blocks.BASALT);
-
     public static final Block CRACKED_GRANITE_STAIRS = registerStairs("cracked_granite", Blocks.GRANITE);
     public static final Block CRACKED_DIORITE_STAIRS = registerStairs("cracked_diorite", Blocks.DIORITE);
     public static final Block CRACKED_ANDESITE_STAIRS = registerStairs("cracked_andesite", Blocks.ANDESITE);

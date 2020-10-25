@@ -1,7 +1,7 @@
 {
     "mod.crumbs.name": "Crumbs",
     "mod.crumbs.description": "Why wood crumby?",
-    "itemGroup.crumbs": "Crumbs",
+    "itemGroup.crumbs.item_group": "Crumbs",
 
     "block.crumbs.oak_bundled_log": "Oak Bundled Log",
     "block.crumbs.spruce_bundled_log": "Spruce Bundled Log",
@@ -108,10 +108,6 @@
     "block.crumbs.cracked_diorite_stairs": "Cracked Diorite Stairs",
     "block.crumbs.cracked_andesite_stairs": "Cracked Andesite Stairs",
     "block.crumbs.cracked_basalt_stairs": "Cracked Basalt Stairs",
-    "block.crumbs.cracked_granite_wall": "Cracked Granite Wall",
-    "block.crumbs.cracked_diorite_wall": "Cracked Diorite Wall",
-    "block.crumbs.cracked_andesite_wall": "Cracked Andesite Wall",
-    "block.crumbs.cracked_basalt_wall": "Cracked Basalt Wall",
     "block.crumbs.granite_pebbles": "Granite Pebbles",
     "block.crumbs.diorite_pebbles": "Diorite Pebbles",
     "block.crumbs.andesite_pebbles": "Andesite Pebbles",

@@ -19,7 +19,7 @@ public class WoodLanternBlock extends Block {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
     public WoodLanternBlock(Block.Properties properties) {
-        super(properties.setLightLevel((state) -> {
+        super(properties.func_235838_a_((state) -> {
             return state.get(LIT) ? 15 : 0;
         }));
         setDefaultState(this.getDefaultState().with(LIT, false));

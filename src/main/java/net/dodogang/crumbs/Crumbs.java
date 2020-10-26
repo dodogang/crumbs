@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.dodogang.crumbs.block.CrumbsBarrelBlock;
 import net.dodogang.crumbs.init.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -42,7 +41,7 @@ public class Crumbs {
 
         new CrumbsBlocks();
 
-        CrumbsBarrelBlock.registerPointsOfInterest();
+        // CrumbsBarrelBlock.registerPointsOfInterest();
 
         log("Initialized");
     }

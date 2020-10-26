@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:blackstone"
-    },
-    "result": "crumbs:bordered_blackstone",
-    "count": 1
-}

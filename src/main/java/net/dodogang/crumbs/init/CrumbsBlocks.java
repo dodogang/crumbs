@@ -102,22 +102,22 @@ public class CrumbsBlocks {
     // STONE BLOCKS
 
     public static final Block COBBLED_GRANITE = registerCopy("cobbled_granite", Blocks.GRANITE);
-    public static final Block CHISELED_GRANITE = registerCopy("chiseled_granite", Blocks.GRANITE);
-    public static final Block BORDERED_GRANITE = registerCopy("bordered_granite", Blocks.GRANITE);
-    public static final Block CRACKED_GRANITE = registerCopy("cracked_granite", Blocks.GRANITE);
+    public static final Block CHISELED_POLISHED_GRANITE = registerCopy("chiseled_polished_granite", Blocks.GRANITE);
+    public static final Block BEVELED_POLISHED_GRANITE = registerCopy("beveled_polished_granite", Blocks.GRANITE);
+    public static final Block CRACKED_POLISHED_GRANITE = registerCopy("cracked_polished_granite", Blocks.GRANITE);
 
     public static final Block COBBLED_DIORITE = registerCopy("cobbled_diorite", Blocks.DIORITE);
-    public static final Block CHISELED_DIORITE = registerCopy("chiseled_diorite", Blocks.DIORITE);
-    public static final Block BORDERED_DIORITE = registerCopy("bordered_diorite", Blocks.DIORITE);
-    public static final Block CRACKED_DIORITE = registerCopy("cracked_diorite", Blocks.DIORITE);
+    public static final Block CHISELED_POLISHED_DIORITE = registerCopy("chiseled_polished_diorite", Blocks.DIORITE);
+    public static final Block BEVELED_POLISHED_DIORITE = registerCopy("beveled_polished_diorite", Blocks.DIORITE);
+    public static final Block CRACKED_POLISHED_DIORITE = registerCopy("cracked_polished_diorite", Blocks.DIORITE);
 
     public static final Block COBBLED_ANDESITE = registerCopy("cobbled_andesite", Blocks.ANDESITE);
-    public static final Block CHISELED_ANDESITE = registerCopy("chiseled_andesite", Blocks.ANDESITE);
-    public static final Block BORDERED_ANDESITE = registerCopy("bordered_andesite", Blocks.ANDESITE);
-    public static final Block CRACKED_ANDESITE = registerCopy("cracked_andesite", Blocks.ANDESITE);
+    public static final Block CHISELED_POLISHED_ANDESITE = registerCopy("chiseled_polished_andesite", Blocks.ANDESITE);
+    public static final Block BEVELED_POLISHED_ANDESITE = registerCopy("beveled_polished_andesite", Blocks.ANDESITE);
+    public static final Block CRACKED_POLISHED_ANDESITE = registerCopy("cracked_polished_andesite", Blocks.ANDESITE);
 
-    public static final Block BORDERED_BLACKSTONE = registerCopy("bordered_blackstone", Blocks.BLACKSTONE);
-    public static final Block CRACKED_BLACKSTONE = registerCopy("cracked_blackstone", Blocks.BLACKSTONE);
+    public static final Block BEVELED_POLISHED_BLACKSTONE = registerCopy("beveled_polished_blackstone", Blocks.BLACKSTONE);
+    public static final Block CRACKED_POLISHED_BLACKSTONE = registerCopy("cracked_polished_blackstone", Blocks.BLACKSTONE);
 
     public static final Block COBBLED_GRANITE_WALL = registerWall("cobbled_granite", COBBLED_GRANITE);
     public static final Block COBBLED_DIORITE_WALL = registerWall("cobbled_diorite", COBBLED_DIORITE);

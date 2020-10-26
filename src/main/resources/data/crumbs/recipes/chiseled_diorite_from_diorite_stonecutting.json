@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:diorite"
-    },
-    "result": "crumbs:chiseled_diorite",
-    "count": 1
-}

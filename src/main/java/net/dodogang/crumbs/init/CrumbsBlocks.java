@@ -131,16 +131,6 @@ public class CrumbsBlocks {
     public static final Block COBBLED_DIORITE_STAIRS = registerStairs("cobbled_diorite", COBBLED_DIORITE);
     public static final Block COBBLED_ANDESITE_STAIRS = registerStairs("cobbled_andesite", COBBLED_ANDESITE);
 
-    public static final Block CRACKED_GRANITE_SLAB = registerSlab("cracked_granite", CRACKED_GRANITE);
-    public static final Block CRACKED_DIORITE_SLAB = registerSlab("cracked_diorite", CRACKED_DIORITE);
-    public static final Block CRACKED_ANDESITE_SLAB = registerSlab("cracked_andesite", CRACKED_ANDESITE);
-    public static final Block CRACKED_BLACKSTONE_SLAB = registerSlab("cracked_blackstone", CRACKED_BLACKSTONE);
-
-    public static final Block CRACKED_GRANITE_STAIRS = registerStairs("cracked_granite", CRACKED_GRANITE);
-    public static final Block CRACKED_DIORITE_STAIRS = registerStairs("cracked_diorite", CRACKED_DIORITE);
-    public static final Block CRACKED_ANDESITE_STAIRS = registerStairs("cracked_andesite", CRACKED_ANDESITE);
-    public static final Block CRACKED_BLACKSTONE_STAIRS = registerStairs("cracked_blackstone", CRACKED_BLACKSTONE);
-
     // SAND BLOCKS
 
     public static final Block SANDSTONE_TILE = registerCopy("sandstone_tile", Blocks.SANDSTONE);

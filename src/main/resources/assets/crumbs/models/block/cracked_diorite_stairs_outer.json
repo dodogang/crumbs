@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "crumbs:block/cracked_diorite",
-        "top": "crumbs:block/cracked_diorite",
-        "side": "crumbs:block/cracked_diorite"
-    }
-}

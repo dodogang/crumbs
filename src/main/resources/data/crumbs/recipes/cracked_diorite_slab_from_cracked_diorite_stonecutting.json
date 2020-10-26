@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "crumbs:cracked_diorite"
-    },
-    "result": "crumbs:cracked_diorite_slab",
-    "count": 2
-}

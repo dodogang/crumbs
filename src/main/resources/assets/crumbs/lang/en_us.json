@@ -108,6 +108,14 @@
     "block.crumbs.red_sandstone_tile_slab": "Red Sandstone Tile Slab",
     "block.crumbs.sandstone_tile_stairs": "Sandstone Tile Stairs",
     "block.crumbs.red_sandstone_tile_stairs": "Red Sandstone Tile Stairs",
+    "block.crumbs.chiseled_red_nether_bricks": "Chiseled Red Nether Bricks",
+    "block.crumbs.cracked_red_nether_bricks": "Cracked Red Nether Bricks",
+    "block.crumbs.blue_nether_bricks": "Blue Nether Bricks",
+    "block.crumbs.chiseled_blue_nether_bricks": "Chiseled Blue Nether Bricks",
+    "block.crumbs.cracked_blue_nether_bricks": "Cracked Blue Nether Bricks",
+    "block.crumbs.blue_nether_brick_wall": "Blue Nether Brick Wall",
+    "block.crumbs.blue_nether_brick_stairs": "Blue Nether Brick Stairs",
+    "block.crumbs.blue_nether_brick_slab": "Blue Nether Brick Slab",
 
     "block.minecraft.crafting_table": "Oak Crafting Table",
     "block.minecraft.barrel": "Spruce Barrel"

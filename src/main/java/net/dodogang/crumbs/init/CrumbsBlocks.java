@@ -158,6 +158,19 @@ public class CrumbsBlocks {
     public static final Block SANDSTONE_TILE_STAIRS = registerStairs("sandstone_tile", Blocks.SANDSTONE);
     public static final Block RED_SANDSTONE_TILE_STAIRS = registerStairs("red_sandstone_tile", Blocks.RED_SANDSTONE);
 
+    // Nether Bricks
+
+    public static final Block CHISELED_RED_NETHER_BRICKS = registerCopy("chiseled_red_nether_bricks", Blocks.NETHER_BRICKS);
+    public static final Block CRACKED_RED_NETHER_BRICKS = registerCopy("cracked_red_nether_bricks", Blocks.NETHER_BRICKS);
+
+    public static final Block BLUE_NETHER_BRICKS = registerCopy("blue_nether_bricks", Blocks.NETHER_BRICKS);
+    public static final Block CHISELED_BLUE_NETHER_BRICKS = registerCopy("chiseled_blue_nether_bricks", Blocks.NETHER_BRICKS);
+    public static final Block CRACKED_BLUE_NETHER_BRICKS = registerCopy("cracked_blue_nether_bricks", Blocks.NETHER_BRICKS);
+
+    public static final Block BLUE_NETHER_BRICK_WALL = registerWall("blue_nether_brick", BLUE_NETHER_BRICKS);
+    public static final Block BLUE_NETHER_BRICK_STAIRS = registerStairs("blue_nether_brick", BLUE_NETHER_BRICKS);
+    public static final Block BLUE_NETHER_BRICK_SLAB = registerSlab("blue_nether_brick", BLUE_NETHER_BRICKS);
+
     public static void registerBlocks(RegistryEvent.Register<Block> registry) {
         for (CrumbsBlock crumbsBlock : CrumbsBlock.getAll()) {
             registry.getRegistry().register(crumbsBlock.getBlock().setRegistryName(new ResourceLocation(Crumbs.MOD_ID, crumbsBlock.getId())));

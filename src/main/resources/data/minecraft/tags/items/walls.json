@@ -5,6 +5,7 @@
         "crumbs:cobbled_diorite_wall",
         "crumbs:cobbled_andesite_wall",
         "crumbs:sandstone_tile_wall",
-        "crumbs:red_sandstone_tile_wall"
+        "crumbs:red_sandstone_tile_wall",
+        "crumbs:blue_nether_brick_wall"
     ]
 }

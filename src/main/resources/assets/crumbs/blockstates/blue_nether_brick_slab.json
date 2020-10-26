@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "crumbs:block/blue_nether_brick_slab"
+        },
+        "type=top": {
+            "model": "crumbs:block/blue_nether_brick_slab_top"
+        },
+        "type=double": {
+            "model": "crumbs:block/blue_nether_bricks"
+        }
+    }
+}

@@ -161,9 +161,20 @@ public class CrumbsBlocks {
     public static final Block SANDSTONE_TILE_STAIRS = registerStairs(SANDSTONE_TILE);
     public static final Block RED_SANDSTONE_TILE_STAIRS = registerStairs(RED_SANDSTONE_TILE);
 
-    public CrumbsBlocks() {
-        // TODO barrel point of interests
+    // Nether Bricks
 
+    public static final Block CHISELED_RED_NETHER_BRICKS = registerCopy("chiseled_red_nether_bricks", Blocks.NETHER_BRICKS);
+    public static final Block CRACKED_RED_NETHER_BRICKS = registerCopy("cracked_red_nether_bricks", Blocks.NETHER_BRICKS);
+
+    public static final Block BLUE_NETHER_BRICKS = registerCopy("blue_nether_bricks", Blocks.NETHER_BRICKS);
+    public static final Block CHISELED_BLUE_NETHER_BRICKS = registerCopy("chiseled_blue_nether_bricks", Blocks.NETHER_BRICKS);
+    public static final Block CRACKED_BLUE_NETHER_BRICKS = registerCopy("cracked_blue_nether_bricks", Blocks.NETHER_BRICKS);
+
+    public static final Block BLUE_NETHER_BRICK_WALL = registerWall("blue_nether_brick", BLUE_NETHER_BRICKS);
+    public static final Block BLUE_NETHER_BRICK_STAIRS = registerStairs("blue_nether_brick", BLUE_NETHER_BRICKS);
+    public static final Block BLUE_NETHER_BRICK_SLAB = registerSlab("blue_nether_brick", BLUE_NETHER_BRICKS);
+
+    public CrumbsBlocks() {
         new ImmutableMap.Builder<Block, Block>()
             .put(OAK_BUNDLED_LOG, STRIPPED_OAK_BUNDLED_LOG)
             .put(DARK_OAK_BUNDLED_LOG, STRIPPED_DARK_OAK_BUNDLED_LOG)

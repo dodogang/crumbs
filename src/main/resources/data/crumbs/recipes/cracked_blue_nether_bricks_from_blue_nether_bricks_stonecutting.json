@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "crumbs:blue_nether_bricks"
-    },
-    "result": "crumbs:cracked_blue_nether_bricks",
-    "count": 1
-}

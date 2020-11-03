@@ -1,5 +1,6 @@
 package net.dodogang.crumbs;
 
+import net.dodogang.crumbs.block.CrumbsBarrelBlock;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.Level;
@@ -41,7 +42,7 @@ public class Crumbs {
 
         new CrumbsBlocks();
 
-        // CrumbsBarrelBlock.registerPointsOfInterest();
+        CrumbsBarrelBlock.registerPointsOfInterest();
 
         log("Initialized");
     }

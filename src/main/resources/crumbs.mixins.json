@@ -5,7 +5,8 @@
     "refmap": "crumbs.mixins.refmap.json",
     "package": "net.dodogang.crumbs.mixin",
     "mixins": [
-        "PointOfInterestTypeAccessor"
+        "PointOfInterestTypeAccessor",
+        "RecipeManagerMixin"
     ],
     "client": [],
     "injectors": {

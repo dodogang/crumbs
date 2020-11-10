@@ -8,6 +8,8 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 import java.util.Map;
 import java.util.Set;
 
+// Allows access to variables needed for adding a block to a villager's point of interest.
+// Used in CrumbsBarrelBlock#registerPointsOfInterest
 @Mixin(PointOfInterestType.class)
 public interface PointOfInterestTypeAccessor {
     @Accessor("POIT_BY_BLOCKSTATE")

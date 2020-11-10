@@ -30,10 +30,7 @@ public class CrumbsBarrelBlock extends BarrelBlock {
         modBarrels.addAll(PointOfInterestType.getAllStates(this));
     }
 
-    /**
-     * Copied from BarrelTileEntity.java and BarrelBlock.java To get around hard
-     * coded == Blocks.BARREL
-     */
+    // Copied from BarrelTileEntity.java and BarrelBlock.java To get around hardcoded == Blocks.BARREL
     @Override
     public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
         TileEntity te = worldIn.getTileEntity(pos);
@@ -55,9 +52,7 @@ public class CrumbsBarrelBlock extends BarrelBlock {
         }
     }
 
-    /**
-     * Copied from BarrelTileEntity.java To get around hard coded == Blocks.BARREL
-     */
+    // Copied from BarrelTileEntity.java To get around hard coded == Blocks.BARREL
     private void playSound(BarrelTileEntity te, BlockState state) {
         World world = te.getWorld();
         if (world == null)

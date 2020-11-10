@@ -25,15 +25,11 @@ public class CrumbsBarrelBlock extends BarrelBlock {
     public CrumbsBarrelBlock(Settings settings) {
         super(settings);
 
-        modBarrels.addAll(
-                // Copied from PointOfInterestType#getAllStatesOf because it is private
-                ImmutableSet.copyOf(this.getStateManager().getStates())
-        );
+        // Copied from PointOfInterestType#getAllStatesOf because it is private
+        modBarrels.addAll(ImmutableSet.copyOf(this.getStateManager().getStates()));
     }
 
-    /**
-     * Copied from BarrelBlockEntity.java and BarrelBlock.java to get around hard coded == Blocks.BARREL.
-     */
+    // Copied from BarrelBlockEntity.java and BarrelBlock.java to get around hard coded == Blocks.BARREL.
     @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         BlockEntity be = world.getBlockEntity(pos);
@@ -55,9 +51,7 @@ public class CrumbsBarrelBlock extends BarrelBlock {
         }
     }
 
-    /**
-     * Copied from BarrelBlockEntity.java to get around hard coded == Blocks.BARREL.
-     */
+    // Copied from BarrelBlockEntity.java to get around hard coded == Blocks.BARREL.
     private void playSound(BarrelBlockEntity te, BlockState state) {
         World world = te.getWorld();
         if (world == null)

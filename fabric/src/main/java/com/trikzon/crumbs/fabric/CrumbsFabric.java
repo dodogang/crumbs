@@ -18,20 +18,12 @@ public class CrumbsFabric implements ModInitializer, AbstractPlatform {
     }
 
     @Override
-    public void registerBlocks(ArrayList<Pair<String, Block>> blocks) {
-        blocks.forEach(pair -> Registry.register(
-                Registry.BLOCK,
-                new ResourceLocation(CrumbsCore.MOD_ID, pair.getLeft()),
-                pair.getRight()
-        ));
+    public void registerBlock(ResourceLocation id, Block block) {
+        Registry.register(Registry.BLOCK, id, block);
     }
 
     @Override
-    public void registerItems(ArrayList<Pair<String, Item>> items) {
-        items.forEach(pair -> Registry.register(
-                Registry.ITEM,
-                new ResourceLocation(CrumbsCore.MOD_ID, pair.getLeft()),
-                pair.getRight()
-        ));
+    public void registerItem(ResourceLocation id, Item item) {
+        Registry.register(Registry.ITEM, id, item);
     }
 }

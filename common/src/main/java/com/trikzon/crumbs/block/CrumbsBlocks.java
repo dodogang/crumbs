@@ -1,34 +1,27 @@
 package com.trikzon.crumbs.block;
 
 import com.trikzon.crumbs.CrumbsCore;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
-import org.apache.commons.lang3.tuple.Pair;
-
-import java.util.ArrayList;
 
 public class CrumbsBlocks {
-    public static final ArrayList<Pair<String, Block>> BLOCKS = new ArrayList<>();
+    public static final Item.Properties DEFAULT_PROPS = new Item.Properties().tab(CreativeModeTab.TAB_MISC);
 
-    public static final Block EXAMPLE_BLOCK = put("example_block", new ExampleBlock(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final ExampleBlock EXAMPLE_BLOCK = register("example_block", new ExampleBlock(BlockBehaviour.Properties.of(Material.STONE)));
 
-    public static void register() {
-        CrumbsCore.platform.registerBlocks(BLOCKS);
-
-        ArrayList<Pair<String, Item>> items = new ArrayList<>();
-        for (Pair<String, Block> pair : BLOCKS) {
-            Item item = new BlockItem(pair.getRight(), new Item.Properties().tab(CreativeModeTab.TAB_MISC));
-            items.add(Pair.of(pair.getLeft(), item));
-        }
-        CrumbsCore.platform.registerItems(items);
+    private static <T extends Block> T register(String name, T block) {
+        return register(name, block, DEFAULT_PROPS);
     }
 
-    private static Block put(String name, Block block) {
-        BLOCKS.add(Pair.of(name, block));
+    private static <T extends Block> T register(String name, T block, Item.Properties properties) {
+        ResourceLocation id = CrumbsCore.getId(name);
+        CrumbsCore.platform.registerBlock(id, block);
+        if (properties != null) CrumbsCore.platform.registerItem(id, new BlockItem(block, properties));
         return block;
     }
 }

@@ -5,13 +5,13 @@ issueTrackerURL="https://github.com/dodogang/crumbs/issues"
 
 [[mods]]
 modId="crumbs"
-version="${file.jarVersion}"
+version="1.0.5"
 displayName="Crumbs"
 #updateJSONURL=""
 displayURL="https://crumbs.dodogang.net"
 #logoFile=""
 credits="Translations: ro-mod-dev (French), linzexin022 (Chinese)"
-authors="Trikzon"
+authors="Dodo Gang"
 description='''
 Building mod which adds various blocks tuned to fit with vanilla minecraft.
 '''

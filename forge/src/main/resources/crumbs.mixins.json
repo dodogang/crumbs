@@ -1,11 +1,11 @@
 {
     "required": true,
     "minVersion": "0.8",
-    "package": "com.trikzon.crumbs.fabric.mixin",
+    "package": "com.trikzon.crumbs.forge.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
         "RecipeManagerMixin",
-        "PoiTypeAccessor"
+        "PointOfInterestTypeAccessor"
     ],
     "client": [
     ],

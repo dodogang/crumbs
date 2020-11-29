@@ -63,8 +63,4 @@ public class CrumbsBarrelBlock extends BarrelBlock {
         );
     }
 
-    // TODO: Register Point Of Interest
-    public static void registerPointsOfInterest() {
-
-    }
 }

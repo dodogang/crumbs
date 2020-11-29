@@ -1,18 +1,20 @@
 package com.trikzon.crumbs.forge;
 
+import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Function5;
 import com.trikzon.crumbs.CrumbsCore;
+import com.trikzon.crumbs.block.CrumbsBarrelBlock;
+import com.trikzon.crumbs.forge.mixin.PointOfInterestTypeAccessor;
 import com.trikzon.crumbs.platform.AbstractPlatform;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.village.PointOfInterestType;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.ToolType;
@@ -22,6 +24,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.ArrayList;
 import java.util.function.Supplier;
 
 @Mod(CrumbsCore.MOD_ID)
@@ -34,6 +37,26 @@ public class CrumbsForge implements AbstractPlatform {
 
         BLOCK_REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
         ITEM_REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
+
+        registerPointsOfInterest();
+    }
+
+    public static void registerPointsOfInterest() {
+        // Copied from PoiType#registerBlockStates
+        // Edited to allow adding blocks to a Poi
+        CrumbsBarrelBlock.MOD_BARRELS.forEach((barrel) -> {
+            PointOfInterestType poiType = PointOfInterestTypeAccessor.getTypeByState().put(barrel, PointOfInterestType.FISHERMAN);
+            if (poiType != null) {
+                throw Util.pauseInIde(new IllegalStateException(
+                        String.format("%s is defined in too many tags", barrel)
+                ));
+            }
+        });
+        PointOfInterestTypeAccessor fishermanAccessor = (PointOfInterestTypeAccessor) PointOfInterestType.FISHERMAN;
+
+        ArrayList<BlockState> blockStates = new ArrayList<>(fishermanAccessor.getMatchingStates());
+        blockStates.addAll(CrumbsBarrelBlock.MOD_BARRELS);
+        fishermanAccessor.setMatchingStates(ImmutableSet.copyOf(blockStates));
     }
 
     @Override

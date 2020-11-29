@@ -1,11 +1,13 @@
 buildscript {
     repositories {
-        maven { url "https://files.minecraftforge.net/maven" }
+        maven { url = "https://files.minecraftforge.net/maven" }
+        maven { url = "https://repo.spongepowered.org/maven" }
         jcenter()
         mavenCentral()
     }
     dependencies {
         classpath(group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "3.+", changing: true)
+        classpath(group: "org.spongepowered", name: "mixingradle", version: "0.7-SNAPSHOT")
     }
 }
 
@@ -15,6 +17,7 @@ plugins {
 }
 
 apply plugin: "net.minecraftforge.gradle"
+apply plugin: "org.spongepowered.mixin"
 
 version = project.version + "-forge"
 
@@ -25,6 +28,7 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
+            arg "-mixin.config=" + rootProject.mod_id + ".mixins.json"
             mods {
                 examplemod {
                     source sourceSets.main
@@ -34,6 +38,7 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
+            arg "-mixin.config=" + rootProject.mod_id + ".mixins.json"
             mods {
                 examplemod {
                     source sourceSets.main
@@ -52,6 +57,10 @@ minecraft {
             }
         }
     }
+}
+
+mixin {
+    add sourceSets.main, "${rootProject.mod_id}.mixins.refmap.json"
 }
 
 repositories {

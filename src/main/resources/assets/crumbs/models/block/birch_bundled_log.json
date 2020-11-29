@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "crumbs:block/birch_bundled_log_top",
-        "side": "crumbs:block/birch_bundled_log"
-    }
-}

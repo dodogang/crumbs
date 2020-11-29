@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "crumbs:block/acacia_tile",
-        "top": "crumbs:block/acacia_tile",
-        "side": "crumbs:block/acacia_tile"
-    }
-}

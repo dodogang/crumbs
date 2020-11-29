@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "lit=true": { "model": "crumbs:block/oak_lantern" },
-        "lit=false": { "model": "crumbs:block/oak_lantern_off" }
-    }
-}

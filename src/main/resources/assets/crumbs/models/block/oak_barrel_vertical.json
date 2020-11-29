@@ -1,7 +1,0 @@
-{
-    "parent": "block/orientable_vertical",
-    "textures": {
-        "front": "crumbs:block/oak_barrel_front",
-        "side": "crumbs:block/oak_barrel_top"
-    }
-}

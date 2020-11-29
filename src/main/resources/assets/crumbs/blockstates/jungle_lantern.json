@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "lit=true": { "model": "crumbs:block/jungle_lantern" },
-        "lit=false": { "model": "crumbs:block/jungle_lantern_off" }
-    }
-}

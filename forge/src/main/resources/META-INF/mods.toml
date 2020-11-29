@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[35,)"
+license="MIT"
+issueTrackerURL="https://github.com/dodogang/crumbs/issues"
+
+[[mods]]
+modId="crumbs"
+version="${file.jarVersion}"
+displayName="Crumbs"
+#updateJSONURL=""
+displayURL="https://crumbs.dodogang.net"
+#logoFile=""
+credits="Translations: ro-mod-dev (French), linzexin022 (Chinese)"
+authors="Trikzon"
+description='''
+Building mod which adds various blocks tuned to fit with vanilla minecraft.
+'''
+
+[[dependencies.crumbs]]
+    modId="forge"
+    mandatory=true
+    versionRange="[35,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.crumbs]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.2,)"
+    ordering="NONE"
+    side="BOTH"

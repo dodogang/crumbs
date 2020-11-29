@@ -1,12 +1,22 @@
 package com.trikzon.crumbs.forge;
 
+import com.mojang.datafixers.util.Function5;
 import com.trikzon.crumbs.CrumbsCore;
 import com.trikzon.crumbs.platform.AbstractPlatform;
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.ToolType;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -44,5 +54,19 @@ public class CrumbsForge implements AbstractPlatform {
                 return icon.get();
             }
         };
+    }
+
+    @Override
+    public void registerOnRightClickBlockHandler(Function5<PlayerEntity, World, Hand, BlockPos, Direction, ActionResultType> event) {
+        MinecraftForge.EVENT_BUS.<PlayerInteractEvent.RightClickBlock>addListener(e -> {
+            if (!e.getPlayer().isSpectator()) {
+                e.setCancellationResult(event.apply(e.getPlayer(), e.getWorld(), e.getHand(), e.getPos(), e.getFace()));
+            }
+        });
+    }
+
+    @Override
+    public boolean isAxe(ItemStack item) {
+        return item.getItem().getToolTypes(item).contains(ToolType.AXE);
     }
 }

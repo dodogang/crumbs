@@ -68,6 +68,14 @@ public class CrumbsBlocks {
     public static final Block CRIMSON_CRAFTING_TABLE = registerCopy("crimson_crafting_table", CrumbsCraftingTableBlock::new, Blocks.CRIMSON_PLANKS);
     public static final Block WARPED_CRAFTING_TABLE = registerCopy("warped_crafting_table", CrumbsCraftingTableBlock::new, Blocks.WARPED_PLANKS);
 
+    public static final Block OAK_BARREL = registerCopy("oak_barrel", CrumbsBarrelBlock::new, Blocks.OAK_PLANKS);
+    public static final Block BIRCH_BARREL = registerCopy("birch_barrel", CrumbsBarrelBlock::new, Blocks.BIRCH_PLANKS);
+    public static final Block JUNGLE_BARREL = registerCopy("jungle_barrel", CrumbsBarrelBlock::new, Blocks.JUNGLE_PLANKS);
+    public static final Block ACACIA_BARREL = registerCopy("acacia_barrel", CrumbsBarrelBlock::new, Blocks.ACACIA_PLANKS);
+    public static final Block DARK_OAK_BARREL = registerCopy("dark_oak_barrel", CrumbsBarrelBlock::new, Blocks.DARK_OAK_PLANKS);
+    public static final Block CRIMSON_BARREL = registerCopy("crimson_barrel", CrumbsBarrelBlock::new, Blocks.CRIMSON_PLANKS);
+    public static final Block WARPED_BARREL = registerCopy("warped_barrel", CrumbsBarrelBlock::new, Blocks.WARPED_PLANKS);
+
     public static final Block OAK_LANTERN = registerCopy("oak_lantern", WoodLanternBlock::new, Blocks.OAK_PLANKS);
     public static final Block SPRUCE_LANTERN = registerCopy("spruce_lantern", WoodLanternBlock::new, Blocks.SPRUCE_PLANKS);
     public static final Block BIRCH_LANTERN = registerCopy("birch_lantern", WoodLanternBlock::new, Blocks.BIRCH_PLANKS);

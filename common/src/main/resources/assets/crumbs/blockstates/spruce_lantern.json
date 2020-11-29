@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "lit=true": { "model": "crumbs:block/spruce_lantern" },
+        "lit=false": { "model": "crumbs:block/spruce_lantern_off" }
+    }
+}

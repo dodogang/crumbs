@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "crumbs:block/acacia_bundled_log_top",
+        "side": "crumbs:block/acacia_bundled_log"
+    }
+}

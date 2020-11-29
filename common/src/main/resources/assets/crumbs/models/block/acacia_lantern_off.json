@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "crumbs:block/acacia_lantern_bottom",
+        "top": "crumbs:block/acacia_lantern_top",
+        "side": "crumbs:block/acacia_lantern_off"
+    }
+}

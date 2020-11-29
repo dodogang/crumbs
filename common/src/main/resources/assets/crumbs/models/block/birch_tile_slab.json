@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "crumbs:block/birch_tile",
+        "top": "crumbs:block/birch_tile",
+        "side": "crumbs:block/birch_tile"
+    }
+}

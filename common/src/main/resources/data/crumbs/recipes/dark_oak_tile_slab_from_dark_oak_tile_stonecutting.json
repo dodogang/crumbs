@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "crumbs:dark_oak_tile"
+    },
+    "result": "crumbs:dark_oak_tile_slab",
+    "count": 2
+}

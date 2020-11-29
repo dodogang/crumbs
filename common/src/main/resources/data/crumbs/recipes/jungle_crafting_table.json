@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "crumbs:crafting_table",
+    "pattern": [
+        "##",
+        "##"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:jungle_planks"
+        }
+    },
+    "result": {
+        "item": "crumbs:jungle_crafting_table",
+        "count": 1
+    }
+}

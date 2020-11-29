@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "crumbs:wooden_lantern",
+    "pattern": [
+        "###",
+        "#R#",
+        "#L#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:crimson_planks"
+        },
+        "R": {
+            "item": "minecraft:redstone_lamp"
+        },
+        "L": {
+            "item": "minecraft:lever"
+        }
+    },
+    "result": {
+        "item": "crumbs:crimson_lantern",
+        "count": 1
+    }
+}

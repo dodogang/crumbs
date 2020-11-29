@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:warped_planks"
+    },
+    "result": "crumbs:warped_tile",
+    "count": 1
+}

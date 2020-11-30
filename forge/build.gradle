@@ -94,6 +94,9 @@ dependencies {
     shadow(project(path: ":common", configuration: "mcp")) {
         transitive = false
     }
+
+    // Needed for mixins to work with gradle 5
+    annotationProcessor "org.spongepowered:mixin:0.8:processor"
 }
 
 shadowJar {

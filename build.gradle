@@ -14,7 +14,7 @@ allprojects {
     group = rootProject.mod_group
 
     if (System.env.CI == "true") {
-        version = "${project.mod_version}+a${System.env.GITHUB_RUN_NUMBER}.${branch}"
+        version = "${project.mod_version}+a${System.env.GITHUB_RUN_NUMBER}.${System.env.GITHUB_REF}"
     } else {
         version = "${project.mod_version}+${project.minecraft_version}"
     }

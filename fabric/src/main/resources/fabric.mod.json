@@ -17,6 +17,9 @@
   "entrypoints": {
     "main": [
       "com.trikzon.crumbs.fabric.CrumbsFabric"
+    ],
+    "client": [
+      "com.trikzon.crumbs.fabric.client.CrumbsClientFabric"
     ]
   },
   "mixins": [

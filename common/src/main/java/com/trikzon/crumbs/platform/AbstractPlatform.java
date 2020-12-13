@@ -12,12 +12,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.function.Supplier;
 
 public interface AbstractPlatform {
     void registerBlock(ResourceLocation id, Block block);
     void registerItem(ResourceLocation id, Item item);
+    void registerBlockEntityType(ResourceLocation id, BlockEntityType<?> beType);
 
     CreativeModeTab createCreativeTab(String name, Supplier<ItemStack> icon);
 

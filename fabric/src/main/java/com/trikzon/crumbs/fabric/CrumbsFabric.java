@@ -12,7 +12,6 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.BlockSource;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
@@ -25,8 +24,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayList;
 import java.util.function.Supplier;
@@ -65,6 +64,11 @@ public class CrumbsFabric implements ModInitializer, AbstractPlatform {
     @Override
     public void registerItem(ResourceLocation id, Item item) {
         Registry.register(Registry.ITEM, id, item);
+    }
+
+    @Override
+    public void registerBlockEntityType(ResourceLocation id, BlockEntityType<?> beType) {
+        Registry.register(Registry.BLOCK_ENTITY_TYPE, id, beType);
     }
 
     @Override

@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Function5;
 import com.trikzon.crumbs.CrumbsCore;
 import com.trikzon.crumbs.block.CrumbsBarrelBlock;
+import com.trikzon.crumbs.forge.client.CrumbsClientForge;
 import com.trikzon.crumbs.forge.mixin.PointOfInterestTypeAccessor;
 import com.trikzon.crumbs.platform.AbstractPlatform;
 import net.minecraft.block.Block;
@@ -12,13 +13,16 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.village.PointOfInterestType;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -31,9 +35,12 @@ import java.util.function.Supplier;
 public class CrumbsForge implements AbstractPlatform {
     private static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, CrumbsCore.MOD_ID);
     private static final DeferredRegister<Item> ITEM_REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, CrumbsCore.MOD_ID);
+    private static final DeferredRegister<TileEntityType<?>> BLOCK_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, CrumbsCore.MOD_ID);
 
     public CrumbsForge() {
         CrumbsCore.init(this);
+
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> CrumbsClientForge::new);
 
         BLOCK_REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
         ITEM_REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -67,6 +74,11 @@ public class CrumbsForge implements AbstractPlatform {
     @Override
     public void registerItem(ResourceLocation resourceLocation, Item item) {
         ITEM_REGISTRY.register(resourceLocation.getPath(), () -> item);
+    }
+
+    @Override
+    public void registerBlockEntityType(ResourceLocation resourceLocation, TileEntityType<?> tileEntityType) {
+        BLOCK_ENTITY_REGISTRY.register(resourceLocation.getPath(), () -> tileEntityType);
     }
 
     @Override

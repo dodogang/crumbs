@@ -34,7 +34,7 @@ public abstract class DoubleChestModel extends Model implements IChestModel {
     }
 
     @Override
-    public void render(PoseStack matrices, VertexConsumer vertexConsumer, int packedLight, int packedOverlay) {
+    public void render(PoseStack matrices, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, boolean isItem) {
         renderToBuffer(matrices, vertexConsumer, packedLight, packedOverlay, 1, 1, 1, 1);
     }
 

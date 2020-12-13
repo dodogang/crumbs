@@ -7,8 +7,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.ChestType;
 
+import java.util.HashMap;
 import java.util.function.Function;
 
 public class CrumbsBlocks {
@@ -172,7 +172,7 @@ public class CrumbsBlocks {
     private static <T extends Block> T register(String name, T block, Item.Properties properties) {
         ResourceLocation id = CrumbsCore.getId(name);
         CrumbsCore.platform.registerBlock(id, block);
-        if (properties != null) CrumbsCore.platform.registerItem(id, new BlockItem(block, properties));
+        if (properties != null) { CrumbsCore.platform.registerItem(id, new BlockItem(block, properties)); }
         return block;
     }
 

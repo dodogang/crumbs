@@ -47,13 +47,13 @@ public class CrumbsChestRenderer extends BlockEntityRenderer<CrumbsChestBlockEnt
 
     @Override
     public void render(CrumbsChestBlockEntity be, float tickDelta, PoseStack stack, MultiBufferSource buffer, int light, int overlay) {
-        BlockState state = be.hasLevel() ? be.getBlockState() : CrumbsBlocks.SPRUCE_CHEST.defaultBlockState();
+        Block block = be.block;
+        BlockState state = be.hasLevel() ? be.getBlockState() : block.defaultBlockState();
         ChestType chestType = state.getValue(ChestBlock.TYPE);
         if (chestType == ChestType.LEFT) {
             return;
         }
 
-        Block block = state.getBlock();
         if (block instanceof CrumbsChestBlock) {
             CrumbsChestBlock.ModelType modelType = ((CrumbsChestBlock)block).modelType;
 
@@ -79,38 +79,38 @@ public class CrumbsChestRenderer extends BlockEntityRenderer<CrumbsChestBlockEnt
             }
             model.render(stack,
                     new Material(Sheets.CHEST_SHEET, getTexture(block, chestType)).buffer(buffer, RenderType::entityCutout),
-                    combiner.apply(new BrightnessCombiner<>()).applyAsInt(light), overlay
+                    combiner.apply(new BrightnessCombiner<>()).applyAsInt(light), overlay, !be.hasLevel()
             );
             stack.popPose();
         }
     }
 
-    private ResourceLocation getTexture(Block block, ChestType type) {
-        if (block == CrumbsBlocks.BIRCH_CHEST && type == ChestType.SINGLE)
+    private ResourceLocation getTexture(Block block, ChestType modelType) {
+        if (block == CrumbsBlocks.BIRCH_CHEST && modelType == ChestType.SINGLE)
             return CrumbsSpriteSheets.BIRCH_CHEST;
-        if (block == CrumbsBlocks.BIRCH_CHEST && type == ChestType.RIGHT)
+        if (block == CrumbsBlocks.BIRCH_CHEST && modelType == ChestType.RIGHT)
             return CrumbsSpriteSheets.BIRCH_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.JUNGLE_CHEST && type == ChestType.SINGLE)
+        else if (block == CrumbsBlocks.JUNGLE_CHEST && modelType == ChestType.SINGLE)
             return CrumbsSpriteSheets.JUNGLE_CHEST;
-        else if (block == CrumbsBlocks.JUNGLE_CHEST && type == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.JUNGLE_CHEST && modelType == ChestType.RIGHT)
             return CrumbsSpriteSheets.JUNGLE_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.ACACIA_CHEST && type == ChestType.SINGLE)
+        else if (block == CrumbsBlocks.ACACIA_CHEST && modelType == ChestType.SINGLE)
             return CrumbsSpriteSheets.ACACIA_CHEST;
-        else if (block == CrumbsBlocks.ACACIA_CHEST && type == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.ACACIA_CHEST && modelType == ChestType.RIGHT)
             return CrumbsSpriteSheets.ACACIA_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.DARK_OAK_CHEST && type == ChestType.SINGLE)
+        else if (block == CrumbsBlocks.DARK_OAK_CHEST && modelType == ChestType.SINGLE)
             return CrumbsSpriteSheets.DARK_OAK_CHEST;
-        else if (block == CrumbsBlocks.DARK_OAK_CHEST && type == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.DARK_OAK_CHEST && modelType == ChestType.RIGHT)
             return CrumbsSpriteSheets.DARK_OAK_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.CRIMSON_CHEST && type == ChestType.SINGLE)
+        else if (block == CrumbsBlocks.CRIMSON_CHEST && modelType == ChestType.SINGLE)
             return CrumbsSpriteSheets.CRIMSON_CHEST;
-        else if (block == CrumbsBlocks.CRIMSON_CHEST && type == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.CRIMSON_CHEST && modelType == ChestType.RIGHT)
             return CrumbsSpriteSheets.CRIMSON_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.WARPED_CHEST && type == ChestType.SINGLE)
+        else if (block == CrumbsBlocks.WARPED_CHEST && modelType == ChestType.SINGLE)
             return CrumbsSpriteSheets.WARPED_CHEST;
-        else if (block == CrumbsBlocks.WARPED_CHEST && type == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.WARPED_CHEST && modelType == ChestType.RIGHT)
             return CrumbsSpriteSheets.WARPED_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.SPRUCE_CHEST && type == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.SPRUCE_CHEST && modelType == ChestType.RIGHT)
             return CrumbsSpriteSheets.SPRUCE_DOUBLE_CHEST;
         else
             return CrumbsSpriteSheets.SPRUCE_CHEST;

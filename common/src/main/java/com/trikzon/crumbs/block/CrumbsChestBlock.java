@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 public class CrumbsChestBlock extends ChestBlock implements EntityBlock {
     public final ModelType modelType;
 
-    public CrumbsChestBlock( ModelType modelType, Properties properties) {
+    public CrumbsChestBlock(ModelType modelType, Properties properties) {
         super(properties, () -> CrumbsBlockEntityType.CRUMBS_CHEST);
 
         this.modelType = modelType;
@@ -18,7 +18,7 @@ public class CrumbsChestBlock extends ChestBlock implements EntityBlock {
 
     @Override
     public BlockEntity newBlockEntity(BlockGetter blockGetter) {
-        return new CrumbsChestBlockEntity();
+        return new CrumbsChestBlockEntity(this);
     }
 
     public enum ModelType {

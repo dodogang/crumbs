@@ -27,6 +27,10 @@ public class CrumbsCore {
         new RightClickBlockHandlers();
     }
 
+    public static void setup() {
+
+    }
+
     public static ResourceLocation getId(String name) {
         return new ResourceLocation(MOD_ID, name);
     }

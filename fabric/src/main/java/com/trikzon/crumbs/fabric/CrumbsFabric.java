@@ -34,6 +34,7 @@ public class CrumbsFabric implements ModInitializer, AbstractPlatform {
     @Override
     public void onInitialize() {
         CrumbsCore.init(this);
+        CrumbsCore.setup();
 
         registerPointsOfInterest();
     }

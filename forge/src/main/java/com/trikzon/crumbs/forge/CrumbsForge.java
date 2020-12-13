@@ -24,6 +24,7 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -39,12 +40,17 @@ public class CrumbsForge implements AbstractPlatform {
 
     public CrumbsForge() {
         CrumbsCore.init(this);
-
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> CrumbsClientForge::new);
 
         BLOCK_REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
         ITEM_REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
+        BLOCK_ENTITY_REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
 
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+    }
+
+    public void setup(FMLCommonSetupEvent event) {
+        CrumbsCore.setup();
         registerPointsOfInterest();
     }
 

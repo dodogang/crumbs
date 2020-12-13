@@ -9,6 +9,7 @@
         "PointOfInterestTypeAccessor"
     ],
     "client": [
+        "ClientItemAccessor"
     ],
     "injectors": {
         "defaultRequire": 1

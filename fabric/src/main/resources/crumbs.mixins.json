@@ -7,8 +7,6 @@
         "RecipeManagerMixin",
         "PoiTypeAccessor"
     ],
-    "client": [
-    ],
     "injectors": {
         "defaultRequire": 1
     }

@@ -18,6 +18,8 @@ public abstract class ChestModel extends Model implements IChestModel {
 		base = new ModelPart(this);
 		// I don't know why... but it's upside down... so this fixes that
 		base.xRot = (float) Math.toRadians(180);
+
+
 		base.setPos(8.0F, 0.0F, 8.0F);
 		base.texOffs(0, 19).addBox(-7.0F, -11.0F, -7.0F, 14.0F, 11.0F, 14.0F, 0.0F, false);
 
@@ -33,8 +35,10 @@ public abstract class ChestModel extends Model implements IChestModel {
 	}
 
 	@Override
-	public void render(PoseStack matrices, VertexConsumer consumer, int packedLight, int packedOverlay) {
+	public void render(PoseStack matrices, VertexConsumer consumer, int packedLight, int packedOverlay, boolean isItem) {
+		if (isItem) { base.yRot = (float) Math.toRadians(180); }
 		renderToBuffer(matrices, consumer, packedLight, packedOverlay, 1, 1, 1, 1);
+		base.yRot = 0;
 	}
 
 	@Override

@@ -65,6 +65,13 @@
     "block.crumbs.dark_oak_barrel": "Dark Oak Barrel",
     "block.crumbs.crimson_barrel": "Crimson Barrel",
     "block.crumbs.warped_barrel": "Warped Barrel",
+    "block.crumbs.spruce_chest": "Spruce Chest",
+    "block.crumbs.birch_chest": "Birch Chest",
+    "block.crumbs.jungle_chest": "Jungle Chest",
+    "block.crumbs.acacia_chest": "Acacia Chest",
+    "block.crumbs.dark_oak_chest": "Dark Oak Chest",
+    "block.crumbs.crimson_chest": "Crimson Chest",
+    "block.crumbs.warped_chest": "Warped Chest",
     "block.crumbs.cobbled_granite": "Cobbled Granite",
     "block.crumbs.chiseled_polished_granite": "Chiseled Polished Granite",
     "block.crumbs.beveled_polished_granite": "Beveled Polished Granite",
@@ -110,5 +117,6 @@
     "block.crumbs.blue_nether_brick_slab": "Blue Nether Brick Slab",
 
     "block.minecraft.crafting_table": "Oak Crafting Table",
-    "block.minecraft.barrel": "Spruce Barrel"
+    "block.minecraft.barrel": "Spruce Barrel",
+    "block.minecraft.chest": "Oak Chest"
 }

@@ -142,16 +142,19 @@ public class CrumbsBlocks {
     public static final Block RED_SANDSTONE_TILE_STAIRS = registerStairCopy("red_sandstone_tile_stairs", RED_SANDSTONE_TILE);
 
     // Nether Bricks
-    public static final Block CHISELED_RED_NETHER_BRICKS = registerCopy("chiseled_red_nether_bricks", Block::new, Blocks.NETHER_BRICKS);
-    public static final Block CRACKED_RED_NETHER_BRICKS = registerCopy("cracked_red_nether_bricks", Block::new, Blocks.NETHER_BRICKS);
+    public static final Block CHISELED_RED_NETHER_BRICKS = registerCopy("chiseled_red_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
+    public static final Block CRACKED_RED_NETHER_BRICKS = registerCopy("cracked_red_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
 
-    public static final Block BLUE_NETHER_BRICKS = registerCopy("blue_nether_bricks", Block::new, Blocks.NETHER_BRICKS);
-    public static final Block CHISELED_BLUE_NETHER_BRICKS = registerCopy("chiseled_blue_nether_bricks", Block::new, Blocks.NETHER_BRICKS);
-    public static final Block CRACKED_BLUE_NETHER_BRICKS = registerCopy("cracked_blue_nether_bricks", Block::new, Blocks.NETHER_BRICKS);
+    public static final Block RED_NETHER_BRICK_FENCE = registerCopy("red_nether_brick_fence", FenceBlock::new, Blocks.RED_NETHER_BRICKS);
+
+    public static final Block BLUE_NETHER_BRICKS = registerCopy("blue_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
+    public static final Block CHISELED_BLUE_NETHER_BRICKS = registerCopy("chiseled_blue_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
+    public static final Block CRACKED_BLUE_NETHER_BRICKS = registerCopy("cracked_blue_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
 
     public static final Block BLUE_NETHER_BRICK_WALL = registerCopy("blue_nether_brick_wall", WallBlock::new, BLUE_NETHER_BRICKS);
     public static final Block BLUE_NETHER_BRICK_STAIRS = registerStairCopy("blue_nether_brick_stairs", BLUE_NETHER_BRICKS);
     public static final Block BLUE_NETHER_BRICK_SLAB = registerCopy("blue_nether_brick_slab", SlabBlock::new, BLUE_NETHER_BRICKS);
+    public static final Block BLUE_NETHER_BRICK_FENCE = registerCopy("blue_nether_brick_fence", FenceBlock::new, BLUE_NETHER_BRICKS);
 
     private static <T extends Block> T registerChestCopy(String name, CrumbsChestBlock.ModelType modelType, Block toCopy) {
         return (T) register(name, new CrumbsChestBlock(modelType, BlockBehaviour.Properties.copy(toCopy)));

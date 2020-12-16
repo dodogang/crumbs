@@ -16,10 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.trikzon.crumbs.fabric.CrumbsFabric"
+        "net.dodogang.crumbs.fabric.CrumbsFabric"
     ],
     "client": [
-      "com.trikzon.crumbs.fabric.client.CrumbsClientFabric"
+        "net.dodogang.crumbs.fabric.client.CrumbsClientFabric"
     ]
   },
   "mixins": [

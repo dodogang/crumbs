@@ -1,7 +1,7 @@
 {
     "required": true,
     "minVersion": "0.8",
-    "package": "com.trikzon.crumbs.fabric.mixin",
+    "package": "net.dodogang.crumbs.fabric.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
         "RecipeManagerMixin",

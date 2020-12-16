@@ -11,6 +11,7 @@ libs/
 
 .classpath
 .project
-.settings/org.eclipse.core.resources.prefs
+.settings/
 .idea/
 classes/
+.vscode/

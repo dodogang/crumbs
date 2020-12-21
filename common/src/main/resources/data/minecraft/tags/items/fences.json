@@ -1,5 +1,7 @@
 {
     "replace": false,
     "values": [
+        "crumbs:red_nether_brick_fence",
+        "crumbs:blue_nether_brick_fence"
     ]
 }

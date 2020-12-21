@@ -1,6 +1,6 @@
 package net.dodogang.crumbs.block;
 
-import net.dodogang.crumbs.screen.CrumbsCraftingMenu;
+import net.dodogang.crumbs.menu.CrumbsCraftingMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;

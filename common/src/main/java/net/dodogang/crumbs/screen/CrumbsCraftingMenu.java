@@ -6,11 +6,11 @@ import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.CraftingMenu;
 import net.minecraft.world.level.block.Block;
 
-public class CrumbsCraftingScreen extends CraftingMenu {
+public class CrumbsCraftingMenu extends CraftingMenu {
     private final ContainerLevelAccess containerLevelAccess;
     private final Block block;
 
-    public CrumbsCraftingScreen(int syncId, Inventory inventory, ContainerLevelAccess containerLevelAccess, Block block) {
+    public CrumbsCraftingMenu(int syncId, Inventory inventory, ContainerLevelAccess containerLevelAccess, Block block) {
         super(syncId, inventory, containerLevelAccess);
         this.containerLevelAccess = containerLevelAccess;
         this.block = block;

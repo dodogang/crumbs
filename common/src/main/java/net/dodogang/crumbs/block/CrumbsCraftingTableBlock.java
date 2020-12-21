@@ -1,6 +1,6 @@
 package net.dodogang.crumbs.block;
 
-import net.dodogang.crumbs.screen.CrumbsCraftingScreen;
+import net.dodogang.crumbs.screen.CrumbsCraftingMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -21,7 +21,7 @@ public class CrumbsCraftingTableBlock extends CraftingTableBlock {
     @Override
     public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
         return new SimpleMenuProvider((syncId, inv, player) -> {
-            return new CrumbsCraftingScreen(syncId, inv, ContainerLevelAccess.create(level, pos), this);
+            return new CrumbsCraftingMenu(syncId, inv, ContainerLevelAccess.create(level, pos), this);
         }, TITLE);
     }
 }

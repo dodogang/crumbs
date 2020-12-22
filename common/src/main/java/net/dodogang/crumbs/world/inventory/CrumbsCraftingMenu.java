@@ -1,4 +1,4 @@
-package net.dodogang.crumbs.menu;
+package net.dodogang.crumbs.world.inventory;
 
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;

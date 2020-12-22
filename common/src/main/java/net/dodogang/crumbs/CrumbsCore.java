@@ -22,8 +22,8 @@ public class CrumbsCore {
         CrumbsCore.creativeTab = platform.createCreativeTab("item_group", () -> new ItemStack(CrumbsBlocks.OAK_BUNDLED_LOG));
 
         new CrumbsBlocks();
-        // new CrumbsItems();
-        new CrumbsBlockEntityType();
+//        new CrumbsItems();
+//        new CrumbsBlockEntityType();
         new RightClickBlockHandlers();
     }
 

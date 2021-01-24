@@ -4,8 +4,8 @@
     "package": "net.dodogang.crumbs.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
-        "RecipeManagerMixin",
-        "PoiTypeAccessor"
+        "PointOfInterestTypeAccessor",
+        "RecipeManagerMixin"
     ],
     "injectors": {
         "defaultRequire": 1

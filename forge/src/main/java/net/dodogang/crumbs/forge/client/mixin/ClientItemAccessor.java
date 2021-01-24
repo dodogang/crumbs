@@ -1,6 +1,6 @@
-package net.dodogang.crumbs.forge.mixin;
+package net.dodogang.crumbs.forge.client.mixin;
 
-import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
+import net.minecraft.client.render.item.BuiltinModelItemRenderer;
 import net.minecraft.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -14,5 +14,5 @@ import java.util.function.Supplier;
 public interface ClientItemAccessor {
     // remap = false because this field is part of a forge patch.
     @Accessor(value = "ister", remap = false)
-    void setIster(Supplier<ItemStackTileEntityRenderer> ister);
+    void setIster(Supplier<BuiltinModelItemRenderer> ister);
 }

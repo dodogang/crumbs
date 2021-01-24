@@ -1,15 +1,11 @@
 {
     "required": true,
     "minVersion": "0.8",
-    "package": "net.dodogang.crumbs.forge.mixin",
+    "package": "net.dodogang.crumbs.mixin",
     "compatibilityLevel": "JAVA_8",
-    "refmap": "crumbs.mixins.refmap.json",
     "mixins": [
         "RecipeManagerMixin",
-        "PointOfInterestTypeAccessor"
-    ],
-    "client": [
-        "ClientItemAccessor"
+        "PoiTypeAccessor"
     ],
     "injectors": {
         "defaultRequire": 1

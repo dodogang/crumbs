@@ -1,8 +1,8 @@
 package net.dodogang.crumbs.block.entity;
 
 import net.dodogang.crumbs.block.CrumbsBlocks;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.ChestBlockEntity;
+import net.minecraft.block.Block;
+import net.minecraft.block.entity.ChestBlockEntity;
 
 public class CrumbsChestBlockEntity extends ChestBlockEntity {
     public final Block block;

@@ -1,9 +1,9 @@
 package net.dodogang.crumbs.client.model;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.util.math.MatrixStack;
 
 public interface IChestModel {
-    void render(PoseStack matrices, VertexConsumer consumer, int packedLight, int packedOverlay, boolean isItem);
+    void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, boolean isItem);
     void rotateLid(float pitch);
 }

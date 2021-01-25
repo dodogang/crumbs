@@ -1,11 +1,11 @@
 package net.dodogang.crumbs.client.platform;
 
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.block.Block;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
+import net.minecraft.client.render.block.entity.BlockEntityRenderer;
+import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
 
@@ -14,5 +14,5 @@ public interface AbstractPlatformClient {
 
     void registerBuiltinItemRendererForBlock(Block block, BlockEntity blockEntity);
 
-    void registerSpritesToAtlas(ResourceLocation atlas, ResourceLocation... spriteLocations);
+    void registerSpritesToAtlas(Identifier atlas, Identifier... spriteLocations);
 }

@@ -2,22 +2,22 @@ package net.dodogang.crumbs.block;
 
 import net.dodogang.crumbs.block.entity.CrumbsBlockEntityType;
 import net.dodogang.crumbs.block.entity.CrumbsChestBlockEntity;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.ChestBlock;
-import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.block.BlockEntityProvider;
+import net.minecraft.block.ChestBlock;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.world.BlockView;
 
-public class CrumbsChestBlock extends ChestBlock implements EntityBlock {
+public class CrumbsChestBlock extends ChestBlock implements BlockEntityProvider {
     public final ModelType modelType;
 
-    public CrumbsChestBlock(ModelType modelType, Properties properties) {
-        super(properties, () -> CrumbsBlockEntityType.CRUMBS_CHEST);
+    public CrumbsChestBlock(ModelType modelType, Settings settings) {
+        super(settings, () -> CrumbsBlockEntityType.CRUMBS_CHEST);
 
         this.modelType = modelType;
     }
 
     @Override
-    public BlockEntity newBlockEntity(BlockGetter blockGetter) {
+    public BlockEntity createBlockEntity(BlockView world) {
         return new CrumbsChestBlockEntity(this);
     }
 

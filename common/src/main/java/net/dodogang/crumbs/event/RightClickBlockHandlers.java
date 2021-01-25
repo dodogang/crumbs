@@ -3,18 +3,18 @@ package net.dodogang.crumbs.event;
 import com.google.common.collect.ImmutableMap;
 import net.dodogang.crumbs.CrumbsCore;
 import net.dodogang.crumbs.block.CrumbsBlocks;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.PillarBlock;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.world.World;
 
 public class RightClickBlockHandlers {
     private final ImmutableMap<Block, Block> logToStrippedMap;
@@ -34,24 +34,24 @@ public class RightClickBlockHandlers {
         CrumbsCore.platform.registerOnRightClickBlockHandler(this::stripLog);
     }
 
-    public InteractionResult stripLog(Player player, Level level, InteractionHand hand, BlockPos pos, Direction dir) {
-        BlockState state = level.getBlockState(pos);
-        ItemStack stack = player.getItemInHand(hand);
+    public ActionResult stripLog(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction dir) {
+        BlockState state = world.getBlockState(pos);
+        ItemStack stack = player.getStackInHand(hand);
 
         if (CrumbsCore.platform.isAxe(stack) && logToStrippedMap.containsKey(state.getBlock())) {
-            level.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0f, 1.0f);
-            if (!level.isClientSide) {
+            world.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
+            if (!world.isClient) {
                 Block strippedLog = logToStrippedMap.get(state.getBlock());
 
-                level.setBlock(pos, strippedLog.defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS)), 11);
+                world.setBlockState(pos, strippedLog.getDefaultState().with(PillarBlock.AXIS, state.get(PillarBlock.AXIS)), 11);
                 if (!player.isCreative()) {
-                    stack.hurtAndBreak(1, player, (playerX) -> {
-                        playerX.broadcastBreakEvent(hand);
+                    stack.damage(1, player, (playerX) -> {
+                        playerX.sendToolBreakStatus(hand);
                     });
                 }
             }
-            return InteractionResult.SUCCESS;
+            return ActionResult.SUCCESS;
         }
-        return InteractionResult.PASS;
+        return ActionResult.PASS;
     }
 }

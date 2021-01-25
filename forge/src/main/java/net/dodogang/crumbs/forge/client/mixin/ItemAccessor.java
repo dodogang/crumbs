@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 
 @OnlyIn(Dist.CLIENT)
 @Mixin(Item.class)
-public interface ClientItemAccessor {
+public interface ItemAccessor {
     // remap = false because this field is part of a forge patch.
     @Accessor(value = "ister", remap = false)
     void setIster(Supplier<BuiltinModelItemRenderer> ister);

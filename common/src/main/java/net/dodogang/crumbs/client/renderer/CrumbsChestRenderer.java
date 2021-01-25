@@ -1,30 +1,30 @@
 package net.dodogang.crumbs.client.renderer;
 
 import com.google.common.collect.ImmutableMap;
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.datafixers.util.Pair;
-import com.mojang.math.Vector3f;
 import net.dodogang.crumbs.block.CrumbsBlocks;
 import net.dodogang.crumbs.block.CrumbsChestBlock;
 import net.dodogang.crumbs.block.entity.CrumbsChestBlockEntity;
 import net.dodogang.crumbs.client.model.ChestModel;
 import net.dodogang.crumbs.client.model.DoubleChestModel;
 import net.dodogang.crumbs.client.model.IChestModel;
-import net.minecraft.Util;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
-import net.minecraft.client.renderer.blockentity.BrightnessCombiner;
-import net.minecraft.client.resources.model.Material;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.ChestBlock;
-import net.minecraft.world.level.block.DoubleBlockCombiner;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.ChestType;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.ChestBlock;
+import net.minecraft.block.DoubleBlockProperties;
+import net.minecraft.block.enums.ChestType;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.TexturedRenderLayers;
+import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
+import net.minecraft.client.render.block.entity.BlockEntityRenderer;
+import net.minecraft.client.render.block.entity.LightmapCoordinatesRetriever;
+import net.minecraft.client.util.SpriteIdentifier;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.util.math.Vector3f;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Util;
 
 public class CrumbsChestRenderer extends BlockEntityRenderer<CrumbsChestBlockEntity> {
     private static final ImmutableMap<Pair<CrumbsChestBlock.ModelType, ChestType>, IChestModel> MODELS =
@@ -46,10 +46,10 @@ public class CrumbsChestRenderer extends BlockEntityRenderer<CrumbsChestBlockEnt
     }
 
     @Override
-    public void render(CrumbsChestBlockEntity be, float tickDelta, PoseStack stack, MultiBufferSource buffer, int light, int overlay) {
-        Block block = be.block;
-        BlockState state = be.hasLevel() ? be.getBlockState() : block.defaultBlockState();
-        ChestType chestType = state.getValue(ChestBlock.TYPE);
+    public void render(CrumbsChestBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+        Block block = entity.block;
+        BlockState state = entity.hasWorld() ? entity.getCachedState() : block.getDefaultState();
+        ChestType chestType = state.get(ChestBlock.CHEST_TYPE);
         if (chestType == ChestType.LEFT) {
             return;
         }
@@ -59,60 +59,62 @@ public class CrumbsChestRenderer extends BlockEntityRenderer<CrumbsChestBlockEnt
 
             IChestModel model = MODELS.get(new Pair<>(modelType, chestType));
             if (model == null) {
-                Util.pauseInIde(new IllegalStateException(String.format(
+                Util.throwOrPause(new IllegalStateException(String.format(
                         "Missing model definition for ModelType: %s, ChestType: %s", chestType
                 )));
             }
 
-            stack.pushPose();
-            stack.translate(0.5d, 0.5d, 0.5d);
-            stack.mulPose(Vector3f.YP.rotationDegrees(-state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot()));
-            stack.translate(-0.5d, -0.5d, -0.5d);
-            model.rotateLid(be.getOpenNess(tickDelta));
+            matrices.push();
+            matrices.translate(0.5d, 0.5d, 0.5d);
+            matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(-state.get(Properties.HORIZONTAL_FACING).getOffsetY()));
+            matrices.translate(-0.5d, -0.5d, -0.5d);
+            model.rotateLid(entity.getAnimationProgress(tickDelta));
 
-            DoubleBlockCombiner.NeighborCombineResult<CrumbsChestBlockEntity> combiner;
-            if (be.hasLevel()) {
-                combiner = (DoubleBlockCombiner.NeighborCombineResult<CrumbsChestBlockEntity>)
-                        ((CrumbsChestBlock) state.getBlock()).combine(state, be.getLevel(), be.getBlockPos(), true);
+            DoubleBlockProperties.PropertySource<CrumbsChestBlockEntity> combiner;
+            if (entity.hasWorld()) {
+                combiner = (DoubleBlockProperties.PropertySource<CrumbsChestBlockEntity>)
+                        ((CrumbsChestBlock) state.getBlock()).getBlockEntitySource(state, entity.getWorld(), entity.getPos(), true);
             } else {
-                combiner = DoubleBlockCombiner.Combiner::acceptNone;
+                combiner = DoubleBlockProperties.PropertyRetriever::getFallback;
             }
-            model.render(stack,
-                    new Material(Sheets.CHEST_SHEET, getTexture(block, chestType)).buffer(buffer, RenderType::entityCutout),
-                    combiner.apply(new BrightnessCombiner<>()).applyAsInt(light), overlay, !be.hasLevel()
+            model.render(
+                    matrices,
+                    new SpriteIdentifier(TexturedRenderLayers.CHEST_ATLAS_TEXTURE, getTexture(block, chestType))
+                            .getVertexConsumer(vertexConsumers, RenderLayer::getEntityCutout),
+                    combiner.apply(new LightmapCoordinatesRetriever<>()).applyAsInt(light), overlay, !entity.hasWorld()
             );
-            stack.popPose();
+            matrices.pop();
         }
     }
 
-    private ResourceLocation getTexture(Block block, ChestType modelType) {
+    private Identifier getTexture(Block block, ChestType modelType) {
         if (block == CrumbsBlocks.BIRCH_CHEST && modelType == ChestType.SINGLE)
-            return CrumbsSpriteSheets.BIRCH_CHEST;
+            return CrumbsAtlasTextures.BIRCH_CHEST;
         if (block == CrumbsBlocks.BIRCH_CHEST && modelType == ChestType.RIGHT)
-            return CrumbsSpriteSheets.BIRCH_DOUBLE_CHEST;
+            return CrumbsAtlasTextures.BIRCH_DOUBLE_CHEST;
         else if (block == CrumbsBlocks.JUNGLE_CHEST && modelType == ChestType.SINGLE)
-            return CrumbsSpriteSheets.JUNGLE_CHEST;
+            return CrumbsAtlasTextures.JUNGLE_CHEST;
         else if (block == CrumbsBlocks.JUNGLE_CHEST && modelType == ChestType.RIGHT)
-            return CrumbsSpriteSheets.JUNGLE_DOUBLE_CHEST;
+            return CrumbsAtlasTextures.JUNGLE_DOUBLE_CHEST;
         else if (block == CrumbsBlocks.ACACIA_CHEST && modelType == ChestType.SINGLE)
-            return CrumbsSpriteSheets.ACACIA_CHEST;
+            return CrumbsAtlasTextures.ACACIA_CHEST;
         else if (block == CrumbsBlocks.ACACIA_CHEST && modelType == ChestType.RIGHT)
-            return CrumbsSpriteSheets.ACACIA_DOUBLE_CHEST;
+            return CrumbsAtlasTextures.ACACIA_DOUBLE_CHEST;
         else if (block == CrumbsBlocks.DARK_OAK_CHEST && modelType == ChestType.SINGLE)
-            return CrumbsSpriteSheets.DARK_OAK_CHEST;
+            return CrumbsAtlasTextures.DARK_OAK_CHEST;
         else if (block == CrumbsBlocks.DARK_OAK_CHEST && modelType == ChestType.RIGHT)
-            return CrumbsSpriteSheets.DARK_OAK_DOUBLE_CHEST;
+            return CrumbsAtlasTextures.DARK_OAK_DOUBLE_CHEST;
         else if (block == CrumbsBlocks.CRIMSON_CHEST && modelType == ChestType.SINGLE)
-            return CrumbsSpriteSheets.CRIMSON_CHEST;
+            return CrumbsAtlasTextures.CRIMSON_CHEST;
         else if (block == CrumbsBlocks.CRIMSON_CHEST && modelType == ChestType.RIGHT)
-            return CrumbsSpriteSheets.CRIMSON_DOUBLE_CHEST;
+            return CrumbsAtlasTextures.CRIMSON_DOUBLE_CHEST;
         else if (block == CrumbsBlocks.WARPED_CHEST && modelType == ChestType.SINGLE)
-            return CrumbsSpriteSheets.WARPED_CHEST;
+            return CrumbsAtlasTextures.WARPED_CHEST;
         else if (block == CrumbsBlocks.WARPED_CHEST && modelType == ChestType.RIGHT)
-            return CrumbsSpriteSheets.WARPED_DOUBLE_CHEST;
+            return CrumbsAtlasTextures.WARPED_DOUBLE_CHEST;
         else if (block == CrumbsBlocks.SPRUCE_CHEST && modelType == ChestType.RIGHT)
-            return CrumbsSpriteSheets.SPRUCE_DOUBLE_CHEST;
+            return CrumbsAtlasTextures.SPRUCE_DOUBLE_CHEST;
         else
-            return CrumbsSpriteSheets.SPRUCE_CHEST;
+            return CrumbsAtlasTextures.SPRUCE_CHEST;
     }
 }

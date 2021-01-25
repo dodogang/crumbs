@@ -1,36 +1,34 @@
 package net.dodogang.crumbs.block;
 
 import net.dodogang.crumbs.CrumbsCore;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.block.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
 
 public class CrumbsBlocks {
-    public static final Item.Properties DEFAULT_PROPS = new Item.Properties().tab(CrumbsCore.creativeTab);
+    public static final Item.Settings DEFAULT_SETTINGS = new Item.Settings().group(CrumbsCore.itemGroup);
 
     // Bundled Logs
-    public static final Block OAK_BUNDLED_LOG = registerCopy("oak_bundled_log", RotatedPillarBlock::new, Blocks.OAK_LOG);
-    public static final Block SPRUCE_BUNDLED_LOG = registerCopy("spruce_bundled_log", RotatedPillarBlock::new, Blocks.SPRUCE_LOG);
-    public static final Block BIRCH_BUNDLED_LOG = registerCopy("birch_bundled_log", RotatedPillarBlock::new, Blocks.BIRCH_LOG);
-    public static final Block JUNGLE_BUNDLED_LOG = registerCopy("jungle_bundled_log", RotatedPillarBlock::new, Blocks.JUNGLE_LOG);
-    public static final Block ACACIA_BUNDLED_LOG = registerCopy("acacia_bundled_log", RotatedPillarBlock::new, Blocks.ACACIA_LOG);
-    public static final Block DARK_OAK_BUNDLED_LOG = registerCopy("dark_oak_bundled_log", RotatedPillarBlock::new, Blocks.DARK_OAK_LOG);
-    public static final Block CRIMSON_BUNDLED_STEM = registerCopy("crimson_bundled_stem", RotatedPillarBlock::new, Blocks.CRIMSON_STEM);
-    public static final Block WARPED_BUNDLED_STEM = registerCopy("warped_bundled_stem", RotatedPillarBlock::new, Blocks.WARPED_STEM);
+    public static final Block OAK_BUNDLED_LOG = registerCopy("oak_bundled_log", PillarBlock::new, Blocks.OAK_LOG);
+    public static final Block SPRUCE_BUNDLED_LOG = registerCopy("spruce_bundled_log", PillarBlock::new, Blocks.SPRUCE_LOG);
+    public static final Block BIRCH_BUNDLED_LOG = registerCopy("birch_bundled_log", PillarBlock::new, Blocks.BIRCH_LOG);
+    public static final Block JUNGLE_BUNDLED_LOG = registerCopy("jungle_bundled_log", PillarBlock::new, Blocks.JUNGLE_LOG);
+    public static final Block ACACIA_BUNDLED_LOG = registerCopy("acacia_bundled_log", PillarBlock::new, Blocks.ACACIA_LOG);
+    public static final Block DARK_OAK_BUNDLED_LOG = registerCopy("dark_oak_bundled_log", PillarBlock::new, Blocks.DARK_OAK_LOG);
+    public static final Block CRIMSON_BUNDLED_STEM = registerCopy("crimson_bundled_stem", PillarBlock::new, Blocks.CRIMSON_STEM);
+    public static final Block WARPED_BUNDLED_STEM = registerCopy("warped_bundled_stem", PillarBlock::new, Blocks.WARPED_STEM);
 
-    public static final Block STRIPPED_OAK_BUNDLED_LOG = registerCopy("stripped_oak_bundled_log", RotatedPillarBlock::new, Blocks.STRIPPED_OAK_LOG);
-    public static final Block STRIPPED_SPRUCE_BUNDLED_LOG = registerCopy("stripped_spruce_bundled_log", RotatedPillarBlock::new, Blocks.STRIPPED_SPRUCE_LOG);
-    public static final Block STRIPPED_BIRCH_BUNDLED_LOG = registerCopy("stripped_birch_bundled_log", RotatedPillarBlock::new, Blocks.STRIPPED_BIRCH_LOG);
-    public static final Block STRIPPED_JUNGLE_BUNDLED_LOG = registerCopy("stripped_jungle_bundled_log", RotatedPillarBlock::new, Blocks.STRIPPED_JUNGLE_LOG);
-    public static final Block STRIPPED_ACACIA_BUNDLED_LOG = registerCopy("stripped_acacia_bundled_log", RotatedPillarBlock::new, Blocks.STRIPPED_ACACIA_LOG);
-    public static final Block STRIPPED_DARK_OAK_BUNDLED_LOG = registerCopy("stripped_dark_oak_bundled_log", RotatedPillarBlock::new, Blocks.STRIPPED_DARK_OAK_LOG);
-    public static final Block STRIPPED_CRIMSON_BUNDLED_STEM = registerCopy("stripped_crimson_bundled_stem", RotatedPillarBlock::new, Blocks.STRIPPED_CRIMSON_STEM);
-    public static final Block STRIPPED_WARPED_BUNDLED_STEM = registerCopy("stripped_warped_bundled_stem", RotatedPillarBlock::new, Blocks.STRIPPED_WARPED_STEM);
+    public static final Block STRIPPED_OAK_BUNDLED_LOG = registerCopy("stripped_oak_bundled_log", PillarBlock::new, Blocks.STRIPPED_OAK_LOG);
+    public static final Block STRIPPED_SPRUCE_BUNDLED_LOG = registerCopy("stripped_spruce_bundled_log", PillarBlock::new, Blocks.STRIPPED_SPRUCE_LOG);
+    public static final Block STRIPPED_BIRCH_BUNDLED_LOG = registerCopy("stripped_birch_bundled_log", PillarBlock::new, Blocks.STRIPPED_BIRCH_LOG);
+    public static final Block STRIPPED_JUNGLE_BUNDLED_LOG = registerCopy("stripped_jungle_bundled_log", PillarBlock::new, Blocks.STRIPPED_JUNGLE_LOG);
+    public static final Block STRIPPED_ACACIA_BUNDLED_LOG = registerCopy("stripped_acacia_bundled_log", PillarBlock::new, Blocks.STRIPPED_ACACIA_LOG);
+    public static final Block STRIPPED_DARK_OAK_BUNDLED_LOG = registerCopy("stripped_dark_oak_bundled_log", PillarBlock::new, Blocks.STRIPPED_DARK_OAK_LOG);
+    public static final Block STRIPPED_CRIMSON_BUNDLED_STEM = registerCopy("stripped_crimson_bundled_stem", PillarBlock::new, Blocks.STRIPPED_CRIMSON_STEM);
+    public static final Block STRIPPED_WARPED_BUNDLED_STEM = registerCopy("stripped_warped_bundled_stem", PillarBlock::new, Blocks.STRIPPED_WARPED_STEM);
 
     // Wooden Blocks
     public static final Block OAK_TILE = registerCopy("oak_tile", Block::new, Blocks.OAK_PLANKS);
@@ -51,14 +49,14 @@ public class CrumbsBlocks {
     public static final Block CRIMSON_TILE_SLAB = registerCopy("crimson_tile_slab", SlabBlock::new, CRIMSON_TILE);
     public static final Block WARPED_TILE_SLAB = registerCopy("warped_tile_slab", SlabBlock::new, WARPED_TILE);
 
-    public static final Block REINFORCED_OAK_PLANKS = registerCopy("reinforced_oak_planks", RotatedPillarBlock::new, Blocks.OAK_PLANKS);
-    public static final Block REINFORCED_SPRUCE_PLANKS = registerCopy("reinforced_spruce_planks", RotatedPillarBlock::new, Blocks.SPRUCE_PLANKS);
-    public static final Block REINFORCED_BIRCH_PLANKS = registerCopy("reinforced_birch_planks", RotatedPillarBlock::new, Blocks.BIRCH_PLANKS);
-    public static final Block REINFORCED_JUNGLE_PLANKS = registerCopy("reinforced_jungle_planks", RotatedPillarBlock::new, Blocks.JUNGLE_PLANKS);
-    public static final Block REINFORCED_ACACIA_PLANKS = registerCopy("reinforced_acacia_planks", RotatedPillarBlock::new, Blocks.ACACIA_PLANKS);
-    public static final Block REINFORCED_DARK_OAK_PLANKS = registerCopy("reinforced_dark_oak_planks", RotatedPillarBlock::new, Blocks.DARK_OAK_PLANKS);
-    public static final Block REINFORCED_CRIMSON_PLANKS = registerCopy("reinforced_crimson_planks", RotatedPillarBlock::new, Blocks.CRIMSON_PLANKS);
-    public static final Block REINFORCED_WARPED_PLANKS = registerCopy("reinforced_warped_planks", RotatedPillarBlock::new, Blocks.WARPED_PLANKS);
+    public static final Block REINFORCED_OAK_PLANKS = registerCopy("reinforced_oak_planks", PillarBlock::new, Blocks.OAK_PLANKS);
+    public static final Block REINFORCED_SPRUCE_PLANKS = registerCopy("reinforced_spruce_planks", PillarBlock::new, Blocks.SPRUCE_PLANKS);
+    public static final Block REINFORCED_BIRCH_PLANKS = registerCopy("reinforced_birch_planks", PillarBlock::new, Blocks.BIRCH_PLANKS);
+    public static final Block REINFORCED_JUNGLE_PLANKS = registerCopy("reinforced_jungle_planks", PillarBlock::new, Blocks.JUNGLE_PLANKS);
+    public static final Block REINFORCED_ACACIA_PLANKS = registerCopy("reinforced_acacia_planks", PillarBlock::new, Blocks.ACACIA_PLANKS);
+    public static final Block REINFORCED_DARK_OAK_PLANKS = registerCopy("reinforced_dark_oak_planks", PillarBlock::new, Blocks.DARK_OAK_PLANKS);
+    public static final Block REINFORCED_CRIMSON_PLANKS = registerCopy("reinforced_crimson_planks", PillarBlock::new, Blocks.CRIMSON_PLANKS);
+    public static final Block REINFORCED_WARPED_PLANKS = registerCopy("reinforced_warped_planks", PillarBlock::new, Blocks.WARPED_PLANKS);
 
     public static final Block SPRUCE_CRAFTING_TABLE = registerCopy("spruce_crafting_table", CrumbsCraftingTableBlock::new, Blocks.SPRUCE_PLANKS);
     public static final Block BIRCH_CRAFTING_TABLE = registerCopy("birch_crafting_table", CrumbsCraftingTableBlock::new, Blocks.BIRCH_PLANKS);
@@ -144,7 +142,7 @@ public class CrumbsBlocks {
     public static final Block CHISELED_RED_NETHER_BRICKS = registerCopy("chiseled_red_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
     public static final Block CRACKED_RED_NETHER_BRICKS = registerCopy("cracked_red_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
 
-//    public static final Block RED_NETHER_BRICK_FENCE = registerCopy("red_nether_brick_fence", FenceBlock::new, Blocks.RED_NETHER_BRICKS);
+    public static final Block RED_NETHER_BRICK_FENCE = registerCopy("red_nether_brick_fence", FenceBlock::new, Blocks.RED_NETHER_BRICKS);
 
     public static final Block BLUE_NETHER_BRICKS = registerCopy("blue_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
     public static final Block CHISELED_BLUE_NETHER_BRICKS = registerCopy("chiseled_blue_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
@@ -153,35 +151,34 @@ public class CrumbsBlocks {
     public static final Block BLUE_NETHER_BRICK_WALL = registerCopy("blue_nether_brick_wall", WallBlock::new, BLUE_NETHER_BRICKS);
     public static final Block BLUE_NETHER_BRICK_STAIRS = registerStairCopy("blue_nether_brick_stairs", BLUE_NETHER_BRICKS);
     public static final Block BLUE_NETHER_BRICK_SLAB = registerCopy("blue_nether_brick_slab", SlabBlock::new, BLUE_NETHER_BRICKS);
-//    public static final Block BLUE_NETHER_BRICK_FENCE = registerCopy("blue_nether_brick_fence", FenceBlock::new, BLUE_NETHER_BRICKS);
+    public static final Block BLUE_NETHER_BRICK_FENCE = registerCopy("blue_nether_brick_fence", FenceBlock::new, BLUE_NETHER_BRICKS);
 
     private static <T extends Block> T registerChestCopy(String name, CrumbsChestBlock.ModelType modelType, Block toCopy) {
-        return null;
-//        return (T) register(name, new CrumbsChestBlock(modelType, BlockBehaviour.Properties.copy(toCopy)));
+        return (T) register(name, new CrumbsChestBlock(modelType, AbstractBlock.Settings.copy(toCopy)));
     }
 
     private static <T extends Block> T registerStairCopy(String name, Block toCopy) {
-        return (T) register(name, new PublicStairBlock(toCopy.defaultBlockState(), BlockBehaviour.Properties.copy(toCopy)));
+        return (T) register(name, new PublicStairsBlock(toCopy.getDefaultState(), AbstractBlock.Settings.copy(toCopy)));
     }
 
-    private static <T extends Block> T registerCopy(String name, Function<BlockBehaviour.Properties, T> block, BlockBehaviour toCopy) {
-        return register(name, block.apply(BlockBehaviour.Properties.copy(toCopy)));
+    private static <T extends Block> T registerCopy(String name, Function<AbstractBlock.Settings, T> block, AbstractBlock toCopy) {
+        return register(name, block.apply(AbstractBlock.Settings.copy(toCopy)));
     }
 
     private static <T extends Block> T register(String name, T block) {
-        return register(name, block, DEFAULT_PROPS);
+        return register(name, block, DEFAULT_SETTINGS);
     }
 
-    private static <T extends Block> T register(String name, T block, Item.Properties properties) {
-        ResourceLocation id = CrumbsCore.getId(name);
+    private static <T extends Block> T register(String name, T block, Item.Settings settings) {
+        Identifier id = CrumbsCore.getId(name);
         CrumbsCore.platform.registerBlock(id, block);
-        if (properties != null) { CrumbsCore.platform.registerItem(id, new BlockItem(block, properties)); }
+        if (settings != null) { CrumbsCore.platform.registerItem(id, new BlockItem(block, settings)); }
         return block;
     }
 
-    private static class PublicStairBlock extends StairBlock {
-        public PublicStairBlock(BlockState blockState, Properties properties) {
-            super(blockState, properties);
+    private static class PublicStairsBlock extends StairsBlock {
+        public PublicStairsBlock(BlockState blockState, AbstractBlock.Settings settings) {
+            super(blockState, settings);
         }
     }
 }

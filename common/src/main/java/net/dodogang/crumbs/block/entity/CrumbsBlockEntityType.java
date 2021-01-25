@@ -2,10 +2,10 @@ package net.dodogang.crumbs.block.entity;
 
 import net.dodogang.crumbs.CrumbsCore;
 import net.dodogang.crumbs.block.CrumbsBlocks;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.block.Block;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.util.Identifier;
 
 import java.util.function.Supplier;
 
@@ -17,8 +17,8 @@ public class CrumbsBlockEntityType {
     );
 
     private static <T extends BlockEntity> BlockEntityType<T> register(String name, Supplier<T> beSupplier, Block... blocks) {
-        ResourceLocation id = CrumbsCore.getId(name);
-        BlockEntityType<T> be = BlockEntityType.Builder.of(beSupplier, blocks).build(null);
+        Identifier id = CrumbsCore.getId(name);
+        BlockEntityType<T> be = BlockEntityType.Builder.create(beSupplier, blocks).build(null);
         CrumbsCore.platform.registerBlockEntityType(id, be);
         return be;
     }

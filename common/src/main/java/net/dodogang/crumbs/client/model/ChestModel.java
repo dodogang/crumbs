@@ -1,50 +1,51 @@
 package net.dodogang.crumbs.client.model;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.Model;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.model.ModelPart;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.util.math.MatrixStack;
 
 public abstract class ChestModel extends Model implements IChestModel {
 	protected final ModelPart base;
 	protected final ModelPart lid;
 
 	public ChestModel() {
-		super(RenderType::entityCutout);
-		this.texWidth = 64;
-		this.texHeight = 64;
+		super(RenderLayer::getEntityCutout);
+		this.textureWidth = 64;
+		this.textureHeight = 64;
 
 		base = new ModelPart(this);
 		// I don't know why... but it's upside down... so this fixes that
-		base.xRot = (float) Math.toRadians(180);
+		base.pivotX = (float) Math.toRadians(180);
 
 
-		base.setPos(8.0F, 0.0F, 8.0F);
-		base.texOffs(0, 19).addBox(-7.0F, -11.0F, -7.0F, 14.0F, 11.0F, 14.0F, 0.0F, false);
+		base.setPivot(8.0F, 0.0F, 8.0F);
+		base.setTextureOffset(0, 19).addCuboid(-7.0F, -11.0F, -7.0F, 14.0F, 11.0F, 14.0F, 0.0F, false);
 
 		lid = new ModelPart(this);
 		base.addChild(lid);
-		lid.setPos(0.0F, -9.0F, 7.0F);
-		lid.texOffs(0, 0).addBox(-7.0F, -5.0F, -14.0F, 14.0F, 5.0F, 14.0F, 0.001F, false);
+		lid.setPivot(0.0F, -9.0F, 7.0F);
+		lid.setTextureOffset(0, 0).addCuboid(-7.0F, -5.0F, -14.0F, 14.0F, 5.0F, 14.0F, 0.001F, false);
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack matrices, VertexConsumer consumer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
-	    base.render(matrices, consumer, packedLight, packedOverlay);
+	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
+	    base.render(matrices, vertices, light, overlay);
 	}
 
+	// TODO: see where this is called from.
 	@Override
-	public void render(PoseStack matrices, VertexConsumer consumer, int packedLight, int packedOverlay, boolean isItem) {
-		if (isItem) { base.yRot = (float) Math.toRadians(180); }
-		renderToBuffer(matrices, consumer, packedLight, packedOverlay, 1, 1, 1, 1);
-		base.yRot = 0;
+	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, boolean isItem) {
+		if (isItem) { base.pivotY = (float) Math.toRadians(180); }
+		this.render(matrices, vertices, light, overlay, 1, 1, 1, 1);
+		base.pivotY = 0;
 	}
 
 	@Override
 	public void rotateLid(float pitch) {
 	    pitch = 1.0f - pitch;
-	    lid.xRot = -((1.0f - pitch * pitch * pitch) * 1.5707964f);
+	    lid.pivotX = -((1.0f - pitch * pitch * pitch) * 1.5707964f);
 	}
 
 	public static class Oak extends ChestModel {
@@ -53,8 +54,8 @@ public abstract class ChestModel extends Model implements IChestModel {
 		public Oak() {
 			knob = new ModelPart(this);
 			lid.addChild(knob);
-			knob.setPos(0.0F, 1.0F, -15.0F);
-			knob.texOffs(8, 9).addBox(-1.0F, -3.0F, 0.0F, 2.0F, 4.0F, 1.0F, 0.0F, false);
+			knob.setPivot(0.0F, 1.0F, -15.0F);
+			knob.setTextureOffset(8, 9).addCuboid(-1.0F, -3.0F, 0.0F, 2.0F, 4.0F, 1.0F, 0.0F, false);
 		}
 	}
 
@@ -64,8 +65,8 @@ public abstract class ChestModel extends Model implements IChestModel {
 		public Spruce() {
 			knob = new ModelPart(this);
 			lid.addChild(knob);
-			knob.setPos(0.0F, 1.0F, -15.0F);
-			knob.texOffs(4, 9).addBox(-2.0F, -3.0F, 0.0F, 4.0F, 3.0F, 1.0F, 0.0F, false);
+			knob.setPivot(0.0F, 1.0F, -15.0F);
+			knob.setTextureOffset(4, 9).addCuboid(-2.0F, -3.0F, 0.0F, 4.0F, 3.0F, 1.0F, 0.0F, false);
 		}
 	}
 
@@ -75,8 +76,8 @@ public abstract class ChestModel extends Model implements IChestModel {
 		public Acacia() {
 		    knob = new ModelPart(this);
 			lid.addChild(knob);
-			knob.setPos(0.0F, 0.0F, -15.0F);
-			knob.texOffs(43, 11).addBox(-3.0F, -2.0F, 0.0F, 6.0F, 2.0F, 1.0F, 0.0F, false);
+			knob.setPivot(0.0F, 0.0F, -15.0F);
+			knob.setTextureOffset(43, 11).addCuboid(-3.0F, -2.0F, 0.0F, 6.0F, 2.0F, 1.0F, 0.0F, false);
 		}
 	}
 
@@ -86,8 +87,8 @@ public abstract class ChestModel extends Model implements IChestModel {
 		public Birch() {
 			knob = new ModelPart(this);
 			lid.addChild(knob);
-			knob.setPos(0.0F, 1.0F, -15.0F);
-			knob.texOffs(4, 12).addBox(-2.0F, -2.0F, 0.0F, 4.0F, 1.0F, 1.0F, 0.0F, false);
+			knob.setPivot(0.0F, 1.0F, -15.0F);
+			knob.setTextureOffset(4, 12).addCuboid(-2.0F, -2.0F, 0.0F, 4.0F, 1.0F, 1.0F, 0.0F, false);
 		}
 	}
 
@@ -97,8 +98,8 @@ public abstract class ChestModel extends Model implements IChestModel {
 		public Crimson() {
 			knob = new ModelPart(this);
 			lid.addChild(knob);
-			knob.setPos(0.0F, 1.0F, -15.0F);
-			knob.texOffs(0, 10).addBox(-3.0F, -3.0F, 0.0F, 6.0F, 3.0F, 1.0F, 0.0F, false);
+			knob.setPivot(0.0F, 1.0F, -15.0F);
+			knob.setTextureOffset(0, 10).addCuboid(-3.0F, -3.0F, 0.0F, 6.0F, 3.0F, 1.0F, 0.0F, false);
 		}
 	}
 }

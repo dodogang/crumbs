@@ -4,28 +4,28 @@ import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Function5;
 import net.dodogang.crumbs.CrumbsCore;
 import net.dodogang.crumbs.block.CrumbsBarrelBlock;
-import net.dodogang.crumbs.fabric.mixin.PoiTypeAccessor;
+import net.dodogang.crumbs.mixin.PointOfInterestTypeAccessor;
 import net.dodogang.crumbs.platform.AbstractPlatform;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.minecraft.Util;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.ai.village.poi.PoiType;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Util;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
+import net.minecraft.world.poi.PointOfInterestType;
 
 import java.util.ArrayList;
 import java.util.function.Supplier;
@@ -43,47 +43,48 @@ public class CrumbsFabric implements ModInitializer, AbstractPlatform {
         // Copied from PoiType#registerBlockStates
         // Edited to allow adding blocks to a Poi
         CrumbsBarrelBlock.MOD_BARRELS.forEach((barrel) -> {
-            PoiType poiType = PoiTypeAccessor.getTypeByState().put(barrel, PoiType.FISHERMAN);
+            PointOfInterestType poiType = PointOfInterestTypeAccessor.getBlockStatePoiMap()
+                    .put(barrel, PointOfInterestType.FISHERMAN);
             if (poiType != null) {
-                throw Util.pauseInIde(new IllegalStateException(
+                throw Util.throwOrPause(new IllegalStateException(
                         String.format("%s is defined in too many tags", barrel)
                 ));
             }
         });
-        PoiTypeAccessor fishermanAccessor = (PoiTypeAccessor) PoiType.FISHERMAN;
+        PointOfInterestTypeAccessor fishermanAccessor = (PointOfInterestTypeAccessor) PointOfInterestType.FISHERMAN;
 
-        ArrayList<BlockState> blockStates = new ArrayList<>(fishermanAccessor.getMatchingStates());
+        ArrayList<BlockState> blockStates = new ArrayList<>(fishermanAccessor.getBlockStates());
         blockStates.addAll(CrumbsBarrelBlock.MOD_BARRELS);
-        fishermanAccessor.setMatchingStates(ImmutableSet.copyOf(blockStates));
+        fishermanAccessor.setBlockStates(ImmutableSet.copyOf(blockStates));
     }
 
     @Override
-    public void registerBlock(ResourceLocation id, Block block) {
+    public void registerBlock(Identifier id, Block block) {
         Registry.register(Registry.BLOCK, id, block);
     }
 
     @Override
-    public void registerItem(ResourceLocation id, Item item) {
+    public void registerItem(Identifier id, Item item) {
         Registry.register(Registry.ITEM, id, item);
     }
 
     @Override
-    public void registerBlockEntityType(ResourceLocation id, BlockEntityType<?> beType) {
+    public void registerBlockEntityType(Identifier id, BlockEntityType<?> beType) {
         Registry.register(Registry.BLOCK_ENTITY_TYPE, id, beType);
     }
 
     @Override
-    public CreativeModeTab createCreativeTab(String name, Supplier<ItemStack> icon) {
-        return FabricItemGroupBuilder.build(new ResourceLocation(CrumbsCore.MOD_ID, name), icon);
+    public ItemGroup createItemGroup(String name, Supplier<ItemStack> icon) {
+        return FabricItemGroupBuilder.build(new Identifier(CrumbsCore.MOD_ID, name), icon);
     }
 
     @Override
-    public void registerOnRightClickBlockHandler(Function5<Player, Level, InteractionHand, BlockPos, Direction, InteractionResult> event) {
+    public void registerOnRightClickBlockHandler(Function5<PlayerEntity, World, Hand, BlockPos, Direction, ActionResult> event) {
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
             if (!player.isSpectator()) {
-                return event.apply(player, world, hand, hitResult.getBlockPos(), hitResult.getDirection());
+                return event.apply(player, world, hand, hitResult.getBlockPos(), hitResult.getSide());
             } else {
-                return InteractionResult.PASS;
+                return ActionResult.PASS;
             }
         });
     }

@@ -17,7 +17,7 @@ public abstract class DoubleChestModel extends Model implements IChestModel {
 
         base = new ModelPart(this);
         // I don't know why... but it's upside down... so this fixes that
-        base.pivotX = (float) Math.toRadians(180);
+        base.pitch = (float) Math.toRadians(180);
         base.setPivot(8.0F, 0.0F, 8.0F);
         base.setTextureOffset(0, 19).addCuboid(-7.0F, -11.0F, -7.0F, 30.0F, 11.0F, 14.0F, 0.0F, false);
 
@@ -41,7 +41,7 @@ public abstract class DoubleChestModel extends Model implements IChestModel {
     @Override
     public void rotateLid(float pitch) {
         pitch = 1.0f - pitch;
-        lid.pivotX = -((1.0f - pitch * pitch * pitch) * 1.5707964f);
+        lid.pitch = -((1.0f - pitch * pitch * pitch) * 1.5707964f);
     }
 
     public static class Oak extends DoubleChestModel {

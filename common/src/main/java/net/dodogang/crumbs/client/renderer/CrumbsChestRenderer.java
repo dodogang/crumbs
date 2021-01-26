@@ -66,7 +66,7 @@ public class CrumbsChestRenderer extends BlockEntityRenderer<CrumbsChestBlockEnt
 
             matrices.push();
             matrices.translate(0.5d, 0.5d, 0.5d);
-            matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(-state.get(Properties.HORIZONTAL_FACING).getOffsetY()));
+            matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(-state.get(Properties.HORIZONTAL_FACING).asRotation()));
             matrices.translate(-0.5d, -0.5d, -0.5d);
             model.rotateLid(entity.getAnimationProgress(tickDelta));
 

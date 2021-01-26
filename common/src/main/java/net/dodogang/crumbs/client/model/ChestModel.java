@@ -17,7 +17,7 @@ public abstract class ChestModel extends Model implements IChestModel {
 
 		base = new ModelPart(this);
 		// I don't know why... but it's upside down... so this fixes that
-		base.pivotX = (float) Math.toRadians(180);
+		base.pitch = (float) Math.toRadians(180);
 
 
 		base.setPivot(8.0F, 0.0F, 8.0F);
@@ -37,15 +37,15 @@ public abstract class ChestModel extends Model implements IChestModel {
 	// TODO: see where this is called from.
 	@Override
 	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, boolean isItem) {
-		if (isItem) { base.pivotY = (float) Math.toRadians(180); }
+		if (isItem) { base.yaw = (float) Math.toRadians(180); }
 		this.render(matrices, vertices, light, overlay, 1, 1, 1, 1);
-		base.pivotY = 0;
+		base.yaw = 0;
 	}
 
 	@Override
 	public void rotateLid(float pitch) {
 	    pitch = 1.0f - pitch;
-	    lid.pivotX = -((1.0f - pitch * pitch * pitch) * 1.5707964f);
+	    lid.pitch = -((1.0f - pitch * pitch * pitch) * 1.5707964f);
 	}
 
 	public static class Oak extends ChestModel {

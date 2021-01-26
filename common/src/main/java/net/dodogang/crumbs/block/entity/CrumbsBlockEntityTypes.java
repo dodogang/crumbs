@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Supplier;
 
-public class CrumbsBlockEntityType {
+public class CrumbsBlockEntityTypes {
     public static final BlockEntityType<CrumbsChestBlockEntity> CRUMBS_CHEST = register(
             "chest", CrumbsChestBlockEntity::new,
             CrumbsBlocks.SPRUCE_CHEST, CrumbsBlocks.BIRCH_CHEST, CrumbsBlocks.JUNGLE_CHEST, CrumbsBlocks.ACACIA_CHEST,

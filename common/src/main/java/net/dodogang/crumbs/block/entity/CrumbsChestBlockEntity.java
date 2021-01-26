@@ -12,7 +12,7 @@ public class CrumbsChestBlockEntity extends ChestBlockEntity {
     }
 
     public CrumbsChestBlockEntity(Block block) {
-        super(CrumbsBlockEntityType.CRUMBS_CHEST);
+        super(CrumbsBlockEntityTypes.CRUMBS_CHEST);
         this.block = block;
     }
 }

@@ -1,7 +1,7 @@
 package net.dodogang.crumbs.client;
 
 import net.dodogang.crumbs.block.CrumbsBlocks;
-import net.dodogang.crumbs.block.entity.CrumbsBlockEntityType;
+import net.dodogang.crumbs.block.entity.CrumbsBlockEntityTypes;
 import net.dodogang.crumbs.block.entity.CrumbsChestBlockEntity;
 import net.dodogang.crumbs.client.platform.AbstractPlatformClient;
 import net.dodogang.crumbs.client.renderer.CrumbsChestRenderer;
@@ -13,6 +13,7 @@ public class CrumbsClient {
     public static void init(AbstractPlatformClient platform) {
         CrumbsClient.platform = platform;
 
+        new CrumbsBlockEntityTypes();
         new CrumbsAtlasTextures();
     }
 
@@ -22,7 +23,7 @@ public class CrumbsClient {
     }
 
     public static void registerBlockEntityRenderers() {
-        platform.registerBlockEntityRenderer(CrumbsBlockEntityType.CRUMBS_CHEST, CrumbsChestRenderer::new);
+        platform.registerBlockEntityRenderer(CrumbsBlockEntityTypes.CRUMBS_CHEST, CrumbsChestRenderer::new);
     }
 
     public static void registerBuiltInItemRenderers() {

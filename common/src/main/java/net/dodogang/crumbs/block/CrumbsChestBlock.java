@@ -1,6 +1,6 @@
 package net.dodogang.crumbs.block;
 
-import net.dodogang.crumbs.block.entity.CrumbsBlockEntityType;
+import net.dodogang.crumbs.block.entity.CrumbsBlockEntityTypes;
 import net.dodogang.crumbs.block.entity.CrumbsChestBlockEntity;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.ChestBlock;
@@ -11,7 +11,7 @@ public class CrumbsChestBlock extends ChestBlock implements BlockEntityProvider 
     public final ModelType modelType;
 
     public CrumbsChestBlock(ModelType modelType, Settings settings) {
-        super(settings, () -> CrumbsBlockEntityType.CRUMBS_CHEST);
+        super(settings, () -> CrumbsBlockEntityTypes.CRUMBS_CHEST);
 
         this.modelType = modelType;
     }

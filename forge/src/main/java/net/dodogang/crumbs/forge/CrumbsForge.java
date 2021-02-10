@@ -12,7 +12,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -31,7 +30,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
-import java.util.function.Supplier;
 
 @Mod(CrumbsCore.MOD_ID)
 public class CrumbsForge implements AbstractPlatform {
@@ -87,16 +85,6 @@ public class CrumbsForge implements AbstractPlatform {
     @Override
     public void registerBlockEntityType(Identifier id, BlockEntityType<?> beType) {
         BLOCK_ENTITY_REGISTRY.register(id.getPath(), () -> beType);
-    }
-
-    @Override
-    public ItemGroup createItemGroup(String name, Supplier<ItemStack> icon) {
-        return new ItemGroup(CrumbsCore.MOD_ID + "." + name) {
-            @Override
-            public ItemStack createIcon() {
-                return icon.get();
-            }
-        };
     }
 
     @Override

@@ -1,5 +1,6 @@
 package net.dodogang.crumbs;
 
+import net.dodogang.ash.registry.ItemGroupBuilder;
 import net.dodogang.crumbs.block.CrumbsBlocks;
 import net.dodogang.crumbs.event.RightClickBlockHandlers;
 import net.dodogang.crumbs.platform.AbstractPlatform;
@@ -14,11 +15,10 @@ public class CrumbsCore {
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public static AbstractPlatform platform;
-    public static ItemGroup itemGroup;
+    public static ItemGroup itemGroup = ItemGroupBuilder.build(getId("item_group"), () -> new ItemStack(CrumbsBlocks.OAK_BUNDLED_LOG));
 
     public static void init(AbstractPlatform platform) {
         CrumbsCore.platform = platform;
-        CrumbsCore.itemGroup = platform.createItemGroup("item_group", () -> new ItemStack(CrumbsBlocks.OAK_BUNDLED_LOG));
 
         new CrumbsBlocks();
 //        new CrumbsItems();

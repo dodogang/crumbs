@@ -15,16 +15,6 @@ loom {
     useFabricMixin = true
 }
 
-repositories {
-    maven {
-        name = "Progwml6 maven / JEI Maven"
-        url = "https://dvs1.progwml6.com/files/maven/"
-    }
-    maven {
-        name = "ModMaven / JEI Mirror"
-        url = "https://modmaven.k-4u.nl"
-    }
-}
 
 dependencies {
     minecraft("com.mojang:minecraft:${rootProject.minecraft_version}")
@@ -34,6 +24,10 @@ dependencies {
     if (rootProject.hasProperty('jei_version')) {
         modCompile("mezz.jei:jei-${rootProject.jei_version}:api")
         modRuntime("mezz.jei:jei-${rootProject.jei_version}")
+    }
+
+    if (rootProject.hasProperty('plume_version')) {
+        modCompile("net.dodogang:plume:${rootProject.plume_version}:forge")
     }
 
     compileOnly(project(path: ":common")) {

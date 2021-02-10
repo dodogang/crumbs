@@ -1,6 +1,6 @@
 plugins {
-    id "architectury-plugin" version "2.0.59"
-    id "forgified-fabric-loom" version "0.6.52" apply false
+    id "architectury-plugin" version "2.0.68"
+    id "forgified-fabric-loom" version "0.6.64" apply false
 }
 
 architectury {
@@ -10,8 +10,11 @@ architectury {
 subprojects {
     apply plugin: "forgified-fabric-loom"
 
-    loom {
-        silentMojangMappingsLicense()
+    repositories {
+        maven {
+            name = "ModMaven"
+            url = "https://modmaven.k-4u.nl"
+        }
     }
 }
 

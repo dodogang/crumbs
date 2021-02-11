@@ -30,7 +30,7 @@ dependencies {
         modRuntime("io.github.prospector:modmenu:${rootProject.mod_menu_version}")
     }
     if (rootProject.hasProperty('plume_version')) {
-        modCompile("net.dodogang:plume:${rootProject.plume_version}:fabric")
+        modCompile("net.dodogang.plume:plume-${rootProject.minecraft_version}:${rootProject.plume_version}:fabric")
     }
 
     compileOnly(project(path: ":common")) {

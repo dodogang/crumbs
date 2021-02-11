@@ -7,7 +7,7 @@ dependencies {
     modCompile "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
 
     if (rootProject.hasProperty('plume_version')) {
-        modCompile("net.dodogang:plume:${rootProject.plume_version}:fabric")
+        modCompile("net.dodogang.plume:plume-${rootProject.minecraft_version}:${rootProject.plume_version}:fabric")
     }
 }
 

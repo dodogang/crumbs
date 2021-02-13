@@ -11,7 +11,7 @@ public class CrumbsChestBlock extends ChestBlock implements BlockEntityProvider 
     public final ModelType modelType;
 
     public CrumbsChestBlock(ModelType modelType, Settings settings) {
-        super(settings, () -> CrumbsBlockEntityTypes.CRUMBS_CHEST);
+        super(settings, () -> CrumbsBlockEntityTypes.CRUMBS_CHEST.get());
 
         this.modelType = modelType;
     }

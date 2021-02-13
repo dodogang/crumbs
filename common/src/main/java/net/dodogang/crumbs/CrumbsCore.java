@@ -2,6 +2,7 @@ package net.dodogang.crumbs;
 
 import net.dodogang.ash.registry.ItemGroupBuilder;
 import net.dodogang.crumbs.block.CrumbsBlocks;
+import net.dodogang.crumbs.block.entity.CrumbsBlockEntityTypes;
 import net.dodogang.crumbs.event.RightClickBlockHandlers;
 import net.dodogang.crumbs.platform.AbstractPlatform;
 import net.minecraft.item.ItemGroup;
@@ -15,19 +16,20 @@ public class CrumbsCore {
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public static AbstractPlatform platform;
-    public static ItemGroup itemGroup = ItemGroupBuilder.build(getId("item_group"), () -> new ItemStack(CrumbsBlocks.OAK_BUNDLED_LOG));
+    public static ItemGroup itemGroup = ItemGroupBuilder.build(
+            getId("item_group"),
+            () -> new ItemStack(CrumbsBlocks.OAK_BUNDLED_LOG.get())
+    );
 
     public static void init(AbstractPlatform platform) {
         CrumbsCore.platform = platform;
 
-        new CrumbsBlocks();
-//        new CrumbsItems();
-//        new CrumbsBlockEntityType();
-        new RightClickBlockHandlers();
+        CrumbsBlocks.register();
+        CrumbsBlockEntityTypes.register();
     }
 
     public static void setup() {
-
+        new RightClickBlockHandlers();
     }
 
     public static Identifier getId(String name) {

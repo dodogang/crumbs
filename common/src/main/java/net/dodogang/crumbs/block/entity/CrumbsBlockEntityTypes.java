@@ -1,25 +1,41 @@
 package net.dodogang.crumbs.block.entity;
 
+import net.dodogang.ash.registry.BatchedRegister;
+import net.dodogang.ash.registry.RegistrySupplier;
 import net.dodogang.crumbs.CrumbsCore;
 import net.dodogang.crumbs.block.CrumbsBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 import java.util.function.Supplier;
 
 public class CrumbsBlockEntityTypes {
-    public static final BlockEntityType<CrumbsChestBlockEntity> CRUMBS_CHEST = register(
-            "chest", CrumbsChestBlockEntity::new,
-            CrumbsBlocks.SPRUCE_CHEST, CrumbsBlocks.BIRCH_CHEST, CrumbsBlocks.JUNGLE_CHEST, CrumbsBlocks.ACACIA_CHEST,
-            CrumbsBlocks.DARK_OAK_CHEST, CrumbsBlocks.CRIMSON_CHEST, CrumbsBlocks.WARPED_CHEST
-    );
+    private CrumbsBlockEntityTypes() {}
 
-    private static <T extends BlockEntity> BlockEntityType<T> register(String name, Supplier<T> beSupplier, Block... blocks) {
-        Identifier id = CrumbsCore.getId(name);
-        BlockEntityType<T> be = BlockEntityType.Builder.create(beSupplier, blocks).build(null);
-        CrumbsCore.platform.registerBlockEntityType(id, be);
-        return be;
+    public static RegistrySupplier<BlockEntityType<CrumbsChestBlockEntity>> CRUMBS_CHEST;
+
+    public static void register() {
+        BatchedRegister<BlockEntityType<?>> beBatchedRegister = BatchedRegister.create(
+                Registry.BLOCK_ENTITY_TYPE_KEY, CrumbsCore.MOD_ID
+        );
+
+        CRUMBS_CHEST = beBatchedRegister.add("chest", createBE(
+                CrumbsChestBlockEntity::new,
+                CrumbsBlocks.SPRUCE_CHEST.getEarly(),
+                CrumbsBlocks.BIRCH_CHEST.getEarly(),
+                CrumbsBlocks.JUNGLE_CHEST.getEarly(),
+                CrumbsBlocks.ACACIA_CHEST.getEarly(),
+                CrumbsBlocks.DARK_OAK_CHEST.getEarly(),
+                CrumbsBlocks.CRIMSON_CHEST.getEarly(),
+                CrumbsBlocks.WARPED_CHEST.getEarly()
+        ));
+
+        beBatchedRegister.register();
+    }
+
+    private static <T extends BlockEntity> BlockEntityType<T> createBE(Supplier<T> beSupplier, Block... blocks) {
+        return BlockEntityType.Builder.create(beSupplier, blocks).build(null);
     }
 }

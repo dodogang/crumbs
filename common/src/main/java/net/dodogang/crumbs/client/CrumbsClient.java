@@ -13,7 +13,6 @@ public class CrumbsClient {
     public static void init(AbstractPlatformClient platform) {
         CrumbsClient.platform = platform;
 
-        new CrumbsBlockEntityTypes();
         new CrumbsAtlasTextures();
     }
 
@@ -23,16 +22,16 @@ public class CrumbsClient {
     }
 
     public static void registerBlockEntityRenderers() {
-        platform.registerBlockEntityRenderer(CrumbsBlockEntityTypes.CRUMBS_CHEST, CrumbsChestRenderer::new);
+        platform.registerBlockEntityRenderer(CrumbsBlockEntityTypes.CRUMBS_CHEST.get(), CrumbsChestRenderer::new);
     }
 
     public static void registerBuiltInItemRenderers() {
-        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.SPRUCE_CHEST, new CrumbsChestBlockEntity(CrumbsBlocks.SPRUCE_CHEST));
-        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.BIRCH_CHEST, new CrumbsChestBlockEntity(CrumbsBlocks.BIRCH_CHEST));
-        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.JUNGLE_CHEST, new CrumbsChestBlockEntity(CrumbsBlocks.JUNGLE_CHEST));
-        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.ACACIA_CHEST, new CrumbsChestBlockEntity(CrumbsBlocks.ACACIA_CHEST));
-        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.DARK_OAK_CHEST, new CrumbsChestBlockEntity(CrumbsBlocks.DARK_OAK_CHEST));
-        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.CRIMSON_CHEST, new CrumbsChestBlockEntity(CrumbsBlocks.CRIMSON_CHEST));
-        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.WARPED_CHEST, new CrumbsChestBlockEntity(CrumbsBlocks.WARPED_CHEST));
+        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.SPRUCE_CHEST.get(), new CrumbsChestBlockEntity(CrumbsBlocks.SPRUCE_CHEST.get()));
+        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.BIRCH_CHEST.get(), new CrumbsChestBlockEntity(CrumbsBlocks.BIRCH_CHEST.get()));
+        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.JUNGLE_CHEST.get(), new CrumbsChestBlockEntity(CrumbsBlocks.JUNGLE_CHEST.get()));
+        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.ACACIA_CHEST.get(), new CrumbsChestBlockEntity(CrumbsBlocks.ACACIA_CHEST.get()));
+        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.DARK_OAK_CHEST.get(), new CrumbsChestBlockEntity(CrumbsBlocks.DARK_OAK_CHEST.get()));
+        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.CRIMSON_CHEST.get(), new CrumbsChestBlockEntity(CrumbsBlocks.CRIMSON_CHEST.get()));
+        platform.registerBuiltinItemRendererForBlock(CrumbsBlocks.WARPED_CHEST.get(), new CrumbsChestBlockEntity(CrumbsBlocks.WARPED_CHEST.get()));
     }
 }

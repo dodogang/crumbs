@@ -21,14 +21,14 @@ public class RightClickBlockHandlers {
 
     public RightClickBlockHandlers() {
         logToStrippedMap = new ImmutableMap.Builder<Block, Block>()
-                .put(CrumbsBlocks.OAK_BUNDLED_LOG, CrumbsBlocks.STRIPPED_OAK_BUNDLED_LOG)
-                .put(CrumbsBlocks.BIRCH_BUNDLED_LOG, CrumbsBlocks.STRIPPED_BIRCH_BUNDLED_LOG)
-                .put(CrumbsBlocks.SPRUCE_BUNDLED_LOG, CrumbsBlocks.STRIPPED_SPRUCE_BUNDLED_LOG)
-                .put(CrumbsBlocks.JUNGLE_BUNDLED_LOG, CrumbsBlocks.STRIPPED_JUNGLE_BUNDLED_LOG)
-                .put(CrumbsBlocks.ACACIA_BUNDLED_LOG, CrumbsBlocks.STRIPPED_ACACIA_BUNDLED_LOG)
-                .put(CrumbsBlocks.DARK_OAK_BUNDLED_LOG, CrumbsBlocks.STRIPPED_DARK_OAK_BUNDLED_LOG)
-                .put(CrumbsBlocks.CRIMSON_BUNDLED_STEM, CrumbsBlocks.STRIPPED_CRIMSON_BUNDLED_STEM)
-                .put(CrumbsBlocks.WARPED_BUNDLED_STEM, CrumbsBlocks.STRIPPED_WARPED_BUNDLED_STEM)
+                .put(CrumbsBlocks.OAK_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_OAK_BUNDLED_LOG.get())
+                .put(CrumbsBlocks.BIRCH_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_BIRCH_BUNDLED_LOG.get())
+                .put(CrumbsBlocks.SPRUCE_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_SPRUCE_BUNDLED_LOG.get())
+                .put(CrumbsBlocks.JUNGLE_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_JUNGLE_BUNDLED_LOG.get())
+                .put(CrumbsBlocks.ACACIA_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_ACACIA_BUNDLED_LOG.get())
+                .put(CrumbsBlocks.DARK_OAK_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_DARK_OAK_BUNDLED_LOG.get())
+                .put(CrumbsBlocks.CRIMSON_BUNDLED_STEM.get(), CrumbsBlocks.STRIPPED_CRIMSON_BUNDLED_STEM.get())
+                .put(CrumbsBlocks.WARPED_BUNDLED_STEM.get(), CrumbsBlocks.STRIPPED_WARPED_BUNDLED_STEM.get())
                 .build();
 
         CrumbsCore.platform.registerOnRightClickBlockHandler(this::stripLog);

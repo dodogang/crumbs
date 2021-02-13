@@ -9,11 +9,9 @@ import net.dodogang.crumbs.platform.AbstractPlatform;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -53,21 +51,6 @@ public class CrumbsFabric implements ModInitializer, AbstractPlatform {
         ArrayList<BlockState> blockStates = new ArrayList<>(fishermanAccessor.getBlockStates());
         blockStates.addAll(CrumbsBarrelBlock.MOD_BARRELS);
         fishermanAccessor.setBlockStates(ImmutableSet.copyOf(blockStates));
-    }
-
-    @Override
-    public void registerBlock(Identifier id, Block block) {
-        Registry.register(Registry.BLOCK, id, block);
-    }
-
-    @Override
-    public void registerItem(Identifier id, Item item) {
-        Registry.register(Registry.ITEM, id, item);
-    }
-
-    @Override
-    public void registerBlockEntityType(Identifier id, BlockEntityType<?> beType) {
-        Registry.register(Registry.BLOCK_ENTITY_TYPE, id, beType);
     }
 
     @Override

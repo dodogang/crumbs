@@ -88,31 +88,31 @@ public class CrumbsChestRenderer extends BlockEntityRenderer<CrumbsChestBlockEnt
     }
 
     private Identifier getTexture(Block block, ChestType modelType) {
-        if (block == CrumbsBlocks.BIRCH_CHEST && modelType == ChestType.SINGLE)
+        if (block == CrumbsBlocks.BIRCH_CHEST.get() && modelType == ChestType.SINGLE)
             return CrumbsAtlasTextures.BIRCH_CHEST;
-        if (block == CrumbsBlocks.BIRCH_CHEST && modelType == ChestType.RIGHT)
+        if (block == CrumbsBlocks.BIRCH_CHEST.get() && modelType == ChestType.RIGHT)
             return CrumbsAtlasTextures.BIRCH_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.JUNGLE_CHEST && modelType == ChestType.SINGLE)
+        else if (block == CrumbsBlocks.JUNGLE_CHEST.get() && modelType == ChestType.SINGLE)
             return CrumbsAtlasTextures.JUNGLE_CHEST;
-        else if (block == CrumbsBlocks.JUNGLE_CHEST && modelType == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.JUNGLE_CHEST.get() && modelType == ChestType.RIGHT)
             return CrumbsAtlasTextures.JUNGLE_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.ACACIA_CHEST && modelType == ChestType.SINGLE)
+        else if (block == CrumbsBlocks.ACACIA_CHEST.get() && modelType == ChestType.SINGLE)
             return CrumbsAtlasTextures.ACACIA_CHEST;
-        else if (block == CrumbsBlocks.ACACIA_CHEST && modelType == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.ACACIA_CHEST.get() && modelType == ChestType.RIGHT)
             return CrumbsAtlasTextures.ACACIA_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.DARK_OAK_CHEST && modelType == ChestType.SINGLE)
+        else if (block == CrumbsBlocks.DARK_OAK_CHEST.get() && modelType == ChestType.SINGLE)
             return CrumbsAtlasTextures.DARK_OAK_CHEST;
-        else if (block == CrumbsBlocks.DARK_OAK_CHEST && modelType == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.DARK_OAK_CHEST.get() && modelType == ChestType.RIGHT)
             return CrumbsAtlasTextures.DARK_OAK_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.CRIMSON_CHEST && modelType == ChestType.SINGLE)
+        else if (block == CrumbsBlocks.CRIMSON_CHEST.get() && modelType == ChestType.SINGLE)
             return CrumbsAtlasTextures.CRIMSON_CHEST;
-        else if (block == CrumbsBlocks.CRIMSON_CHEST && modelType == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.CRIMSON_CHEST.get() && modelType == ChestType.RIGHT)
             return CrumbsAtlasTextures.CRIMSON_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.WARPED_CHEST && modelType == ChestType.SINGLE)
+        else if (block == CrumbsBlocks.WARPED_CHEST.get() && modelType == ChestType.SINGLE)
             return CrumbsAtlasTextures.WARPED_CHEST;
-        else if (block == CrumbsBlocks.WARPED_CHEST && modelType == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.WARPED_CHEST.get() && modelType == ChestType.RIGHT)
             return CrumbsAtlasTextures.WARPED_DOUBLE_CHEST;
-        else if (block == CrumbsBlocks.SPRUCE_CHEST && modelType == ChestType.RIGHT)
+        else if (block == CrumbsBlocks.SPRUCE_CHEST.get() && modelType == ChestType.RIGHT)
             return CrumbsAtlasTextures.SPRUCE_DOUBLE_CHEST;
         else
             return CrumbsAtlasTextures.SPRUCE_CHEST;

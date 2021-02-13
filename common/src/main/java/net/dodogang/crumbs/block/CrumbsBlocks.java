@@ -2,7 +2,7 @@ package net.dodogang.crumbs.block;
 
 import net.dodogang.ash.registry.BatchedRegister;
 import net.dodogang.ash.registry.RegistrySupplier;
-import net.dodogang.crumbs.CrumbsCore;
+import net.dodogang.crumbs.Crumbs;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -14,7 +14,7 @@ import java.util.function.Function;
 public class CrumbsBlocks {
     private CrumbsBlocks() {}
 
-    public static final Item.Settings DEFAULT_SETTINGS = new Item.Settings().group(CrumbsCore.itemGroup);
+    public static final Item.Settings DEFAULT_SETTINGS = new Item.Settings().group(Crumbs.itemGroup);
 
     public static RegistrySupplier<Block> OAK_BUNDLED_LOG;
     public static RegistrySupplier<Block> SPRUCE_BUNDLED_LOG;
@@ -197,8 +197,8 @@ public class CrumbsBlocks {
         private final BatchedRegister<Item> itemBatchedRegister;
 
         private BlockItemRegistry() {
-            this.blockBatchedRegister = BatchedRegister.create(Registry.BLOCK_KEY, CrumbsCore.MOD_ID);
-            this.itemBatchedRegister = BatchedRegister.create(Registry.ITEM_KEY, CrumbsCore.MOD_ID);
+            this.blockBatchedRegister = BatchedRegister.create(Registry.BLOCK_KEY, Crumbs.MOD_ID);
+            this.itemBatchedRegister = BatchedRegister.create(Registry.ITEM_KEY, Crumbs.MOD_ID);
         }
 
         private void register() {

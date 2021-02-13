@@ -1,7 +1,7 @@
 package net.dodogang.crumbs.event;
 
 import com.google.common.collect.ImmutableMap;
-import net.dodogang.crumbs.CrumbsCore;
+import net.dodogang.crumbs.Crumbs;
 import net.dodogang.crumbs.block.CrumbsBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -31,14 +31,14 @@ public class RightClickBlockHandlers {
                 .put(CrumbsBlocks.WARPED_BUNDLED_STEM.get(), CrumbsBlocks.STRIPPED_WARPED_BUNDLED_STEM.get())
                 .build();
 
-        CrumbsCore.platform.registerOnRightClickBlockHandler(this::stripLog);
+        Crumbs.platform.registerOnRightClickBlockHandler(this::stripLog);
     }
 
     public ActionResult stripLog(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction dir) {
         BlockState state = world.getBlockState(pos);
         ItemStack stack = player.getStackInHand(hand);
 
-        if (CrumbsCore.platform.isAxe(stack) && logToStrippedMap.containsKey(state.getBlock())) {
+        if (Crumbs.platform.isAxe(stack) && logToStrippedMap.containsKey(state.getBlock())) {
             world.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
             if (!world.isClient) {
                 Block strippedLog = logToStrippedMap.get(state.getBlock());

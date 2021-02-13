@@ -1,6 +1,6 @@
 package net.dodogang.crumbs.client.renderer;
 
-import net.dodogang.crumbs.CrumbsCore;
+import net.dodogang.crumbs.Crumbs;
 import net.dodogang.crumbs.client.CrumbsClient;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.util.Identifier;
@@ -26,7 +26,7 @@ public class CrumbsAtlasTextures {
     }
 
     private static Identifier register(Identifier atlas, String spritePath) {
-        Identifier spriteLocation = CrumbsCore.getId(spritePath);
+        Identifier spriteLocation = Crumbs.getId(spritePath);
         CrumbsClient.platform.registerSpritesToAtlas(atlas, spriteLocation);
         return spriteLocation;
     }

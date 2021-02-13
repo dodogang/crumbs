@@ -1,7 +1,7 @@
 package net.dodogang.crumbs.mixin;
 
 import com.google.gson.Gson;
-import net.dodogang.crumbs.CrumbsCore;
+import net.dodogang.crumbs.Crumbs;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeManager;
@@ -30,7 +30,7 @@ public abstract class RecipeManagerMixin extends JsonDataLoader {
             RecipeType<T> type, C inventory, World world, CallbackInfoReturnable<Optional<T>> cir
     ) {
         Optional<T> firstCrumbsMatch = this.getAllMatches(type, inventory, world).stream()
-                .filter(t -> t.getId().getNamespace().equals(CrumbsCore.MOD_ID))
+                .filter(t -> t.getId().getNamespace().equals(Crumbs.MOD_ID))
                 .findFirst();
         if (firstCrumbsMatch.isPresent()) {
             cir.setReturnValue(firstCrumbsMatch);

@@ -2,7 +2,7 @@ package net.dodogang.crumbs.block.entity;
 
 import net.dodogang.ash.registry.BatchedRegister;
 import net.dodogang.ash.registry.RegistrySupplier;
-import net.dodogang.crumbs.CrumbsCore;
+import net.dodogang.crumbs.Crumbs;
 import net.dodogang.crumbs.block.CrumbsBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntity;
@@ -18,7 +18,7 @@ public class CrumbsBlockEntityTypes {
 
     public static void register() {
         BatchedRegister<BlockEntityType<?>> beBatchedRegister = BatchedRegister.create(
-                Registry.BLOCK_ENTITY_TYPE_KEY, CrumbsCore.MOD_ID
+                Registry.BLOCK_ENTITY_TYPE_KEY, Crumbs.MOD_ID
         );
 
         CRUMBS_CHEST = beBatchedRegister.add("chest", createBE(

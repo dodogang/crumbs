@@ -3,7 +3,7 @@ package net.dodogang.crumbs.forge;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Function5;
 import net.dodogang.ash.forge.ModEventBus;
-import net.dodogang.crumbs.CrumbsCore;
+import net.dodogang.crumbs.Crumbs;
 import net.dodogang.crumbs.block.CrumbsBarrelBlock;
 import net.dodogang.crumbs.forge.client.CrumbsClientForge;
 import net.dodogang.crumbs.mixin.PointOfInterestTypeAccessor;
@@ -30,13 +30,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
 
-@Mod(CrumbsCore.MOD_ID)
+@Mod(Crumbs.MOD_ID)
 public class CrumbsForge implements AbstractPlatform {
-    private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, CrumbsCore.MOD_ID);
+    private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Crumbs.MOD_ID);
 
     public CrumbsForge() {
-        ModEventBus.registerModEventBus(CrumbsCore.MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
-        CrumbsCore.init(this);
+        ModEventBus.registerModEventBus(Crumbs.MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
+        Crumbs.init(this);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> CrumbsClientForge::new);
 
         BLOCK_ENTITY_REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -45,7 +45,7 @@ public class CrumbsForge implements AbstractPlatform {
     }
 
     public void setup(FMLCommonSetupEvent event) {
-        CrumbsCore.setup();
+        Crumbs.setup();
         registerPointsOfInterest();
     }
 

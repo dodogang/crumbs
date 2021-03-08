@@ -83,13 +83,13 @@ public class CrumbsBlocks {
     public static final Block CRIMSON_LANTERN = registerCopy("crimson_lantern", WoodLanternBlock::new, Blocks.CRIMSON_PLANKS);
     public static final Block WARPED_LANTERN = registerCopy("warped_lantern", WoodLanternBlock::new, Blocks.WARPED_PLANKS);
 
-    public static final Block SPRUCE_CHEST = registerChestCopy("spruce_chest", CrumbsChestBlock.ModelType.SPRUCE, Blocks.SPRUCE_PLANKS);
-    public static final Block BIRCH_CHEST = registerChestCopy("birch_chest", CrumbsChestBlock.ModelType.BIRCH, Blocks.BIRCH_PLANKS);
-    public static final Block JUNGLE_CHEST = registerChestCopy("jungle_chest", CrumbsChestBlock.ModelType.OAK, Blocks.JUNGLE_PLANKS);
-    public static final Block ACACIA_CHEST = registerChestCopy("acacia_chest", CrumbsChestBlock.ModelType.ACACIA, Blocks.ACACIA_PLANKS);
-    public static final Block DARK_OAK_CHEST = registerChestCopy("dark_oak_chest", CrumbsChestBlock.ModelType.OAK, Blocks.DARK_OAK_PLANKS);
-    public static final Block CRIMSON_CHEST = registerChestCopy("crimson_chest", CrumbsChestBlock.ModelType.CRIMSON, Blocks.CRIMSON_PLANKS);
-    public static final Block WARPED_CHEST = registerChestCopy("warped_chest", CrumbsChestBlock.ModelType.CRIMSON, Blocks.WARPED_PLANKS);
+//    public static final Block SPRUCE_CHEST = registerChestCopy("spruce_chest", CrumbsChestBlock.ModelType.SPRUCE, Blocks.SPRUCE_PLANKS);
+//    public static final Block BIRCH_CHEST = registerChestCopy("birch_chest", CrumbsChestBlock.ModelType.BIRCH, Blocks.BIRCH_PLANKS);
+//    public static final Block JUNGLE_CHEST = registerChestCopy("jungle_chest", CrumbsChestBlock.ModelType.OAK, Blocks.JUNGLE_PLANKS);
+//    public static final Block ACACIA_CHEST = registerChestCopy("acacia_chest", CrumbsChestBlock.ModelType.ACACIA, Blocks.ACACIA_PLANKS);
+//    public static final Block DARK_OAK_CHEST = registerChestCopy("dark_oak_chest", CrumbsChestBlock.ModelType.OAK, Blocks.DARK_OAK_PLANKS);
+//    public static final Block CRIMSON_CHEST = registerChestCopy("crimson_chest", CrumbsChestBlock.ModelType.CRIMSON, Blocks.CRIMSON_PLANKS);
+//    public static final Block WARPED_CHEST = registerChestCopy("warped_chest", CrumbsChestBlock.ModelType.CRIMSON, Blocks.WARPED_PLANKS);
 
     // Stone Blocks
     public static final Block COBBLED_GRANITE = registerCopy("cobbled_granite", Block::new, Blocks.GRANITE);
@@ -142,7 +142,7 @@ public class CrumbsBlocks {
     public static final Block CHISELED_RED_NETHER_BRICKS = registerCopy("chiseled_red_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
     public static final Block CRACKED_RED_NETHER_BRICKS = registerCopy("cracked_red_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
 
-    public static final Block RED_NETHER_BRICK_FENCE = registerCopy("red_nether_brick_fence", FenceBlock::new, Blocks.RED_NETHER_BRICKS);
+//    public static final Block RED_NETHER_BRICK_FENCE = registerCopy("red_nether_brick_fence", FenceBlock::new, Blocks.RED_NETHER_BRICKS);
 
     public static final Block BLUE_NETHER_BRICKS = registerCopy("blue_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
     public static final Block CHISELED_BLUE_NETHER_BRICKS = registerCopy("chiseled_blue_nether_bricks", Block::new, Blocks.RED_NETHER_BRICKS);
@@ -151,11 +151,11 @@ public class CrumbsBlocks {
     public static final Block BLUE_NETHER_BRICK_WALL = registerCopy("blue_nether_brick_wall", WallBlock::new, BLUE_NETHER_BRICKS);
     public static final Block BLUE_NETHER_BRICK_STAIRS = registerStairCopy("blue_nether_brick_stairs", BLUE_NETHER_BRICKS);
     public static final Block BLUE_NETHER_BRICK_SLAB = registerCopy("blue_nether_brick_slab", SlabBlock::new, BLUE_NETHER_BRICKS);
-    public static final Block BLUE_NETHER_BRICK_FENCE = registerCopy("blue_nether_brick_fence", FenceBlock::new, BLUE_NETHER_BRICKS);
+//    public static final Block BLUE_NETHER_BRICK_FENCE = registerCopy("blue_nether_brick_fence", FenceBlock::new, BLUE_NETHER_BRICKS);
 
-    private static <T extends Block> T registerChestCopy(String name, CrumbsChestBlock.ModelType modelType, Block toCopy) {
-        return (T) register(name, new CrumbsChestBlock(modelType, AbstractBlock.Settings.copy(toCopy)));
-    }
+//    private static <T extends Block> T registerChestCopy(String name, CrumbsChestBlock.ModelType modelType, Block toCopy) {
+//        return (T) register(name, new CrumbsChestBlock(modelType, AbstractBlock.Settings.copy(toCopy)));
+//    }
 
     private static <T extends Block> T registerStairCopy(String name, Block toCopy) {
         return (T) register(name, new PublicStairsBlock(toCopy.getDefaultState(), AbstractBlock.Settings.copy(toCopy)));

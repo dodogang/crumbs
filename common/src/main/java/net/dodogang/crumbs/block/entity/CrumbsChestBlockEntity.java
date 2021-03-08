@@ -4,15 +4,15 @@ import net.dodogang.crumbs.block.CrumbsBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.ChestBlockEntity;
 
-public class CrumbsChestBlockEntity extends ChestBlockEntity {
-    public final Block block;
-
-    public CrumbsChestBlockEntity() {
-        this(CrumbsBlocks.SPRUCE_CHEST);
-    }
-
-    public CrumbsChestBlockEntity(Block block) {
-        super(CrumbsBlockEntityTypes.CRUMBS_CHEST);
-        this.block = block;
-    }
-}
+//public class CrumbsChestBlockEntity extends ChestBlockEntity {
+//    public final Block block;
+//
+//    public CrumbsChestBlockEntity() {
+//        this(CrumbsBlocks.SPRUCE_CHEST);
+//    }
+//
+//    public CrumbsChestBlockEntity(Block block) {
+//        super(CrumbsBlockEntityTypes.CRUMBS_CHEST);
+//        this.block = block;
+//    }
+//}

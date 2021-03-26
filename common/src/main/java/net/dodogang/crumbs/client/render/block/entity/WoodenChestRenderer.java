@@ -153,4 +153,9 @@ public class WoodenChestRenderer extends BlockEntityRenderer<WoodenChestBlockEnt
         }
         return CrumbsAtlasTextures.SPRUCE_CHEST;
     }
+
+    @Override
+    public boolean rendersOutsideBoundingBox(WoodenChestBlockEntity blockEntity) {
+        return true;
+    }
 }

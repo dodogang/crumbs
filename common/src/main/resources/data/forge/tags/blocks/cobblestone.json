@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "values": [
+        "crumbs:cobbled_granite",
+        "crumbs:cobbled_diorite",
+        "crumbs:cobbled_andesite"
+    ]
+}

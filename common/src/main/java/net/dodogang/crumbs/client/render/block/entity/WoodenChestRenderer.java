@@ -1,6 +1,8 @@
 package net.dodogang.crumbs.client.render.block.entity;
 
 import com.google.common.collect.ImmutableMap;
+import com.mojang.datafixers.util.Pair;
+import net.dodogang.crumbs.Crumbs;
 import net.dodogang.crumbs.block.CrumbsBlocks;
 import net.dodogang.crumbs.block.WoodenChestBlock;
 import net.dodogang.crumbs.block.entity.WoodenChestBlockEntity;
@@ -24,8 +26,6 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Pair;
-import net.minecraft.util.Util;
 
 public class WoodenChestRenderer extends BlockEntityRenderer<WoodenChestBlockEntity> {
     private static final ImmutableMap<Pair<WoodenChestBlock.ModelType, ChestType>, ChestModel> MODELS;
@@ -71,9 +71,10 @@ public class WoodenChestRenderer extends BlockEntityRenderer<WoodenChestBlockEnt
 
             ChestModel model = MODELS.get(new Pair<>(modelType, chestType));
             if (model == null) {
-                Util.throwOrPause(new IllegalStateException(String.format(
-                        "Missing model definition for ModelType: %s, ChestType: %s", modelType, chestType
-                )));
+                Crumbs.LOGGER.error(
+                        String.format("Missing model definition for ModelType: %s, ChestType: %s", modelType, chestType)
+                );
+                return;
             }
 
             matrices.push();
@@ -116,7 +117,9 @@ public class WoodenChestRenderer extends BlockEntityRenderer<WoodenChestBlockEnt
     private Identifier getTexture(Block block, ChestType chestType) {
         switch (chestType) {
             case SINGLE:
-                if (block == CrumbsBlocks.SPRUCE_CHEST.get())
+                if (block == CrumbsBlocks.OAK_CHEST.get())
+                    return CrumbsAtlasTextures.OAK_CHEST;
+                else if (block == CrumbsBlocks.SPRUCE_CHEST.get())
                     return CrumbsAtlasTextures.SPRUCE_CHEST;
                 else if (block == CrumbsBlocks.BIRCH_CHEST.get())
                     return CrumbsAtlasTextures.BIRCH_CHEST;
@@ -131,7 +134,9 @@ public class WoodenChestRenderer extends BlockEntityRenderer<WoodenChestBlockEnt
                 else if (block == CrumbsBlocks.WARPED_CHEST.get())
                     return CrumbsAtlasTextures.WARPED_CHEST;
             case RIGHT:
-                if (block == CrumbsBlocks.SPRUCE_CHEST.get())
+                if (block == CrumbsBlocks.OAK_CHEST.get())
+                    return CrumbsAtlasTextures.OAK_DOUBLE_CHEST;
+                else if (block == CrumbsBlocks.SPRUCE_CHEST.get())
                     return CrumbsAtlasTextures.SPRUCE_DOUBLE_CHEST;
                 else if (block == CrumbsBlocks.BIRCH_CHEST.get())
                     return CrumbsAtlasTextures.BIRCH_DOUBLE_CHEST;

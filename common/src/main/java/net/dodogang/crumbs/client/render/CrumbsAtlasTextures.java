@@ -8,6 +8,8 @@ import net.minecraft.util.Identifier;
 public class CrumbsAtlasTextures {
     private CrumbsAtlasTextures() {}
 
+    public static final Identifier OAK_CHEST = chestSpriteId("oak");
+    public static final Identifier OAK_DOUBLE_CHEST = chestSpriteId("oak_double");
     public static final Identifier SPRUCE_CHEST = chestSpriteId("spruce");
     public static final Identifier SPRUCE_DOUBLE_CHEST = chestSpriteId("spruce_double");
     public static final Identifier BIRCH_CHEST = chestSpriteId("birch");
@@ -26,6 +28,8 @@ public class CrumbsAtlasTextures {
     public static void register() {
         CrumbsClient.platform.registerSpritesToAtlas(
                 TexturedRenderLayers.CHEST_ATLAS_TEXTURE,
+                OAK_CHEST,
+                OAK_DOUBLE_CHEST,
                 SPRUCE_CHEST,
                 SPRUCE_DOUBLE_CHEST,
                 BIRCH_CHEST,

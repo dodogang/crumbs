@@ -36,6 +36,7 @@ public class CrumbsBlocks {
     public static RegistrySupplier<Block> CRIMSON_BARREL;
     public static RegistrySupplier<Block> WARPED_BARREL;
 
+    public static RegistrySupplier<WoodenChestBlock> OAK_CHEST;
     public static RegistrySupplier<WoodenChestBlock> SPRUCE_CHEST;
     public static RegistrySupplier<WoodenChestBlock> BIRCH_CHEST;
     public static RegistrySupplier<WoodenChestBlock> JUNGLE_CHEST;
@@ -121,13 +122,14 @@ public class CrumbsBlocks {
         batch.addCopy("crimson_lantern", WoodenLanternBlock::new, Blocks.CRIMSON_PLANKS);
         batch.addCopy("warped_lantern", WoodenLanternBlock::new, Blocks.WARPED_PLANKS);
 
-        SPRUCE_CHEST = addChestCopy(batch, "spruce_chest", WoodenChestBlock.ModelType.SPRUCE, Blocks.SPRUCE_PLANKS);
-        BIRCH_CHEST = addChestCopy(batch, "birch_chest", WoodenChestBlock.ModelType.BIRCH, Blocks.BIRCH_PLANKS);
-        JUNGLE_CHEST = addChestCopy(batch, "jungle_chest", WoodenChestBlock.ModelType.OAK, Blocks.JUNGLE_PLANKS);
-        ACACIA_CHEST = addChestCopy(batch, "acacia_chest", WoodenChestBlock.ModelType.ACACIA, Blocks.ACACIA_PLANKS);
-        DARK_OAK_CHEST = addChestCopy(batch, "dark_oak_chest", WoodenChestBlock.ModelType.OAK, Blocks.DARK_OAK_PLANKS);
-        CRIMSON_CHEST = addChestCopy(batch, "crimson_chest", WoodenChestBlock.ModelType.CRIMSON, Blocks.CRIMSON_PLANKS);
-        WARPED_CHEST = addChestCopy(batch, "warped_chest", WoodenChestBlock.ModelType.CRIMSON, Blocks.WARPED_PLANKS);
+        OAK_CHEST = addChestCopy(batch, "oak_chest", WoodenChestBlock.ModelType.OAK, Blocks.CHEST);
+        SPRUCE_CHEST = addChestCopy(batch, "spruce_chest", WoodenChestBlock.ModelType.SPRUCE, Blocks.CHEST);
+        BIRCH_CHEST = addChestCopy(batch, "birch_chest", WoodenChestBlock.ModelType.BIRCH, Blocks.CHEST);
+        JUNGLE_CHEST = addChestCopy(batch, "jungle_chest", WoodenChestBlock.ModelType.OAK, Blocks.CHEST);
+        ACACIA_CHEST = addChestCopy(batch, "acacia_chest", WoodenChestBlock.ModelType.ACACIA, Blocks.CHEST);
+        DARK_OAK_CHEST = addChestCopy(batch, "dark_oak_chest", WoodenChestBlock.ModelType.OAK, Blocks.CHEST);
+        CRIMSON_CHEST = addChestCopy(batch, "crimson_chest", WoodenChestBlock.ModelType.CRIMSON, Blocks.CHEST);
+        WARPED_CHEST = addChestCopy(batch, "warped_chest", WoodenChestBlock.ModelType.CRIMSON, Blocks.CHEST);
 
         // -------- Stone Blocks --------
         // ------------------------------

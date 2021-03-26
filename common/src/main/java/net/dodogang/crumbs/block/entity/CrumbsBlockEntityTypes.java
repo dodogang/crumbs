@@ -22,6 +22,7 @@ public class CrumbsBlockEntityTypes {
                 "chest",
                 BlockEntityType.Builder.create(
                     WoodenChestBlockEntity::new,
+                    CrumbsBlocks.OAK_CHEST.getInitialValue(),
                     CrumbsBlocks.SPRUCE_CHEST.getInitialValue(),
                     CrumbsBlocks.BIRCH_CHEST.getInitialValue(),
                     CrumbsBlocks.JUNGLE_CHEST.getInitialValue(),

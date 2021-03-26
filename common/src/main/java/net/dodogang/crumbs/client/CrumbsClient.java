@@ -29,6 +29,10 @@ public class CrumbsClient {
 
     public static void registerBuiltInItemRenderers() {
         platform.registerBuiltInItemRendererForBlock(
+                CrumbsBlocks.OAK_CHEST.get(),
+                new WoodenChestBlockEntity(CrumbsBlocks.OAK_CHEST.get())
+        );
+        platform.registerBuiltInItemRendererForBlock(
                 CrumbsBlocks.SPRUCE_CHEST.get(),
                 new WoodenChestBlockEntity(CrumbsBlocks.SPRUCE_CHEST.get())
         );

@@ -1,24 +1,24 @@
 package net.dodogang.crumbs.block;
 
 import net.dodogang.crumbs.block.entity.CrumbsBlockEntityTypes;
-import net.dodogang.crumbs.block.entity.CrumbsChestBlockEntity;
+import net.dodogang.crumbs.block.entity.WoodenChestBlockEntity;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.ChestBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.world.BlockView;
 
-public class CrumbsChestBlock extends ChestBlock implements BlockEntityProvider {
+public class WoodenChestBlock extends ChestBlock implements BlockEntityProvider {
     public final ModelType modelType;
 
-    public CrumbsChestBlock(ModelType modelType, Settings settings) {
-        super(settings, () -> CrumbsBlockEntityTypes.CRUMBS_CHEST.get());
+    public WoodenChestBlock(ModelType modelType, Settings settings) {
+        super(settings, () -> CrumbsBlockEntityTypes.WOODEN_CHEST.get());
 
         this.modelType = modelType;
     }
 
     @Override
-    public BlockEntity createBlockEntity(BlockView world) {
-        return new CrumbsChestBlockEntity(this);
+    public BlockEntity createBlockEntity(BlockView blockView) {
+        return new WoodenChestBlockEntity(this);
     }
 
     public enum ModelType {

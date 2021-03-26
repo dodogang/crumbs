@@ -1,27 +1,31 @@
 package net.dodogang.crumbs;
 
-import net.dodogang.ash.registry.ItemGroupBuilder;
 import net.dodogang.crumbs.block.CrumbsBlocks;
 import net.dodogang.crumbs.block.entity.CrumbsBlockEntityTypes;
 import net.dodogang.crumbs.event.RightClickBlockHandlers;
 import net.dodogang.crumbs.platform.AbstractPlatform;
+import net.dodogang.plume.ash.registry.ItemGroupBuilder;
+import net.dodogang.plume.registry.PointOfInterestTypeAppender;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.poi.PointOfInterestType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Crumbs {
+    private Crumbs() {}
+
     public static final String MOD_ID = "crumbs";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public static AbstractPlatform platform;
-    public static ItemGroup itemGroup = ItemGroupBuilder.build(
-            getId("item_group"),
+    public static final ItemGroup ITEM_GROUP = ItemGroupBuilder.build(
+            new Identifier(MOD_ID, "item_group"),
             () -> new ItemStack(CrumbsBlocks.OAK_BUNDLED_LOG.get())
     );
 
-    public static void init(AbstractPlatform platform) {
+    public static void initialize(AbstractPlatform platform) {
         Crumbs.platform = platform;
 
         CrumbsBlocks.register();
@@ -29,10 +33,22 @@ public class Crumbs {
     }
 
     public static void setup() {
-        new RightClickBlockHandlers();
+        RightClickBlockHandlers.register();
+
+        registerToPointOfInterests();
     }
 
-    public static Identifier getId(String name) {
-        return new Identifier(MOD_ID, name);
+    private static void registerToPointOfInterests() {
+        // Register barrels to fisherman point of interest.
+        PointOfInterestTypeAppender.appendBlocks(
+                PointOfInterestType.FISHERMAN,
+                CrumbsBlocks.OAK_BARREL.get(),
+                CrumbsBlocks.BIRCH_BARREL.get(),
+                CrumbsBlocks.JUNGLE_BARREL.get(),
+                CrumbsBlocks.ACACIA_BARREL.get(),
+                CrumbsBlocks.DARK_OAK_BARREL.get(),
+                CrumbsBlocks.CRIMSON_BARREL.get(),
+                CrumbsBlocks.WARPED_BARREL.get()
+        );
     }
 }

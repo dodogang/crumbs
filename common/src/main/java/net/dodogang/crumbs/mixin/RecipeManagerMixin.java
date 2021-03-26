@@ -19,17 +19,35 @@ import java.util.Optional;
 
 @Mixin(RecipeManager.class)
 public abstract class RecipeManagerMixin extends JsonDataLoader {
-    @Shadow public abstract <C extends Inventory, T extends Recipe<C>> List<T> getAllMatches(RecipeType<T> type, C inventory, World world);
 
-    public RecipeManagerMixin(Gson gson, String dataType) {
-        super(gson, dataType);
+    @Shadow public abstract <C extends Inventory, T extends Recipe<C>> List<T> getAllMatches(
+            RecipeType<T> recipeType,
+            C inventory,
+            World world
+    );
+
+    public RecipeManagerMixin(Gson gson, String string) {
+        super(gson, string);
     }
 
+    /**
+     * {@link RecipeManager#getFirstMatch} returns the result of a crafting
+     * recipe. Because Crumbs has recipes that conflict with vanilla, this
+     * mixin makes crumbs results always return in cases of conflict.
+     *
+     * Maybe this isn't the best solution... but as far as I can tell this
+     * shouldn't break any mods or modpacks. If it does, please report it
+     * to the issue tracker and I will look into better solutions.
+     */
     @Inject(method = "getFirstMatch", at = @At("HEAD"), cancellable = true)
     private <C extends Inventory, T extends Recipe<C>> void crumbs_getFirstMatch(
-            RecipeType<T> type, C inventory, World world, CallbackInfoReturnable<Optional<T>> cir
+            RecipeType<T> type,
+            C inventory,
+            World world,
+            CallbackInfoReturnable<Optional<T>> cir
     ) {
-        Optional<T> firstCrumbsMatch = this.getAllMatches(type, inventory, world).stream()
+        Optional<T> firstCrumbsMatch = this.getAllMatches(type, inventory, world)
+                .stream()
                 .filter(t -> t.getId().getNamespace().equals(Crumbs.MOD_ID))
                 .findFirst();
         if (firstCrumbsMatch.isPresent()) {

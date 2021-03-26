@@ -9,6 +9,7 @@
     ],
     "contact": {
         "homepage": "https://crumbs.dodogang.net",
+        "issues": "https://github.com/dodogang/crumbs/issues",
         "sources": "https://github.com/dodogang/crumbs"
     },
     "license": "MIT",
@@ -19,7 +20,7 @@
             "net.dodogang.crumbs.fabric.CrumbsFabric"
         ],
         "client": [
-            "net.dodogang.crumbs.fabric.client.CrumbsClientFabric"
+            "net.dodogang.crumbs.client.fabric.CrumbsClientFabric"
         ]
     },
     "mixins": [
@@ -34,8 +35,12 @@
         "flamingo": "*"
     },
     "custom": {
-        "modmenu:api": false,
-        "modmenu:clientsideOnly": false,
-        "modmenu:parent": ""
+        "modmenu": {
+            "badges": [],
+            "links": {
+                "crumbs.discord": "https://discord.gg/APPWa6s"
+            },
+            "parent": "plume"
+        }
     }
 }

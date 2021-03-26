@@ -17,9 +17,11 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
 public class RightClickBlockHandlers {
-    private final ImmutableMap<Block, Block> logToStrippedMap;
+    private RightClickBlockHandlers() {}
 
-    public RightClickBlockHandlers() {
+    private static ImmutableMap<Block, Block> logToStrippedMap;
+
+    public static void register() {
         logToStrippedMap = new ImmutableMap.Builder<Block, Block>()
                 .put(CrumbsBlocks.OAK_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_OAK_BUNDLED_LOG.get())
                 .put(CrumbsBlocks.BIRCH_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_BIRCH_BUNDLED_LOG.get())
@@ -31,10 +33,10 @@ public class RightClickBlockHandlers {
                 .put(CrumbsBlocks.WARPED_BUNDLED_STEM.get(), CrumbsBlocks.STRIPPED_WARPED_BUNDLED_STEM.get())
                 .build();
 
-        Crumbs.platform.registerOnRightClickBlockHandler(this::stripLog);
+        Crumbs.platform.registerOnRightClickBlockHandler(RightClickBlockHandlers::stripLog);
     }
 
-    public ActionResult stripLog(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction dir) {
+    public static ActionResult stripLog(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction dir) {
         BlockState state = world.getBlockState(pos);
         ItemStack stack = player.getStackInHand(hand);
 
@@ -43,10 +45,15 @@ public class RightClickBlockHandlers {
             if (!world.isClient) {
                 Block strippedLog = logToStrippedMap.get(state.getBlock());
 
-                world.setBlockState(pos, strippedLog.getDefaultState().with(PillarBlock.AXIS, state.get(PillarBlock.AXIS)), 11);
+                world.setBlockState(
+                        pos,
+                        strippedLog.getDefaultState().with(PillarBlock.AXIS, state.get(PillarBlock.AXIS)),
+                        11
+                );
+
                 if (!player.isCreative()) {
-                    stack.damage(1, player, (playerX) -> {
-                        playerX.sendToolBreakStatus(hand);
+                    stack.damage(1, player, (_player) -> {
+                        _player.sendToolBreakStatus(hand);
                     });
                 }
             }

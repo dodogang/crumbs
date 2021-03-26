@@ -1,22 +1,17 @@
 package net.dodogang.crumbs.forge;
 
-import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Function5;
-import net.dodogang.ash.forge.ModEventBus;
 import net.dodogang.crumbs.Crumbs;
-import net.dodogang.crumbs.block.CrumbsBarrelBlock;
-import net.dodogang.crumbs.forge.client.CrumbsClientForge;
-import net.dodogang.crumbs.mixin.PointOfInterestTypeAccessor;
+import net.dodogang.crumbs.client.forge.CrumbsClientForge;
 import net.dodogang.crumbs.platform.AbstractPlatform;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntityType;
+import net.dodogang.plume.ash.forge.ModEventBus;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.*;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-import net.minecraft.world.poi.PointOfInterestType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.ToolType;
@@ -25,47 +20,21 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.ArrayList;
 
 @Mod(Crumbs.MOD_ID)
 public class CrumbsForge implements AbstractPlatform {
-    private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Crumbs.MOD_ID);
-
     public CrumbsForge() {
         ModEventBus.registerModEventBus(Crumbs.MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
-        Crumbs.init(this);
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> CrumbsClientForge::new);
 
-        BLOCK_ENTITY_REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
+        Crumbs.initialize(this);
+
+        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> CrumbsClientForge::new);
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     }
 
     public void setup(FMLCommonSetupEvent event) {
         Crumbs.setup();
-        registerPointsOfInterest();
-    }
-
-    public static void registerPointsOfInterest() {
-        // Copied from PoiType#registerBlockStates
-        // Edited to allow adding blocks to a Poi
-        CrumbsBarrelBlock.MOD_BARRELS.forEach((barrel) -> {
-            PointOfInterestType poiType = PointOfInterestTypeAccessor.getBlockStatePoiMap()
-                    .put(barrel, PointOfInterestType.FISHERMAN);
-            if (poiType != null) {
-                throw Util.throwOrPause(new IllegalStateException(
-                        String.format("%s is defined in too many tags", barrel)
-                ));
-            }
-        });
-        PointOfInterestTypeAccessor fishermanAccessor = (PointOfInterestTypeAccessor) PointOfInterestType.FISHERMAN;
-
-        ArrayList<BlockState> blockStates = new ArrayList<>(fishermanAccessor.getBlockStates());
-        blockStates.addAll(CrumbsBarrelBlock.MOD_BARRELS);
-        fishermanAccessor.setBlockStates(ImmutableSet.copyOf(blockStates));
     }
 
     @Override
@@ -78,7 +47,7 @@ public class CrumbsForge implements AbstractPlatform {
     }
 
     @Override
-    public boolean isAxe(ItemStack item) {
-        return item.getItem().getToolTypes(item).contains(ToolType.AXE);
+    public boolean isAxe(ItemStack stack) {
+        return stack.getItem().getToolTypes(stack).contains(ToolType.AXE);
     }
 }

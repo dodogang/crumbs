@@ -12,5 +12,5 @@ import net.minecraft.world.World;
 public interface AbstractPlatform {
     void registerOnRightClickBlockHandler(Function5<PlayerEntity, World, Hand, BlockPos, Direction, ActionResult> event);
 
-    boolean isAxe(ItemStack item);
+    boolean isAxe(ItemStack stack);
 }

@@ -8,6 +8,7 @@ out/
 output/
 bin/
 libs/
+logs/
 
 .classpath
 .project
@@ -17,4 +18,3 @@ classes/
 .vscode
 .settings
 *.launch
-logs/

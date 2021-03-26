@@ -1,8 +1,8 @@
-package net.dodogang.crumbs.forge.client;
+package net.dodogang.crumbs.client.forge;
 
 import net.dodogang.crumbs.client.CrumbsClient;
 import net.dodogang.crumbs.client.platform.AbstractPlatformClient;
-import net.dodogang.crumbs.forge.client.mixin.ItemAccessor;
+import net.dodogang.crumbs.mixin.client.forge.ItemAccessor;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
@@ -24,7 +24,7 @@ import java.util.function.Function;
 
 public class CrumbsClientForge implements AbstractPlatformClient {
     public CrumbsClientForge() {
-        CrumbsClient.init(this);
+        CrumbsClient.initialize(this);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     }
 
@@ -38,10 +38,13 @@ public class CrumbsClientForge implements AbstractPlatformClient {
     }
 
     @Override
-    public void registerBuiltinItemRendererForBlock(Block block, BlockEntity blockEntity) {
+    public void registerBuiltInItemRendererForBlock(Block block, BlockEntity blockEntity) {
         ItemAccessor item = (ItemAccessor) block.asItem();
         if (item == Items.AIR) {
-            throw new RuntimeException(String.format("Attempted to register a Builtin Item Renderer for a block without an item: %s.", block));
+            throw new RuntimeException(String.format(
+                    "Attempted to register a Builtin Item Renderer for a block without an item: %s.",
+                    block
+            ));
         }
         item.setIster(() -> new CustomBuiltinModelItemRenderer(blockEntity));
     }
@@ -54,19 +57,28 @@ public class CrumbsClientForge implements AbstractPlatformClient {
         }
 
         @Override
-        public void render(ItemStack stack, ModelTransformation.Mode mode, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+        public void render(
+                ItemStack stack,
+                ModelTransformation.Mode mode,
+                MatrixStack matrices,
+                VertexConsumerProvider vertexConsumers,
+                int light,
+                int overlay
+        ) {
             matrices.push();
+
             BlockEntityRenderDispatcher.INSTANCE.renderEntity(blockEntity, matrices, vertexConsumers, light, overlay);
+
             matrices.pop();
         }
     }
 
     @Override
     public void registerSpritesToAtlas(Identifier atlas, Identifier... spriteLocations) {
-        FMLJavaModLoadingContext.get().getModEventBus().<TextureStitchEvent.Pre>addListener(event -> {
-            if (event.getMap().getId().equals(atlas)) {
+        FMLJavaModLoadingContext.get().getModEventBus().<TextureStitchEvent.Pre>addListener(e -> {
+            if (e.getMap().getId().equals(atlas)) {
                 for (Identifier spriteLocation : spriteLocations) {
-                    event.addSprite(spriteLocation);
+                    e.addSprite(spriteLocation);
                 }
             }
         });

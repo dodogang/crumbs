@@ -1,8 +1,7 @@
 pluginManagement {
     repositories {
-        jcenter()
         maven { url "https://maven.fabricmc.net/" }
-        maven { url "https://dl.bintray.com/shedaniel/cloth" }
+        maven { url "https://maven.shedaniel.me/" }
         maven { url "https://files.minecraftforge.net/maven/" }
         gradlePluginPortal()
     }
@@ -12,4 +11,4 @@ include("common")
 include("fabric")
 include("forge")
 
-rootProject.name = "crumbs-1.16.5"
+rootProject.name = "crumbs"

@@ -1,6 +1,8 @@
 {
     "mod.crumbs.name": "Crumbs",
     "mod.crumbs.description": "나무가 왜 이리 바스락대지?",
+    "crumbs.discord": "Discord",
+
     "itemGroup.crumbs.item_group": "Crumbs",
 
     "block.crumbs.oak_bundled_log": "참나무 원목 묶음",
@@ -65,6 +67,7 @@
     "block.crumbs.dark_oak_barrel": "짙은 참나무 통",
     "block.crumbs.crimson_barrel": "진홍빛 통",
     "block.crumbs.warped_barrel": "뒤틀린 통",
+    "block.crumbs.oak_chest": "참나무 상자",
     "block.crumbs.spruce_chest": "가문비나무 상자",
     "block.crumbs.birch_chest": "자작나무 상자",
     "block.crumbs.jungle_chest": "정글 나무 상자",
@@ -119,6 +122,5 @@
     "block.crumbs.blue_nether_brick_fence": "푸른 네더 벽돌 울타리",
 
     "block.minecraft.crafting_table": "참나무 제작대",
-    "block.minecraft.barrel": "가문비나무 통",
-    "block.minecraft.chest": "참나무 상자"
+    "block.minecraft.barrel": "가문비나무 통"
 }

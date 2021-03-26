@@ -1,6 +1,7 @@
 {
     "mod.crumbs.name": "Crumbs",
     "mod.crumbs.description": "Bloques desmenuzados al pastor:)",
+    "crumbs.discord": "Discord",
 
     "itemGroup.crumbs.item_group": "Crumbs",
 
@@ -109,5 +110,19 @@
     "block.crumbs.blue_nether_brick_slab": "Losa de ladrillos de nether azules",
 
     "block.minecraft.crafting_table": "Mesa de crafteo de roble",
-    "block.minecraft.barrel": "Barril de abeto"
+    "block.minecraft.barrel": "Barril de abeto",
+
+    "__comment1__": "Un-localized keys.",
+    "block.crumbs.crimson_lantern": "Crimson Lantern",
+    "block.crumbs.warped_lantern": "Warped Lantern",
+    "block.crumbs.oak_chest": "Oak Chest",
+    "block.crumbs.spruce_chest": "Spruce Chest",
+    "block.crumbs.birch_chest": "Birch Chest",
+    "block.crumbs.jungle_chest": "Jungle Chest",
+    "block.crumbs.acacia_chest": "Acacia Chest",
+    "block.crumbs.dark_oak_chest": "Dark Oak Chest",
+    "block.crumbs.crimson_chest": "Crimson Chest",
+    "block.crumbs.warped_chest": "Warped Chest",
+    "block.crumbs.red_nether_brick_fence": "Red Nether Brick Fence",
+    "block.crumbs.blue_nether_brick_fence": "Blue Nether Brick Fence"
 }

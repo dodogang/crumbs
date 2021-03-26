@@ -1,6 +1,8 @@
 {
     "mod.crumbs.name": "Crumbs",
     "mod.crumbs.description": "Why wood crumby?",
+    "crumbs.discord": "Discord",
+
     "itemGroup.crumbs.item_group": "Crumbs",
 
     "block.crumbs.oak_bundled_log": "橡木成捆原木",
@@ -110,5 +112,17 @@
     "block.crumbs.blue_nether_brick_slab": "蓝色下界砖台阶",
 
     "block.minecraft.crafting_table": "橡木工作台",
-    "block.minecraft.barrel": "云杉木桶"
+    "block.minecraft.barrel": "云杉木桶",
+
+    "__comment1__": "Un-localized keys.",
+    "block.crumbs.oak_chest": "Oak Chest",
+    "block.crumbs.spruce_chest": "Spruce Chest",
+    "block.crumbs.birch_chest": "Birch Chest",
+    "block.crumbs.jungle_chest": "Jungle Chest",
+    "block.crumbs.acacia_chest": "Acacia Chest",
+    "block.crumbs.dark_oak_chest": "Dark Oak Chest",
+    "block.crumbs.crimson_chest": "Crimson Chest",
+    "block.crumbs.warped_chest": "Warped Chest",
+    "block.crumbs.red_nether_brick_fence": "Red Nether Brick Fence",
+    "block.crumbs.blue_nether_brick_fence": "Blue Nether Brick Fence"
 }

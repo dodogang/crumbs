@@ -1,7 +1,7 @@
 {
-    "crumbs.discord": "Discord",
     "mod.crumbs.name": "Crumbs",
     "mod.crumbs.description": "Why wood crumby?",
+    "crumbs.discord": "Discord",
     "itemGroup.crumbs.item_group": "Crumbs",
 
     "block.crumbs.oak_bundled_log": "Oak Bundled Log",
@@ -66,6 +66,7 @@
     "block.crumbs.dark_oak_barrel": "Dark Oak Barrel",
     "block.crumbs.crimson_barrel": "Crimson Barrel",
     "block.crumbs.warped_barrel": "Warped Barrel",
+    "block.crumbs.oak_chest": "Oak Chest",
     "block.crumbs.spruce_chest": "Spruce Chest",
     "block.crumbs.birch_chest": "Birch Chest",
     "block.crumbs.jungle_chest": "Jungle Chest",
@@ -120,6 +121,5 @@
     "block.crumbs.blue_nether_brick_fence": "Blue Nether Brick Fence",
 
     "block.minecraft.crafting_table": "Oak Crafting Table",
-    "block.minecraft.barrel": "Spruce Barrel",
-    "block.minecraft.chest": "Oak Chest"
+    "block.minecraft.barrel": "Spruce Barrel"
 }

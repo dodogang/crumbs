@@ -1,6 +1,8 @@
 {
     "mod.crumbs.name": "Crumbs",
     "mod.crumbs.description": "Waarom hout kruimelig?",
+    "crumbs.discord": "Discord",
+
     "itemGroup.crumbs.item_group": "Crumbs",
 
     "block.crumbs.oak_bundled_log": "Gebundelde eikenstam",
@@ -65,6 +67,7 @@
     "block.crumbs.dark_oak_barrel": "Donkere eikenhouten vat",
     "block.crumbs.crimson_barrel": "Helrood vat",
     "block.crumbs.warped_barrel": "Spookachtig vat",
+    "block.crumbs.oak_chest": "Eikenhouten kist",
     "block.crumbs.spruce_chest": "Sparrenhouten kist",
     "block.crumbs.birch_chest": "Berkenhouten kist",
     "block.crumbs.jungle_chest": "Oerwoudhouten kist",
@@ -118,5 +121,8 @@
 
     "block.minecraft.crafting_table": "Eikenhouten werkbank",
     "block.minecraft.barrel": "Sparrenhouten vat",
-    "block.minecraft.chest": "Eikenhouten kist"
+
+    "__comment1__": "Un-localized keys.",
+    "block.crumbs.red_nether_brick_fence": "Red Nether Brick Fence",
+    "block.crumbs.blue_nether_brick_fence": "Blue Nether Brick Fence"
 }

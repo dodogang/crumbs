@@ -14,7 +14,7 @@ architectury {
 loom {
     useFabricMixin = true
 
-    mixinConfigs = [ "crumbs.mixins.json", "crumbs-forge.mixins.json" ]
+    mixinConfigs = [ "crumbs.mixins.json" ]
 }
 
 dependencies {

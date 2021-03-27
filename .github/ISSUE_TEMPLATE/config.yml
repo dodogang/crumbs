@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Dodo Gang
-    url: https://dodogang.net
-    about: Wikis for all of our mods and blog updates
+  - name: Feature Request
+    url: https://github.com/dodogang/crumbs/discussions/new
+    about: Submit a feature request, or ask a question!

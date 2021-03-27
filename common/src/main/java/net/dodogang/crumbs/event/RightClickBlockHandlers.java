@@ -1,8 +1,9 @@
 package net.dodogang.crumbs.event;
 
 import com.google.common.collect.ImmutableMap;
-import net.dodogang.crumbs.Crumbs;
 import net.dodogang.crumbs.block.CrumbsBlocks;
+import net.dodogang.plume.ash.event.InteractionCallback;
+import net.dodogang.plume.ash.tag.ToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
@@ -21,7 +22,7 @@ public class RightClickBlockHandlers {
 
     private static ImmutableMap<Block, Block> logToStrippedMap;
 
-    public static void register() {
+    static {
         logToStrippedMap = new ImmutableMap.Builder<Block, Block>()
                 .put(CrumbsBlocks.OAK_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_OAK_BUNDLED_LOG.get())
                 .put(CrumbsBlocks.BIRCH_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_BIRCH_BUNDLED_LOG.get())
@@ -32,15 +33,17 @@ public class RightClickBlockHandlers {
                 .put(CrumbsBlocks.CRIMSON_BUNDLED_STEM.get(), CrumbsBlocks.STRIPPED_CRIMSON_BUNDLED_STEM.get())
                 .put(CrumbsBlocks.WARPED_BUNDLED_STEM.get(), CrumbsBlocks.STRIPPED_WARPED_BUNDLED_STEM.get())
                 .build();
+    }
 
-        Crumbs.platform.registerOnRightClickBlockHandler(RightClickBlockHandlers::stripLog);
+    public static void register() {
+        InteractionCallback.RightClickBlock.register(RightClickBlockHandlers::stripLog);
     }
 
     public static ActionResult stripLog(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction dir) {
         BlockState state = world.getBlockState(pos);
         ItemStack stack = player.getStackInHand(hand);
 
-        if (Crumbs.platform.isAxe(stack) && logToStrippedMap.containsKey(state.getBlock())) {
+        if (ToolTags.AXES.contains(stack) && logToStrippedMap.containsKey(state.getBlock())) {
             world.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
             if (!world.isClient) {
                 Block strippedLog = logToStrippedMap.get(state.getBlock());

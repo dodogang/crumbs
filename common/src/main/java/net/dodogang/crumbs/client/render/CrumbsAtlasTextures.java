@@ -1,7 +1,7 @@
 package net.dodogang.crumbs.client.render;
 
 import net.dodogang.crumbs.Crumbs;
-import net.dodogang.crumbs.client.CrumbsClient;
+import net.dodogang.plume.ash.client.registry.SpriteRegistry;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.util.Identifier;
 
@@ -26,7 +26,8 @@ public class CrumbsAtlasTextures {
     public static final Identifier WARPED_DOUBLE_CHEST = chestSpriteId("warped_double");
 
     public static void register() {
-        CrumbsClient.platform.registerSpritesToAtlas(
+        SpriteRegistry.register(
+                Crumbs.MOD_ID,
                 TexturedRenderLayers.CHEST_ATLAS_TEXTURE,
                 OAK_CHEST,
                 OAK_DOUBLE_CHEST,

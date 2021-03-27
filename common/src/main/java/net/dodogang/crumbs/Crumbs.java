@@ -3,7 +3,6 @@ package net.dodogang.crumbs;
 import net.dodogang.crumbs.block.CrumbsBlocks;
 import net.dodogang.crumbs.block.entity.CrumbsBlockEntityTypes;
 import net.dodogang.crumbs.event.RightClickBlockHandlers;
-import net.dodogang.crumbs.platform.AbstractPlatform;
 import net.dodogang.plume.ash.registry.ItemGroupBuilder;
 import net.dodogang.plume.registry.PointOfInterestTypeAppender;
 import net.minecraft.item.ItemGroup;
@@ -19,15 +18,12 @@ public class Crumbs {
     public static final String MOD_ID = "crumbs";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
-    public static AbstractPlatform platform;
     public static final ItemGroup ITEM_GROUP = ItemGroupBuilder.build(
             new Identifier(MOD_ID, "item_group"),
             () -> new ItemStack(CrumbsBlocks.OAK_BUNDLED_LOG.get())
     );
 
-    public static void initialize(AbstractPlatform platform) {
-        Crumbs.platform = platform;
-
+    public static void initialize() {
         CrumbsBlocks.register();
         CrumbsBlockEntityTypes.register();
     }

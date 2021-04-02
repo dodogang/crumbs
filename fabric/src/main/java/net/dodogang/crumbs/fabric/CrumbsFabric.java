@@ -9,5 +9,4 @@ public class CrumbsFabric implements ModInitializer {
         Crumbs.initialize();
         Crumbs.setup();
     }
-
 }

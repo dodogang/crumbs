@@ -28,6 +28,14 @@ public class CrumbsBlocks {
     public static RegistrySupplier<Block> STRIPPED_CRIMSON_BUNDLED_STEM;
     public static RegistrySupplier<Block> STRIPPED_WARPED_BUNDLED_STEM;
 
+    public static RegistrySupplier<Block> SPRUCE_CRAFTING_TABLE;
+    public static RegistrySupplier<Block> BIRCH_CRAFTING_TABLE;
+    public static RegistrySupplier<Block> JUNGLE_CRAFTING_TABLE;
+    public static RegistrySupplier<Block> ACACIA_CRAFTING_TABLE;
+    public static RegistrySupplier<Block> DARK_OAK_CRAFTING_TABLE;
+    public static RegistrySupplier<Block> CRIMSON_CRAFTING_TABLE;
+    public static RegistrySupplier<Block> WARPED_CRAFTING_TABLE;
+
     public static RegistrySupplier<Block> OAK_BARREL;
     public static RegistrySupplier<Block> BIRCH_BARREL;
     public static RegistrySupplier<Block> JUNGLE_BARREL;
@@ -35,6 +43,15 @@ public class CrumbsBlocks {
     public static RegistrySupplier<Block> DARK_OAK_BARREL;
     public static RegistrySupplier<Block> CRIMSON_BARREL;
     public static RegistrySupplier<Block> WARPED_BARREL;
+
+    public static RegistrySupplier<Block> OAK_LANTERN;
+    public static RegistrySupplier<Block> SPRUCE_LANTERN;
+    public static RegistrySupplier<Block> BIRCH_LANTERN;
+    public static RegistrySupplier<Block> JUNGLE_LANTERN;
+    public static RegistrySupplier<Block> ACACIA_LANTERN;
+    public static RegistrySupplier<Block> DARK_OAK_LANTERN;
+    public static RegistrySupplier<Block> CRIMSON_LANTERN;
+    public static RegistrySupplier<Block> WARPED_LANTERN;
 
     public static RegistrySupplier<WoodenChestBlock> OAK_CHEST;
     public static RegistrySupplier<WoodenChestBlock> SPRUCE_CHEST;
@@ -97,13 +114,13 @@ public class CrumbsBlocks {
         batch.addCopy("reinforced_crimson_planks", PillarBlock::new, Blocks.CRIMSON_PLANKS);
         batch.addCopy("reinforced_warped_planks", PillarBlock::new, Blocks.WARPED_PLANKS);
 
-        batch.addCopy("spruce_crafting_table", PlumeCraftingTableBlock::new, Blocks.SPRUCE_PLANKS);
-        batch.addCopy("birch_crafting_table", PlumeCraftingTableBlock::new, Blocks.BIRCH_PLANKS);
-        batch.addCopy("jungle_crafting_table", PlumeCraftingTableBlock::new, Blocks.JUNGLE_PLANKS);
-        batch.addCopy("acacia_crafting_table", PlumeCraftingTableBlock::new, Blocks.ACACIA_PLANKS);
-        batch.addCopy("dark_oak_crafting_table", PlumeCraftingTableBlock::new, Blocks.DARK_OAK_PLANKS);
-        batch.addCopy("crimson_crafting_table", PlumeCraftingTableBlock::new, Blocks.CRIMSON_PLANKS);
-        batch.addCopy("warped_crafting_table", PlumeCraftingTableBlock::new, Blocks.WARPED_PLANKS);
+        SPRUCE_CRAFTING_TABLE = batch.addCopy("spruce_crafting_table", PlumeCraftingTableBlock::new, Blocks.SPRUCE_PLANKS);
+        BIRCH_CRAFTING_TABLE = batch.addCopy("birch_crafting_table", PlumeCraftingTableBlock::new, Blocks.BIRCH_PLANKS);
+        JUNGLE_CRAFTING_TABLE = batch.addCopy("jungle_crafting_table", PlumeCraftingTableBlock::new, Blocks.JUNGLE_PLANKS);
+        ACACIA_CRAFTING_TABLE = batch.addCopy("acacia_crafting_table", PlumeCraftingTableBlock::new, Blocks.ACACIA_PLANKS);
+        DARK_OAK_CRAFTING_TABLE = batch.addCopy("dark_oak_crafting_table", PlumeCraftingTableBlock::new, Blocks.DARK_OAK_PLANKS);
+        CRIMSON_CRAFTING_TABLE = batch.addCopy("crimson_crafting_table", PlumeCraftingTableBlock::new, Blocks.CRIMSON_PLANKS);
+        WARPED_CRAFTING_TABLE = batch.addCopy("warped_crafting_table", PlumeCraftingTableBlock::new, Blocks.WARPED_PLANKS);
 
         OAK_BARREL = batch.addCopy("oak_barrel", WoodenBarrelBlock::new, Blocks.OAK_PLANKS);
         BIRCH_BARREL = batch.addCopy("birch_barrel", WoodenBarrelBlock::new, Blocks.BIRCH_PLANKS);
@@ -113,14 +130,14 @@ public class CrumbsBlocks {
         CRIMSON_BARREL = batch.addCopy("crimson_barrel", WoodenBarrelBlock::new, Blocks.CRIMSON_PLANKS);
         WARPED_BARREL = batch.addCopy("warped_barrel", WoodenBarrelBlock::new, Blocks.WARPED_PLANKS);
 
-        batch.addCopy("oak_lantern", WoodenLanternBlock::new, Blocks.OAK_PLANKS);
-        batch.addCopy("spruce_lantern", WoodenLanternBlock::new, Blocks.SPRUCE_PLANKS);
-        batch.addCopy("birch_lantern", WoodenLanternBlock::new, Blocks.BIRCH_PLANKS);
-        batch.addCopy("jungle_lantern", WoodenLanternBlock::new, Blocks.JUNGLE_PLANKS);
-        batch.addCopy("acacia_lantern", WoodenLanternBlock::new, Blocks.ACACIA_PLANKS);
-        batch.addCopy("dark_oak_lantern", WoodenLanternBlock::new, Blocks.DARK_OAK_PLANKS);
-        batch.addCopy("crimson_lantern", WoodenLanternBlock::new, Blocks.CRIMSON_PLANKS);
-        batch.addCopy("warped_lantern", WoodenLanternBlock::new, Blocks.WARPED_PLANKS);
+        OAK_LANTERN = batch.addCopy("oak_lantern", WoodenLanternBlock::new, Blocks.OAK_PLANKS);
+        SPRUCE_LANTERN = batch.addCopy("spruce_lantern", WoodenLanternBlock::new, Blocks.SPRUCE_PLANKS);
+        BIRCH_LANTERN = batch.addCopy("birch_lantern", WoodenLanternBlock::new, Blocks.BIRCH_PLANKS);
+        JUNGLE_LANTERN = batch.addCopy("jungle_lantern", WoodenLanternBlock::new, Blocks.JUNGLE_PLANKS);
+        ACACIA_LANTERN = batch.addCopy("acacia_lantern", WoodenLanternBlock::new, Blocks.ACACIA_PLANKS);
+        DARK_OAK_LANTERN = batch.addCopy("dark_oak_lantern", WoodenLanternBlock::new, Blocks.DARK_OAK_PLANKS);
+        CRIMSON_LANTERN = batch.addCopy("crimson_lantern", WoodenLanternBlock::new, Blocks.CRIMSON_PLANKS);
+        WARPED_LANTERN = batch.addCopy("warped_lantern", WoodenLanternBlock::new, Blocks.WARPED_PLANKS);
 
         OAK_CHEST = addChestCopy(batch, "oak_chest", WoodenChestBlock.ModelType.OAK, Blocks.CHEST);
         SPRUCE_CHEST = addChestCopy(batch, "spruce_chest", WoodenChestBlock.ModelType.SPRUCE, Blocks.CHEST);

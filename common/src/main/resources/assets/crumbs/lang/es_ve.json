@@ -1,6 +1,7 @@
 {
     "mod.crumbs.name": "Crumbs",
     "mod.crumbs.description": "Bloques desmenuzados al pastor :)",
+    "crumbs.discord": "Discord",
     "itemGroup.crumbs.item_group": "Crumbs",
 
     "block.crumbs.oak_bundled_log": "Tronco empaquetado de roble",
@@ -65,6 +66,7 @@
     "block.crumbs.dark_oak_barrel": "Barril de roble oscuro",
     "block.crumbs.crimson_barrel": "Barril carmesí",
     "block.crumbs.warped_barrel": "Barril distorsionado",
+    "block.crumbs.oak_chest": "Baúl de roble",
     "block.crumbs.spruce_chest": "Baúl de pino",
     "block.crumbs.birch_chest": "Baúl de abedul",
     "block.crumbs.jungle_chest": "Baúl de jungla",
@@ -119,6 +121,5 @@
     "block.crumbs.blue_nether_brick_fence": "Cerca de ladrillos del Nether azules",
 
     "block.minecraft.crafting_table": "Mesa de crafteo de roble",
-    "block.minecraft.barrel": "Barril de pino",
-    "block.minecraft.chest": "Baúl de roble"
+    "block.minecraft.barrel": "Barril de pino"
 }

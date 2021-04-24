@@ -1,0 +1,21 @@
+<head>
+  {% if site.inc_before_head %}
+  {% include {{ site.inc_before_head }} %}
+  {% endif %}
+ 
+  {% include git-wiki/sections/head/meta.html %}
+  {% include git-wiki/sections/head/scripts.html %}
+  {% include git-wiki/sections/head/styles.html %}
+
+  {% if site.inc_after_head %}
+  {% include {{ site.inc_after_head }} %}
+  {% endif %}
+
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+    <script>
+        anchors.options.icon = '#';
+        anchors.options.visible = 'hover';
+        anchors.options.placement = 'left';
+        anchors.add('h3, h4, h5, h6');
+    </script>
+</head>

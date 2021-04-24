@@ -1,0 +1,33 @@
+{% if site.inc_before_tail %}
+{% include {{ site.inc_before_tail }} %}
+{% endif %}
+
+<script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+
+{% if site.google_analytics %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', '{{ site.google_analytics }}');
+</script>
+{% endif %}
+
+{% assign items = site.html_pages %}
+{% for page in items %}
+{% assign url = page.url | relative_url %}
+{% assign urls = urls | append: url | append: "," %}
+{% endfor %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document.body).checkLinks("{{ urls }}".split(","));
+    });
+</script>
+
+{% if site.inc_after_tail %}
+{% include {{ site.inc_after_tail }} %}
+{% endif %}

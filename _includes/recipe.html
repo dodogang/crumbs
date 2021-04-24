@@ -1,0 +1,3 @@
+The {{ page.title }} is crafted with {{ include.ingredients }}.
+
+<img class="ignore-defaults" src="{% if include.src %}{{ include.src }}{% else %}/assets/docs/{{ page.reg_id }}/recipe.{% if include.gif != true %}png{% else %}gif{% endif %}{% endif %}" alt="{{ include.src }}" />

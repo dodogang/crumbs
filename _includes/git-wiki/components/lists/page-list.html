@@ -1,0 +1,23 @@
+<div class="git-wiki-page-list">
+    {% if site.inc_before_page_list %}
+    {% include {{ site.inc_before_page_list }} %}
+    {% endif %}
+
+    <!-- <span class="page-list-title">Pages</span> -->
+    <ul class="page-list">
+        {% assign items = site.html_pages | sort: 'date' %}
+        {% for page in items %}
+        {% if page.is_wiki_page != false and page.sitemap != false and page.favorite == true %}
+        <li class="page-list-item">
+            {% assign title = page.title | default: page.name %}
+            <a href="{{ page.url | relative_url }}">{{title | escape}}</a>
+        </li>
+        {% endif %}
+
+        {% endfor %}
+    </ul>
+
+    {% if site.inc_after_page_list %}
+    {% include {{ site.inc_after_page_list }} %}
+    {% endif %}
+</div>

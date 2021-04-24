@@ -1,0 +1,21 @@
+<br>
+
+<h2>Data Values</h2>
+<h3>ID</h3>
+
+<table id="data-values" center-text>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>{% include mcwiki.html url="Namespaced_ID" title="Namespaced ID" %}</th>
+            <th>Translation Key</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{% include asset/crumbs_text.html path=include.block_texture_path title=include.block_name class="wikitable-block" gif=include.gif %}</td>
+            <td><code>{{ include.block_id }}</code></td>
+            <td><code>block.crumbs.{{ include.block_id }}</code></td>
+        </tr>
+    </tbody>
+</table>

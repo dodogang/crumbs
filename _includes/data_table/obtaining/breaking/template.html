@@ -1,0 +1,52 @@
+<table id="breaking" center-text>
+    <tbody>
+        <tr>
+            <th>Block</th>
+            <th style="text-align: left;">
+                {% include asset/crumbs_text.html path=include.block_texture_path title=include.block_name class="wikitable-block" %}</th>
+        </tr>
+        <tr>
+            <th>Hardness</th>
+            <td>{{ include.hardness }}</td>
+        </tr>
+        <tr>
+            <th>Tool</th>
+            <td>{% include asset/minecraft.html path=include.tool class="wikitable-item" %}</td>
+        </tr>
+        <tr>
+            <th colspan="3">{% include mcwiki.html url="Breaking" title="Breaking" %} time</th>
+        </tr>
+        <tr>
+            <th>&nbsp;Default&nbsp;</th>
+            <td class="breaking-drop-{% if include.td_default == true %}yes{% else %}no{% endif %}">{{ include.bt_default }}</td>
+        </tr>
+        <tr>
+            <th>&nbsp;Wooden&nbsp;</th>
+            <td class="breaking-drop-{% if include.td_wooden == true %}yes{% else %}no{% endif %}">{{ include.bt_wooden }}</td>
+        </tr>
+        <tr>
+            <th>&nbsp;Stone&nbsp;</th>
+            <td class="breaking-drop-{% if include.td_stone == true %}yes{% else %}no{% endif %}">{{ include.bt_stone }}</td>
+        </tr>
+        <tr>
+            <th>&nbsp;Iron&nbsp;</th>
+            <td class="breaking-drop-{% if include.td_iron == true %}yes{% else %}no{% endif %}">{{ include.bt_iron }}</td>
+        </tr>
+        <tr>
+            <th>&nbsp;Diamond&nbsp;</th>
+            <td class="breaking-drop-{% if include.td_diamond == true %}yes{% else %}no{% endif %}">{{ include.bt_diamond }}</td>
+        </tr>
+        <tr>
+            <th>&nbsp;Netherite&nbsp;</th>
+            <td class="breaking-drop-{% if include.td_netherite == true %}yes{% else %}no{% endif %}">{{ include.bt_netherite }}</td>
+        </tr>
+        <tr>
+            <th>&nbsp;Golden&nbsp;</th>
+            <td class="breaking-drop-{% if include.td_golden == true %}yes{% else %}no{% endif %}">{{ include.bt_golden }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul>
+    <li class="square-list">Times are for unenchanted tools in seconds. For more information, see {% include mcwiki.html url="Haste#Instant_mining" title="Haste § Instant mining" %}</li>
+</ul>

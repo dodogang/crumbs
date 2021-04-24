@@ -1,0 +1,21 @@
+<h4>Cost</h4>
+<table id="data-values" center-text>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Base Cost</th>
+            <th>Cost per <a href="Machine#ascension">Ascension</a></th>
+            <th>Cost per <a href="Machine#reduction">Reduction</a></th>
+            <th>Cooldown</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{% include asset/crumbs_text.html path=include.block_texture_path title=include.block_name class="wikitable-block" %}</td>
+            <td>{{ include.cost_base }}</td>
+            <td>+{{ include.cost_ascension }}</td>
+            <td>-{{ include.cost_reduction }}</td>
+            <td>{% if include.cooldown_t %}{{ include.cooldown_t }}{% else %}8{% endif %}t / {% if include.cooldown_s %}{{ include.cooldown_s }}{% else %}0.4{% endif %}s</td>
+        </tr>
+    </tbody>
+</table>

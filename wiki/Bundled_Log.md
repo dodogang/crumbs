@@ -18,4 +18,3 @@ A bundled log can be [stripped with an axe](https://minecraft.fandom.com/wiki/Ax
 *The logs can be replaced with any log type.*
 <br style="line-height: 1px;">
 ![recipe.png](/assets/docs/bundled_log/recipe.png)
-

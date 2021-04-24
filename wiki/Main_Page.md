@@ -3,7 +3,6 @@ title: Main Page
 
 redirect_from: "/"
 toc: false
-favorite: true
 ---
 
 <img style="width: 1000px;" src="https://imgur.com/qk9QsNm.png">

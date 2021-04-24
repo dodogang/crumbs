@@ -22,6 +22,10 @@ input {
   border-bottom: 3px solid #3f72b9;
 }
 
+ol#git-wiki-toc > li > ol {
+  margin: unset;
+}
+
 h1,
 h2,
 h3,
@@ -29,7 +33,7 @@ h4,
 h5,
 h6 {
   color: #dfdfdf;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 
 p,
@@ -56,6 +60,17 @@ h4,
 h5,
 h6 {
   color: #dfdfdf;
+}
+
+h3 {
+  padding-bottom: 6px;
+  border-bottom: 1px solid #444;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: bold;
 }
 
 a {

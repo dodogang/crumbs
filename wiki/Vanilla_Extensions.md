@@ -1,11 +1,12 @@
 ---
 title: Vanilla Extensions
+excerpt: Crumbs extends various vanilla blocks to have variations. These will copy their parents' recipes and functionality, but of course with respective variation-based changes.
 
 toc: true
 favorite: true
 ---
 
-Crumbs extends various vanilla blocks to have variations. These will copy their parents' recipes and functionality, but of course with respective variation-based changes.
+{{ page.excerpt }}
 
 #### Crafting Tables
 *The vanilla crafting table is renamed to 'Oak Crafting Table' with Crumbs.*

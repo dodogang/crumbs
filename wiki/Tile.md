@@ -1,11 +1,12 @@
 ---
 title: Tile
+excerpt: A tile is a smoother, yet still rough, version of its parent block. Tiles exist for all variants of planks and sandstones.
 
 toc: true
 favorite: true
 ---
 
-A tile is a smoother, yet still rough, version of its parent block. Tiles exist for all variants of planks and sandstones.
+{{ page.excerpt }}
 
 <img style="width: 700px;" src="/assets/docs/tile/showcase.png">
 

@@ -1,5 +1,7 @@
 # (string) Title of your wiki
 title: Crumbs
+# (string) Author of your wiki
+author: Dodo Gang
 # (string) Description of your wiki
 description: 
 # (string) GitHub username

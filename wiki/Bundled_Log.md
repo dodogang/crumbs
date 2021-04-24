@@ -1,11 +1,12 @@
 ---
 title: Bundled Log
+excerpt: A bundled log is a log split into four parts. They can be made of any wood type, and copy functionality of its parent log.
 
 toc: true
 favorite: true
 ---
 
-A bundled log is a log split into four parts. They can be made of any wood type, and copy functionality of its parent log.
+{{ page.excerpt }}
 
 <img style="width: 700px;" src="/assets/docs/bundled_log/showcase.png">
 

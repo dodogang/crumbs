@@ -23,7 +23,7 @@ show_downloads: false
 # (string) Specify branch rendered by gitpages allowing wiki tool buttons to work
 git_branch: "wiki"
 # (string) Url of logo image, it can be full, absolute or relative.
-logo_url: /assets/images/logo.gif
+logo_url: /assets/images/logo.png
 # (string) Url of favicon image, it can be full, absolute or relative.
 favicon_url: /assets/favicon.png
 # (string) The UA-XXXXX-Y code from google analytic to enable GA on your wiki

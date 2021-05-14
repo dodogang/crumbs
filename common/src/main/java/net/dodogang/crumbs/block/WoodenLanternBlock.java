@@ -56,8 +56,8 @@ public class WoodenLanternBlock extends Block {
             player.playSound(
                     isLit ? SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON : SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF,
                     SoundCategory.BLOCKS,
-                    0.5f,
-                    0.75f
+                    0.3f,
+                    isLit ? 0.6f : 0.5f
             );
         }
     }

@@ -28,6 +28,24 @@ public class CrumbsBlocks {
     public static RegistrySupplier<Block> STRIPPED_CRIMSON_BUNDLED_STEM;
     public static RegistrySupplier<Block> STRIPPED_WARPED_BUNDLED_STEM;
 
+    public static RegistrySupplier<Block> OAK_POST;
+    public static RegistrySupplier<Block> SPRUCE_POST;
+    public static RegistrySupplier<Block> BIRCH_POST;
+    public static RegistrySupplier<Block> JUNGLE_POST;
+    public static RegistrySupplier<Block> ACACIA_POST;
+    public static RegistrySupplier<Block> DARK_OAK_POST;
+    public static RegistrySupplier<Block> CRIMSON_POST;
+    public static RegistrySupplier<Block> WARPED_POST;
+
+    public static RegistrySupplier<Block> STRIPPED_OAK_POST;
+    public static RegistrySupplier<Block> STRIPPED_SPRUCE_POST;
+    public static RegistrySupplier<Block> STRIPPED_BIRCH_POST;
+    public static RegistrySupplier<Block> STRIPPED_JUNGLE_POST;
+    public static RegistrySupplier<Block> STRIPPED_ACACIA_POST;
+    public static RegistrySupplier<Block> STRIPPED_DARK_OAK_POST;
+    public static RegistrySupplier<Block> STRIPPED_CRIMSON_POST;
+    public static RegistrySupplier<Block> STRIPPED_WARPED_POST;
+
     public static RegistrySupplier<Block> SPRUCE_CRAFTING_TABLE;
     public static RegistrySupplier<Block> BIRCH_CRAFTING_TABLE;
     public static RegistrySupplier<Block> JUNGLE_CRAFTING_TABLE;
@@ -113,6 +131,24 @@ public class CrumbsBlocks {
         batch.addCopy("reinforced_dark_oak_planks", PillarBlock::new, Blocks.DARK_OAK_PLANKS);
         batch.addCopy("reinforced_crimson_planks", PillarBlock::new, Blocks.CRIMSON_PLANKS);
         batch.addCopy("reinforced_warped_planks", PillarBlock::new, Blocks.WARPED_PLANKS);
+
+        OAK_POST = batch.addCopy("oak_post", WallBlock::new, Blocks.OAK_PLANKS);
+        SPRUCE_POST = batch.addCopy("spruce_post", WallBlock::new, Blocks.SPRUCE_PLANKS);
+        BIRCH_POST = batch.addCopy("birch_post", WallBlock::new, Blocks.BIRCH_PLANKS);
+        JUNGLE_POST = batch.addCopy("jungle_post", WallBlock::new, Blocks.JUNGLE_PLANKS);
+        ACACIA_POST = batch.addCopy("acacia_post", WallBlock::new, Blocks.ACACIA_PLANKS);
+        DARK_OAK_POST = batch.addCopy("dark_oak_post", WallBlock::new, Blocks.DARK_OAK_PLANKS);
+        CRIMSON_POST = batch.addCopy("crimson_post", WallBlock::new, Blocks.CRIMSON_PLANKS);
+        WARPED_POST = batch.addCopy("warped_post", WallBlock::new, Blocks.WARPED_PLANKS);
+
+        STRIPPED_OAK_POST = batch.addCopy("stripped_oak_post", WallBlock::new, Blocks.OAK_PLANKS);
+        STRIPPED_SPRUCE_POST = batch.addCopy("stripped_spruce_post", WallBlock::new, Blocks.SPRUCE_PLANKS);
+        STRIPPED_BIRCH_POST = batch.addCopy("stripped_birch_post", WallBlock::new, Blocks.BIRCH_PLANKS);
+        STRIPPED_JUNGLE_POST = batch.addCopy("stripped_jungle_post", WallBlock::new, Blocks.JUNGLE_PLANKS);
+        STRIPPED_ACACIA_POST = batch.addCopy("stripped_acacia_post", WallBlock::new, Blocks.ACACIA_PLANKS);
+        STRIPPED_DARK_OAK_POST = batch.addCopy("stripped_dark_oak_post", WallBlock::new, Blocks.DARK_OAK_PLANKS);
+        STRIPPED_CRIMSON_POST = batch.addCopy("stripped_crimson_post", WallBlock::new, Blocks.CRIMSON_PLANKS);
+        STRIPPED_WARPED_POST = batch.addCopy("stripped_warped_post", WallBlock::new, Blocks.WARPED_PLANKS);
 
         SPRUCE_CRAFTING_TABLE = batch.addCopy("spruce_crafting_table", PlumeCraftingTableBlock::new, Blocks.SPRUCE_PLANKS);
         BIRCH_CRAFTING_TABLE = batch.addCopy("birch_crafting_table", PlumeCraftingTableBlock::new, Blocks.BIRCH_PLANKS);

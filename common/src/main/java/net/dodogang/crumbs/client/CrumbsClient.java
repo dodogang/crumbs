@@ -7,12 +7,16 @@ import net.dodogang.crumbs.client.render.CrumbsAtlasTextures;
 import net.dodogang.crumbs.client.render.block.entity.WoodenChestRenderer;
 import net.dodogang.plume.ash.client.registry.BlockEntityRendererRegistry;
 import net.dodogang.plume.ash.client.registry.BuiltinItemRendererRegistry;
+import net.dodogang.plume.ash.client.registry.RenderLayerRegistry;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.RenderLayers;
 
 public class CrumbsClient {
     private CrumbsClient() {}
 
     public static void initialize() {
         CrumbsAtlasTextures.register();
+        setBlockRenderLayers();
     }
 
     public static void setup() {
@@ -20,11 +24,11 @@ public class CrumbsClient {
         registerBuiltInItemRenderers();
     }
 
-    public static void registerBlockEntityRenderers() {
+    private static void registerBlockEntityRenderers() {
         BlockEntityRendererRegistry.register(CrumbsBlockEntityTypes.WOODEN_CHEST.get(), WoodenChestRenderer::new);
     }
 
-    public static void registerBuiltInItemRenderers() {
+    private static void registerBuiltInItemRenderers() {
         BuiltinItemRendererRegistry.registerBlockEntityRenderer(
                 CrumbsBlocks.OAK_CHEST.get(),
                 new WoodenChestBlockEntity(CrumbsBlocks.OAK_CHEST.get())
@@ -56,6 +60,19 @@ public class CrumbsClient {
         BuiltinItemRendererRegistry.registerBlockEntityRenderer(
                 CrumbsBlocks.WARPED_CHEST.get(),
                 new WoodenChestBlockEntity(CrumbsBlocks.WARPED_CHEST.get())
+        );
+    }
+
+    private static void setBlockRenderLayers() {
+        RenderLayerRegistry.setRenderLayer(
+                RenderLayer.getCutoutMipped(),
+                CrumbsBlocks.SPRUCE_LADDER.getInitialValue(),
+                CrumbsBlocks.BIRCH_LADDER.getInitialValue(),
+                CrumbsBlocks.JUNGLE_LADDER.getInitialValue(),
+                CrumbsBlocks.ACACIA_LADDER.getInitialValue(),
+                CrumbsBlocks.DARK_OAK_LADDER.getInitialValue(),
+                CrumbsBlocks.CRIMSON_LADDER.getInitialValue(),
+                CrumbsBlocks.WARPED_LADDER.getInitialValue()
         );
     }
 }

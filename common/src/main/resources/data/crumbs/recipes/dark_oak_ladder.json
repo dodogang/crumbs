@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I I",
+    "I#I",
+    "I I"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "minecraft:dark_oak_planks"
+    }
+  },
+  "result": {
+    "item": "crumbs:dark_oak_ladder",
+    "count": 4
+  }
+}

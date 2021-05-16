@@ -3,6 +3,7 @@ package net.dodogang.crumbs.block;
 import net.dodogang.crumbs.Crumbs;
 import net.dodogang.plume.ash.registry.RegistrySupplier;
 import net.dodogang.plume.block.PlumeCraftingTableBlock;
+import net.dodogang.plume.block.PlumeLadderBlock;
 import net.dodogang.plume.registry.BlockRegistryBatch;
 import net.minecraft.block.*;
 import net.minecraft.item.Item;
@@ -28,23 +29,14 @@ public class CrumbsBlocks {
     public static RegistrySupplier<Block> STRIPPED_CRIMSON_BUNDLED_STEM;
     public static RegistrySupplier<Block> STRIPPED_WARPED_BUNDLED_STEM;
 
-    public static RegistrySupplier<Block> OAK_POST;
-    public static RegistrySupplier<Block> SPRUCE_POST;
-    public static RegistrySupplier<Block> BIRCH_POST;
-    public static RegistrySupplier<Block> JUNGLE_POST;
-    public static RegistrySupplier<Block> ACACIA_POST;
-    public static RegistrySupplier<Block> DARK_OAK_POST;
-    public static RegistrySupplier<Block> CRIMSON_POST;
-    public static RegistrySupplier<Block> WARPED_POST;
-
-    public static RegistrySupplier<Block> STRIPPED_OAK_POST;
-    public static RegistrySupplier<Block> STRIPPED_SPRUCE_POST;
-    public static RegistrySupplier<Block> STRIPPED_BIRCH_POST;
-    public static RegistrySupplier<Block> STRIPPED_JUNGLE_POST;
-    public static RegistrySupplier<Block> STRIPPED_ACACIA_POST;
-    public static RegistrySupplier<Block> STRIPPED_DARK_OAK_POST;
-    public static RegistrySupplier<Block> STRIPPED_CRIMSON_POST;
-    public static RegistrySupplier<Block> STRIPPED_WARPED_POST;
+    public static RegistrySupplier<WoodenChestBlock> OAK_CHEST;
+    public static RegistrySupplier<WoodenChestBlock> SPRUCE_CHEST;
+    public static RegistrySupplier<WoodenChestBlock> BIRCH_CHEST;
+    public static RegistrySupplier<WoodenChestBlock> JUNGLE_CHEST;
+    public static RegistrySupplier<WoodenChestBlock> ACACIA_CHEST;
+    public static RegistrySupplier<WoodenChestBlock> DARK_OAK_CHEST;
+    public static RegistrySupplier<WoodenChestBlock> CRIMSON_CHEST;
+    public static RegistrySupplier<WoodenChestBlock> WARPED_CHEST;
 
     public static RegistrySupplier<Block> SPRUCE_CRAFTING_TABLE;
     public static RegistrySupplier<Block> BIRCH_CRAFTING_TABLE;
@@ -71,14 +63,32 @@ public class CrumbsBlocks {
     public static RegistrySupplier<Block> CRIMSON_LANTERN;
     public static RegistrySupplier<Block> WARPED_LANTERN;
 
-    public static RegistrySupplier<WoodenChestBlock> OAK_CHEST;
-    public static RegistrySupplier<WoodenChestBlock> SPRUCE_CHEST;
-    public static RegistrySupplier<WoodenChestBlock> BIRCH_CHEST;
-    public static RegistrySupplier<WoodenChestBlock> JUNGLE_CHEST;
-    public static RegistrySupplier<WoodenChestBlock> ACACIA_CHEST;
-    public static RegistrySupplier<WoodenChestBlock> DARK_OAK_CHEST;
-    public static RegistrySupplier<WoodenChestBlock> CRIMSON_CHEST;
-    public static RegistrySupplier<WoodenChestBlock> WARPED_CHEST;
+    public static RegistrySupplier<Block> SPRUCE_LADDER;
+    public static RegistrySupplier<Block> BIRCH_LADDER;
+    public static RegistrySupplier<Block> JUNGLE_LADDER;
+    public static RegistrySupplier<Block> ACACIA_LADDER;
+    public static RegistrySupplier<Block> DARK_OAK_LADDER;
+    public static RegistrySupplier<Block> CRIMSON_LADDER;
+    public static RegistrySupplier<Block> WARPED_LADDER;
+
+    public static RegistrySupplier<Block> OAK_POST;
+    public static RegistrySupplier<Block> SPRUCE_POST;
+    public static RegistrySupplier<Block> BIRCH_POST;
+    public static RegistrySupplier<Block> JUNGLE_POST;
+    public static RegistrySupplier<Block> ACACIA_POST;
+    public static RegistrySupplier<Block> DARK_OAK_POST;
+    public static RegistrySupplier<Block> CRIMSON_POST;
+    public static RegistrySupplier<Block> WARPED_POST;
+
+    public static RegistrySupplier<Block> STRIPPED_OAK_POST;
+    public static RegistrySupplier<Block> STRIPPED_SPRUCE_POST;
+    public static RegistrySupplier<Block> STRIPPED_BIRCH_POST;
+    public static RegistrySupplier<Block> STRIPPED_JUNGLE_POST;
+    public static RegistrySupplier<Block> STRIPPED_ACACIA_POST;
+    public static RegistrySupplier<Block> STRIPPED_DARK_OAK_POST;
+    public static RegistrySupplier<Block> STRIPPED_CRIMSON_POST;
+    public static RegistrySupplier<Block> STRIPPED_WARPED_POST;
+
 
     public static void register() {
         BlockRegistryBatch batch = new BlockRegistryBatch(Crumbs.MOD_ID);
@@ -157,6 +167,14 @@ public class CrumbsBlocks {
         CRIMSON_BARREL = batch.addCopy("crimson_barrel", WoodenBarrelBlock::new, Blocks.CRIMSON_PLANKS);
         WARPED_BARREL = batch.addCopy("warped_barrel", WoodenBarrelBlock::new, Blocks.WARPED_PLANKS);
 
+        batch.addCopy("spruce_bookshelf", Block::new, Blocks.BOOKSHELF);
+        batch.addCopy("birch_bookshelf", Block::new, Blocks.BOOKSHELF);
+        batch.addCopy("jungle_bookshelf", Block::new, Blocks.BOOKSHELF);
+        batch.addCopy("acacia_bookshelf", Block::new, Blocks.BOOKSHELF);
+        batch.addCopy("dark_oak_bookshelf", Block::new, Blocks.BOOKSHELF);
+        batch.addCopy("crimson_bookshelf", Block::new, Blocks.BOOKSHELF);
+        batch.addCopy("warped_bookshelf", Block::new, Blocks.BOOKSHELF);
+
         OAK_LANTERN = batch.addCopy("oak_lantern", WoodenLanternBlock::new, Blocks.OAK_PLANKS);
         SPRUCE_LANTERN = batch.addCopy("spruce_lantern", WoodenLanternBlock::new, Blocks.SPRUCE_PLANKS);
         BIRCH_LANTERN = batch.addCopy("birch_lantern", WoodenLanternBlock::new, Blocks.BIRCH_PLANKS);
@@ -165,6 +183,14 @@ public class CrumbsBlocks {
         DARK_OAK_LANTERN = batch.addCopy("dark_oak_lantern", WoodenLanternBlock::new, Blocks.DARK_OAK_PLANKS);
         CRIMSON_LANTERN = batch.addCopy("crimson_lantern", WoodenLanternBlock::new, Blocks.CRIMSON_PLANKS);
         WARPED_LANTERN = batch.addCopy("warped_lantern", WoodenLanternBlock::new, Blocks.WARPED_PLANKS);
+
+        SPRUCE_LADDER = batch.addCopy("spruce_ladder", PlumeLadderBlock::new, Blocks.LADDER);
+        BIRCH_LADDER = batch.addCopy("birch_ladder", PlumeLadderBlock::new, Blocks.LADDER);
+        JUNGLE_LADDER = batch.addCopy("jungle_ladder", PlumeLadderBlock::new, Blocks.LADDER);
+        ACACIA_LADDER = batch.addCopy("acacia_ladder", PlumeLadderBlock::new, Blocks.LADDER);
+        DARK_OAK_LADDER = batch.addCopy("dark_oak_ladder", PlumeLadderBlock::new, Blocks.LADDER);
+        CRIMSON_LADDER = batch.addCopy("crimson_ladder", PlumeLadderBlock::new, Blocks.LADDER);
+        WARPED_LADDER = batch.addCopy("warped_ladder", PlumeLadderBlock::new, Blocks.LADDER);
 
         OAK_POST = batch.addCopy("oak_post", WallBlock::new, Blocks.OAK_PLANKS);
         SPRUCE_POST = batch.addCopy("spruce_post", WallBlock::new, Blocks.SPRUCE_PLANKS);

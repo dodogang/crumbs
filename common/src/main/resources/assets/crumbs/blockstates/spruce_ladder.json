@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "crumbs:block/spruce_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "crumbs:block/spruce_ladder"
+    },
+    "facing=south": {
+      "model": "crumbs:block/spruce_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "crumbs:block/spruce_ladder",
+      "y": 270
+    }
+  }
+}

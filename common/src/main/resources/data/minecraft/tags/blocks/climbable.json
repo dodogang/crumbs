@@ -1,0 +1,12 @@
+{
+    "replace": false,
+    "values": [
+        "crumbs:spruce_ladder",
+        "crumbs:birch_ladder",
+        "crumbs:jungle_ladder",
+        "crumbs:acacia_ladder",
+        "crumbs:dark_oak_ladder",
+        "crumbs:crimson_ladder",
+        "crumbs:warped_ladder"
+    ]
+}

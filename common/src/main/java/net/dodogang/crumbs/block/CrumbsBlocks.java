@@ -9,6 +9,7 @@ import net.minecraft.block.*;
 import net.minecraft.item.Item;
 
 public class CrumbsBlocks {
+
     private CrumbsBlocks() {}
 
     public static RegistrySupplier<Block> OAK_BUNDLED_LOG;
@@ -53,6 +54,14 @@ public class CrumbsBlocks {
     public static RegistrySupplier<Block> DARK_OAK_BARREL;
     public static RegistrySupplier<Block> CRIMSON_BARREL;
     public static RegistrySupplier<Block> WARPED_BARREL;
+
+    public static RegistrySupplier<Block> SPRUCE_BOOKSHELF;
+    public static RegistrySupplier<Block> BIRCH_BOOKSHELF;
+    public static RegistrySupplier<Block> JUNGLE_BOOKSHELF;
+    public static RegistrySupplier<Block> ACACIA_BOOKSHELF;
+    public static RegistrySupplier<Block> DARK_OAK_BOOKSHELF;
+    public static RegistrySupplier<Block> CRIMSON_BOOKSHELF;
+    public static RegistrySupplier<Block> WARPED_BOOKSHELF;
 
     public static RegistrySupplier<Block> OAK_LANTERN;
     public static RegistrySupplier<Block> SPRUCE_LANTERN;
@@ -167,13 +176,13 @@ public class CrumbsBlocks {
         CRIMSON_BARREL = batch.addCopy("crimson_barrel", WoodenBarrelBlock::new, Blocks.CRIMSON_PLANKS);
         WARPED_BARREL = batch.addCopy("warped_barrel", WoodenBarrelBlock::new, Blocks.WARPED_PLANKS);
 
-        batch.addCopy("spruce_bookshelf", Block::new, Blocks.BOOKSHELF);
-        batch.addCopy("birch_bookshelf", Block::new, Blocks.BOOKSHELF);
-        batch.addCopy("jungle_bookshelf", Block::new, Blocks.BOOKSHELF);
-        batch.addCopy("acacia_bookshelf", Block::new, Blocks.BOOKSHELF);
-        batch.addCopy("dark_oak_bookshelf", Block::new, Blocks.BOOKSHELF);
-        batch.addCopy("crimson_bookshelf", Block::new, Blocks.BOOKSHELF);
-        batch.addCopy("warped_bookshelf", Block::new, Blocks.BOOKSHELF);
+        SPRUCE_BOOKSHELF = batch.addCopy("spruce_bookshelf", Block::new, Blocks.BOOKSHELF);
+        BIRCH_BOOKSHELF = batch.addCopy("birch_bookshelf", Block::new, Blocks.BOOKSHELF);
+        JUNGLE_BOOKSHELF = batch.addCopy("jungle_bookshelf", Block::new, Blocks.BOOKSHELF);
+        ACACIA_BOOKSHELF = batch.addCopy("acacia_bookshelf", Block::new, Blocks.BOOKSHELF);
+        DARK_OAK_BOOKSHELF = batch.addCopy("dark_oak_bookshelf", Block::new, Blocks.BOOKSHELF);
+        CRIMSON_BOOKSHELF = batch.addCopy("crimson_bookshelf", Block::new, Blocks.BOOKSHELF);
+        WARPED_BOOKSHELF = batch.addCopy("warped_bookshelf", Block::new, Blocks.BOOKSHELF);
 
         OAK_LANTERN = batch.addCopy("oak_lantern", WoodenLanternBlock::new, Blocks.OAK_PLANKS);
         SPRUCE_LANTERN = batch.addCopy("spruce_lantern", WoodenLanternBlock::new, Blocks.SPRUCE_PLANKS);

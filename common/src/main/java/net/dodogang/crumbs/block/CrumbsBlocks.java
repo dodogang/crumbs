@@ -132,23 +132,14 @@ public class CrumbsBlocks {
         batch.addCopy("reinforced_crimson_planks", PillarBlock::new, Blocks.CRIMSON_PLANKS);
         batch.addCopy("reinforced_warped_planks", PillarBlock::new, Blocks.WARPED_PLANKS);
 
-        OAK_POST = batch.addCopy("oak_post", WallBlock::new, Blocks.OAK_PLANKS);
-        SPRUCE_POST = batch.addCopy("spruce_post", WallBlock::new, Blocks.SPRUCE_PLANKS);
-        BIRCH_POST = batch.addCopy("birch_post", WallBlock::new, Blocks.BIRCH_PLANKS);
-        JUNGLE_POST = batch.addCopy("jungle_post", WallBlock::new, Blocks.JUNGLE_PLANKS);
-        ACACIA_POST = batch.addCopy("acacia_post", WallBlock::new, Blocks.ACACIA_PLANKS);
-        DARK_OAK_POST = batch.addCopy("dark_oak_post", WallBlock::new, Blocks.DARK_OAK_PLANKS);
-        CRIMSON_POST = batch.addCopy("crimson_post", WallBlock::new, Blocks.CRIMSON_PLANKS);
-        WARPED_POST = batch.addCopy("warped_post", WallBlock::new, Blocks.WARPED_PLANKS);
-
-        STRIPPED_OAK_POST = batch.addCopy("stripped_oak_post", WallBlock::new, Blocks.OAK_PLANKS);
-        STRIPPED_SPRUCE_POST = batch.addCopy("stripped_spruce_post", WallBlock::new, Blocks.SPRUCE_PLANKS);
-        STRIPPED_BIRCH_POST = batch.addCopy("stripped_birch_post", WallBlock::new, Blocks.BIRCH_PLANKS);
-        STRIPPED_JUNGLE_POST = batch.addCopy("stripped_jungle_post", WallBlock::new, Blocks.JUNGLE_PLANKS);
-        STRIPPED_ACACIA_POST = batch.addCopy("stripped_acacia_post", WallBlock::new, Blocks.ACACIA_PLANKS);
-        STRIPPED_DARK_OAK_POST = batch.addCopy("stripped_dark_oak_post", WallBlock::new, Blocks.DARK_OAK_PLANKS);
-        STRIPPED_CRIMSON_POST = batch.addCopy("stripped_crimson_post", WallBlock::new, Blocks.CRIMSON_PLANKS);
-        STRIPPED_WARPED_POST = batch.addCopy("stripped_warped_post", WallBlock::new, Blocks.WARPED_PLANKS);
+        OAK_CHEST = addChestCopy(batch, "oak_chest", WoodenChestBlock.ModelType.OAK, Blocks.CHEST);
+        SPRUCE_CHEST = addChestCopy(batch, "spruce_chest", WoodenChestBlock.ModelType.SPRUCE, Blocks.CHEST);
+        BIRCH_CHEST = addChestCopy(batch, "birch_chest", WoodenChestBlock.ModelType.BIRCH, Blocks.CHEST);
+        JUNGLE_CHEST = addChestCopy(batch, "jungle_chest", WoodenChestBlock.ModelType.OAK, Blocks.CHEST);
+        ACACIA_CHEST = addChestCopy(batch, "acacia_chest", WoodenChestBlock.ModelType.ACACIA, Blocks.CHEST);
+        DARK_OAK_CHEST = addChestCopy(batch, "dark_oak_chest", WoodenChestBlock.ModelType.OAK, Blocks.CHEST);
+        CRIMSON_CHEST = addChestCopy(batch, "crimson_chest", WoodenChestBlock.ModelType.CRIMSON, Blocks.CHEST);
+        WARPED_CHEST = addChestCopy(batch, "warped_chest", WoodenChestBlock.ModelType.CRIMSON, Blocks.CHEST);
 
         SPRUCE_CRAFTING_TABLE = batch.addCopy("spruce_crafting_table", PlumeCraftingTableBlock::new, Blocks.SPRUCE_PLANKS);
         BIRCH_CRAFTING_TABLE = batch.addCopy("birch_crafting_table", PlumeCraftingTableBlock::new, Blocks.BIRCH_PLANKS);
@@ -175,14 +166,23 @@ public class CrumbsBlocks {
         CRIMSON_LANTERN = batch.addCopy("crimson_lantern", WoodenLanternBlock::new, Blocks.CRIMSON_PLANKS);
         WARPED_LANTERN = batch.addCopy("warped_lantern", WoodenLanternBlock::new, Blocks.WARPED_PLANKS);
 
-        OAK_CHEST = addChestCopy(batch, "oak_chest", WoodenChestBlock.ModelType.OAK, Blocks.CHEST);
-        SPRUCE_CHEST = addChestCopy(batch, "spruce_chest", WoodenChestBlock.ModelType.SPRUCE, Blocks.CHEST);
-        BIRCH_CHEST = addChestCopy(batch, "birch_chest", WoodenChestBlock.ModelType.BIRCH, Blocks.CHEST);
-        JUNGLE_CHEST = addChestCopy(batch, "jungle_chest", WoodenChestBlock.ModelType.OAK, Blocks.CHEST);
-        ACACIA_CHEST = addChestCopy(batch, "acacia_chest", WoodenChestBlock.ModelType.ACACIA, Blocks.CHEST);
-        DARK_OAK_CHEST = addChestCopy(batch, "dark_oak_chest", WoodenChestBlock.ModelType.OAK, Blocks.CHEST);
-        CRIMSON_CHEST = addChestCopy(batch, "crimson_chest", WoodenChestBlock.ModelType.CRIMSON, Blocks.CHEST);
-        WARPED_CHEST = addChestCopy(batch, "warped_chest", WoodenChestBlock.ModelType.CRIMSON, Blocks.CHEST);
+        OAK_POST = batch.addCopy("oak_post", WallBlock::new, Blocks.OAK_PLANKS);
+        SPRUCE_POST = batch.addCopy("spruce_post", WallBlock::new, Blocks.SPRUCE_PLANKS);
+        BIRCH_POST = batch.addCopy("birch_post", WallBlock::new, Blocks.BIRCH_PLANKS);
+        JUNGLE_POST = batch.addCopy("jungle_post", WallBlock::new, Blocks.JUNGLE_PLANKS);
+        ACACIA_POST = batch.addCopy("acacia_post", WallBlock::new, Blocks.ACACIA_PLANKS);
+        DARK_OAK_POST = batch.addCopy("dark_oak_post", WallBlock::new, Blocks.DARK_OAK_PLANKS);
+        CRIMSON_POST = batch.addCopy("crimson_post", WallBlock::new, Blocks.CRIMSON_PLANKS);
+        WARPED_POST = batch.addCopy("warped_post", WallBlock::new, Blocks.WARPED_PLANKS);
+
+        STRIPPED_OAK_POST = batch.addCopy("stripped_oak_post", WallBlock::new, Blocks.OAK_PLANKS);
+        STRIPPED_SPRUCE_POST = batch.addCopy("stripped_spruce_post", WallBlock::new, Blocks.SPRUCE_PLANKS);
+        STRIPPED_BIRCH_POST = batch.addCopy("stripped_birch_post", WallBlock::new, Blocks.BIRCH_PLANKS);
+        STRIPPED_JUNGLE_POST = batch.addCopy("stripped_jungle_post", WallBlock::new, Blocks.JUNGLE_PLANKS);
+        STRIPPED_ACACIA_POST = batch.addCopy("stripped_acacia_post", WallBlock::new, Blocks.ACACIA_PLANKS);
+        STRIPPED_DARK_OAK_POST = batch.addCopy("stripped_dark_oak_post", WallBlock::new, Blocks.DARK_OAK_PLANKS);
+        STRIPPED_CRIMSON_POST = batch.addCopy("stripped_crimson_post", WallBlock::new, Blocks.CRIMSON_PLANKS);
+        STRIPPED_WARPED_POST = batch.addCopy("stripped_warped_post", WallBlock::new, Blocks.WARPED_PLANKS);
 
         // -------- Stone Blocks --------
         // ------------------------------

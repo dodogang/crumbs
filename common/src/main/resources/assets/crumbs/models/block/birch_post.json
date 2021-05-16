@@ -1,0 +1,7 @@
+{
+  "parent": "crumbs:block/template_post",
+  "textures": {
+    "post": "minecraft:block/birch_log",
+    "top": "crumbs:block/birch_post_top"
+  }
+}

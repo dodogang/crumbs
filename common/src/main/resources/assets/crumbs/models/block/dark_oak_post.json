@@ -1,0 +1,7 @@
+{
+  "parent": "crumbs:block/template_post",
+  "textures": {
+    "post": "minecraft:block/dark_oak_log",
+    "top": "crumbs:block/dark_oak_post_top"
+  }
+}

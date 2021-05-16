@@ -1,0 +1,7 @@
+{
+  "parent": "crumbs:block/template_post",
+  "textures": {
+    "post": "crumbs:block/stripped_birch_post",
+    "top": "crumbs:block/stripped_birch_post_top"
+  }
+}

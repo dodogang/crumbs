@@ -1,0 +1,7 @@
+{
+  "parent": "crumbs:block/template_post",
+  "textures": {
+    "post": "minecraft:block/warped_stem",
+    "top": "crumbs:block/warped_post_top"
+  }
+}

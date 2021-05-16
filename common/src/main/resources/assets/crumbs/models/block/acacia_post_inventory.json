@@ -1,0 +1,8 @@
+{
+  "parent": "crumbs:block/template_post_inventory",
+  "textures": {
+    "post": "minecraft:block/acacia_log",
+    "side": "crumbs:block/acacia_post_side",
+    "top": "crumbs:block/acacia_post_top"
+  }
+}

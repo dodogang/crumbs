@@ -1,0 +1,8 @@
+{
+  "parent": "crumbs:block/template_post_inventory",
+  "textures": {
+    "post": "crumbs:block/stripped_warped_post",
+    "side": "crumbs:block/stripped_warped_post_side",
+    "top": "crumbs:block/stripped_warped_post_top"
+  }
+}

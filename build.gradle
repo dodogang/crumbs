@@ -36,11 +36,15 @@ allprojects {
     group = rootProject.maven_group
 
     repositories {
-        // Mod Menu Maven
-        maven { url = "https://maven.terraformersmc.com/releases/" }
-
-        // Mod Maven
-        maven { url = "https://modmaven.k-4u.nl" }
+        maven {
+            name = "Mod Menu Maven"
+            url = "https://maven.terraformersmc.com/releases/"
+        }
+        maven {
+            name = "Dodo Gang Maven Repo"
+            url = "http://maven.dodogang.net/releases"
+            allowInsecureProtocol = true
+        }
     }
 
     tasks.withType(JavaCompile) {

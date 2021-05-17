@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[32,)"
 issueTrackerURL = "https://github.com/dodogang/crumbs/issues"
-license = "MIT"
+license = "MIT; Assets licensed as All Rights Reserved"
 
 [[mods]]
 modId = "crumbs"

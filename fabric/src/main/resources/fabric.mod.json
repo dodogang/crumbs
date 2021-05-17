@@ -12,7 +12,7 @@
         "issues": "https://github.com/dodogang/crumbs/issues",
         "sources": "https://github.com/dodogang/crumbs"
     },
-    "license": "MIT",
+    "license": "MIT; Assets licensed as All Rights Reserved",
     "icon": "assets/crumbs/icon.png",
     "environment": "*",
     "entrypoints": {
@@ -39,8 +39,7 @@
             "badges": [],
             "links": {
                 "crumbs.discord": "https://discord.gg/APPWa6s"
-            },
-            "parent": "plume"
+            }
         }
     }
 }

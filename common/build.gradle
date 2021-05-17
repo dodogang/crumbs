@@ -26,17 +26,16 @@ publishing {
         }
     }
 
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        if (System.getenv("MODMAVEN_API_KEY") != null) {
-            maven {
-                name = "modmaven"
-                url = "http://modmaven.dev/artifactory/local-releases"
-                credentials {
-                    username = "dodogang"
-                    password = System.getenv("MODMAVEN_API_KEY")
-                }
-            }
-        }
+//        if (System.getenv("MODMAVEN_API_KEY") != null) {
+//            maven {
+//                name = "modmaven"
+//                url = "http://modmaven.dev/artifactory/local-releases"
+//                credentials {
+//                    username = "dodogang"
+//                    password = System.getenv("MODMAVEN_API_KEY")
+//                }
+//            }
+//        }
     }
 }

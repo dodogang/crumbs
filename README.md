@@ -9,3 +9,14 @@ Crumbs is a 'small' Minecraft mod that adds a set of new simple building blocks.
 
 ## Contributing
 - You can contribute ideas at [our Discord](https://discord.gg/APPWa6s) or through [issues](https://github.com/dodogang/crumbs/issues) and [pull requests](https://github.com/dodogang/crumbs/pulls).
+
+## License
+
+All assets found in the following directories are licensed under All Rights Reserved.
+- ./common/src/main/resources/assets/
+- ./fabric/src/main/resources/assets/
+- ./forge/src/main/resources/assets/
+
+Everything else is licensed under MIT.
+
+Want clarification or explicit permission? Contact us on [Discord](https://discord.gg/APPWa6s).

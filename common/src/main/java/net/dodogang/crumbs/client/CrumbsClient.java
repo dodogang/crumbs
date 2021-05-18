@@ -1,5 +1,6 @@
 package net.dodogang.crumbs.client;
 
+import com.google.common.reflect.Reflection;
 import net.dodogang.crumbs.block.CrumbsBlocks;
 import net.dodogang.crumbs.block.entity.CrumbsBlockEntityTypes;
 import net.dodogang.crumbs.block.entity.WoodenChestBlockEntity;
@@ -14,8 +15,11 @@ import net.minecraft.client.render.RenderLayers;
 public class CrumbsClient {
     private CrumbsClient() {}
 
+    @SuppressWarnings("UnstableApiUsage")
     public static void initialize() {
-        CrumbsAtlasTextures.register();
+        Reflection.initialize(
+            CrumbsAtlasTextures.class
+        );
         setBlockRenderLayers();
     }
 

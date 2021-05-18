@@ -9,9 +9,6 @@ import net.minecraft.block.*;
 import net.minecraft.item.Item;
 
 public class CrumbsBlocks {
-
-    private CrumbsBlocks() {}
-
     public static RegistrySupplier<Block> OAK_BUNDLED_LOG;
     public static RegistrySupplier<Block> SPRUCE_BUNDLED_LOG;
     public static RegistrySupplier<Block> BIRCH_BUNDLED_LOG;
@@ -99,7 +96,7 @@ public class CrumbsBlocks {
     public static RegistrySupplier<Block> STRIPPED_WARPED_POST;
 
 
-    public static void register() {
+    static {
         BlockRegistryBatch batch = new BlockRegistryBatch(Crumbs.MOD_ID);
 
         batch.setDefaultItemSettings(new Item.Settings().group(Crumbs.ITEM_GROUP));

@@ -1,5 +1,6 @@
 package net.dodogang.crumbs;
 
+import com.google.common.reflect.Reflection;
 import net.dodogang.crumbs.block.CrumbsBlocks;
 import net.dodogang.crumbs.block.entity.CrumbsBlockEntityTypes;
 import net.dodogang.crumbs.event.RightClickBlockHandlers;
@@ -24,13 +25,19 @@ public class Crumbs {
             () -> new ItemStack(CrumbsBlocks.OAK_BUNDLED_LOG.get())
     );
 
+    @SuppressWarnings("UnstableApiUsage")
     public static void initialize() {
-        CrumbsBlocks.register();
-        CrumbsBlockEntityTypes.register();
+        Reflection.initialize(
+            CrumbsBlocks.class,
+            CrumbsBlockEntityTypes.class
+        );
     }
 
+    @SuppressWarnings("UnstableApiUsage")
     public static void setup() {
-        RightClickBlockHandlers.register();
+        Reflection.initialize(
+            RightClickBlockHandlers.class
+        );
 
         registerToPointOfInterests();
         registerFuelBurnTimes();

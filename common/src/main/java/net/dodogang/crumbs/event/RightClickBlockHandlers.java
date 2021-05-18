@@ -19,13 +19,11 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
 public class RightClickBlockHandlers {
-    private RightClickBlockHandlers() {}
-
-    private static ImmutableMap<Block, Block> logToStrippedMap;
-    private static ImmutableMap<Block, Block> wallToStrippedMap;
+    private static final ImmutableMap<Block, Block> LOG_TO_STRIPPED_MAP;
+    private static final ImmutableMap<Block, Block> WALL_TO_STRIPPED_MAP;
 
     static {
-        logToStrippedMap = new ImmutableMap.Builder<Block, Block>()
+        LOG_TO_STRIPPED_MAP = new ImmutableMap.Builder<Block, Block>()
                 .put(CrumbsBlocks.OAK_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_OAK_BUNDLED_LOG.get())
                 .put(CrumbsBlocks.BIRCH_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_BIRCH_BUNDLED_LOG.get())
                 .put(CrumbsBlocks.SPRUCE_BUNDLED_LOG.get(), CrumbsBlocks.STRIPPED_SPRUCE_BUNDLED_LOG.get())
@@ -36,7 +34,7 @@ public class RightClickBlockHandlers {
                 .put(CrumbsBlocks.WARPED_BUNDLED_STEM.get(), CrumbsBlocks.STRIPPED_WARPED_BUNDLED_STEM.get())
                 .build();
 
-        wallToStrippedMap = new ImmutableMap.Builder<Block, Block>()
+        WALL_TO_STRIPPED_MAP = new ImmutableMap.Builder<Block, Block>()
                 .put(CrumbsBlocks.OAK_POST.get(), CrumbsBlocks.STRIPPED_OAK_POST.get())
                 .put(CrumbsBlocks.BIRCH_POST.get(), CrumbsBlocks.STRIPPED_BIRCH_POST.get())
                 .put(CrumbsBlocks.SPRUCE_POST.get(), CrumbsBlocks.STRIPPED_SPRUCE_POST.get())
@@ -48,7 +46,7 @@ public class RightClickBlockHandlers {
                 .build();
     }
 
-    public static void register() {
+    static {
         InteractionCallback.RightClickBlock.register(RightClickBlockHandlers::stripLog);
     }
 
@@ -56,10 +54,10 @@ public class RightClickBlockHandlers {
         BlockState state = world.getBlockState(pos);
         ItemStack stack = player.getStackInHand(hand);
 
-        if (ToolTags.AXES.contains(stack) && logToStrippedMap.containsKey(state.getBlock())) {
+        if (ToolTags.AXES.contains(stack) && LOG_TO_STRIPPED_MAP.containsKey(state.getBlock())) {
             world.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
             if (!world.isClient) {
-                Block strippedLog = logToStrippedMap.get(state.getBlock());
+                Block strippedLog = LOG_TO_STRIPPED_MAP.get(state.getBlock());
 
                 world.setBlockState(
                         pos,
@@ -74,10 +72,10 @@ public class RightClickBlockHandlers {
                 }
             }
             return ActionResult.SUCCESS;
-        } else if (ToolTags.AXES.contains(stack) && wallToStrippedMap.containsKey(state.getBlock())) {
+        } else if (ToolTags.AXES.contains(stack) && WALL_TO_STRIPPED_MAP.containsKey(state.getBlock())) {
             world.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
             if (!world.isClient) {
-                Block strippedWall = wallToStrippedMap.get(state.getBlock());
+                Block strippedWall = WALL_TO_STRIPPED_MAP.get(state.getBlock());
 
                 world.setBlockState(
                         pos,

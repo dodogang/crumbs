@@ -8,11 +8,9 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.registry.Registry;
 
 public class CrumbsBlockEntityTypes {
-    private CrumbsBlockEntityTypes() {}
-
     public static RegistrySupplier<BlockEntityType<WoodenChestBlockEntity>> WOODEN_CHEST;
 
-    public static void register() {
+    static  {
         RegistryBatch<BlockEntityType<?>> batch = RegistryBatch.create(
                 Registry.BLOCK_ENTITY_TYPE_KEY,
                 Crumbs.MOD_ID

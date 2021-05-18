@@ -25,7 +25,7 @@ public class CrumbsAtlasTextures {
     public static final Identifier WARPED_CHEST = chestSpriteId("warped");
     public static final Identifier WARPED_DOUBLE_CHEST = chestSpriteId("warped_double");
 
-    public static void register() {
+    static {
         SpriteRegistry.register(
                 Crumbs.MOD_ID,
                 TexturedRenderLayers.CHEST_ATLAS_TEXTURE,

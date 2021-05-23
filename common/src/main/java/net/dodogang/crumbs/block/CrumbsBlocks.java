@@ -97,9 +97,7 @@ public class CrumbsBlocks {
 
 
     static {
-        BlockRegistryBatch batch = new BlockRegistryBatch(Crumbs.MOD_ID);
-
-        batch.setDefaultItemSettings(new Item.Settings().group(Crumbs.ITEM_GROUP));
+        BlockRegistryBatch batch = new BlockRegistryBatch(Crumbs.MOD_ID).setDefaultItemSettings(new Item.Settings().group(Crumbs.ITEM_GROUP));
 
         // -------- Wooden Blocks --------
         // -------------------------------

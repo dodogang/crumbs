@@ -20,7 +20,7 @@ public class WoodenLanternBlock extends Block {
     public static final BooleanProperty LIT = Properties.LIT;
 
     public WoodenLanternBlock(Settings settings) {
-        super(settings);
+        super(settings.luminance(state -> state.get(LIT) ? 15 : 0));
     }
 
     @Override

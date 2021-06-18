@@ -6,6 +6,7 @@ on: [ pull_request, push ]
 
 jobs:
   build:
+    continue-on-error: true
     strategy:
       matrix:
         # Use these Java versions

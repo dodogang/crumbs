@@ -11,9 +11,7 @@ jobs:
       matrix:
         # Use these Java versions
         java: [
-            8.0,  # Minimum supported by Minecraft
-            11,   # Current Java LTS
-            16    # Latest version
+            8.0   # Minimum supported by Minecraft
         ]
         # and run on both Linux and Windows
         os: [ ubuntu-20.04, windows-latest ]
@@ -31,5 +29,19 @@ jobs:
       - name: Make gradle wrapper executable
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
-      - name: Build
-        run: ./gradlew build
+
+      - name: Build Fabric
+        run: ./gradlew :fabric:build
+      - name: Capture Fabric build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: fabric/build/libs/
+
+      - name: Build Forge
+        run: ./gradlew :forge:build
+      - name: Capture Forge build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: forge/build/libs/

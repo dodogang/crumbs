@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:andesite"
+    },
+    "result": "crumbs:cobbled_andesite",
+    "count": 1
+}

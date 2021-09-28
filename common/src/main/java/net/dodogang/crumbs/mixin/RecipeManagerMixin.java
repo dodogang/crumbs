@@ -37,7 +37,7 @@ public abstract class RecipeManagerMixin extends JsonDataLoader {
      *
      * Maybe this isn't the best solution... but as far as I can tell this
      * shouldn't break any mods or modpacks. If it does, please report it
-     * to the issue tracker and I will look into better solutions.
+     * to the issue tracker, and I will look into better solutions.
      */
     @Inject(method = "getFirstMatch", at = @At("HEAD"), cancellable = true)
     private <C extends Inventory, T extends Recipe<C>> void crumbs_getFirstMatch(

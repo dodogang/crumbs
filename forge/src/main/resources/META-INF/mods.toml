@@ -14,7 +14,7 @@ authors = "Dodo Gang"
 description = '''
 Building mod which adds various blocks tuned to fit with vanilla minecraft.
 '''
-#logoFile = ""
+logoFile = "icon.png"
 
 [[dependencies.crumbs]]
 modId = "forge"

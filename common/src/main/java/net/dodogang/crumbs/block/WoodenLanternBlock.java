@@ -16,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+@SuppressWarnings("deprecation")
 public class WoodenLanternBlock extends Block {
     public static final BooleanProperty LIT = Properties.LIT;
 
@@ -43,12 +44,15 @@ public class WoodenLanternBlock extends Block {
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        boolean isSneaking = ctx.getPlayer().isSneaking();
+        PlayerEntity player = ctx.getPlayer();
+        boolean isSneaking = player != null && player.isSneaking();
         if (isSneaking) {
             // TODO: Test to see how it feels to play the sound if lighting the lamp while sneaking.
             playSound(ctx.getPlayer(), true);
         }
-        return super.getPlacementState(ctx).with(LIT, isSneaking);
+
+        BlockState sup = super.getPlacementState(ctx);
+        return (sup == null ? this.getDefaultState() : sup).with(LIT, isSneaking);
     }
 
     private void playSound(PlayerEntity player, boolean isLit) {

@@ -2,9 +2,12 @@ package net.dodogang.crumbs.client.render;
 
 import net.dodogang.crumbs.Crumbs;
 import net.dodogang.plume.ash.client.registry.SpriteRegistry;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.util.Identifier;
 
+@Environment(EnvType.CLIENT)
 public class CrumbsAtlasTextures {
     private CrumbsAtlasTextures() {}
 
@@ -25,30 +28,9 @@ public class CrumbsAtlasTextures {
     public static final Identifier WARPED_CHEST = chestSpriteId("warped");
     public static final Identifier WARPED_DOUBLE_CHEST = chestSpriteId("warped_double");
 
-    static {
-        SpriteRegistry.register(
-                Crumbs.MOD_ID,
-                TexturedRenderLayers.CHEST_ATLAS_TEXTURE,
-                OAK_CHEST,
-                OAK_DOUBLE_CHEST,
-                SPRUCE_CHEST,
-                SPRUCE_DOUBLE_CHEST,
-                BIRCH_CHEST,
-                BIRCH_DOUBLE_CHEST,
-                JUNGLE_CHEST,
-                JUNGLE_DOUBLE_CHEST,
-                ACACIA_CHEST,
-                ACACIA_DOUBLE_CHEST,
-                DARK_OAK_CHEST,
-                DARK_OAK_DOUBLE_CHEST,
-                CRIMSON_CHEST,
-                CRIMSON_DOUBLE_CHEST,
-                WARPED_CHEST,
-                WARPED_DOUBLE_CHEST
-        );
-    }
-
     private static Identifier chestSpriteId(String name) {
-        return new Identifier(Crumbs.MOD_ID, "entity/chest/" + name);
+        Identifier id = new Identifier(Crumbs.MOD_ID, "entity/chest/" + name);
+        SpriteRegistry.register(Crumbs.MOD_ID, TexturedRenderLayers.CHEST_ATLAS_TEXTURE, id);
+        return id;
     }
 }

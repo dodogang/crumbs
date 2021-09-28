@@ -11,8 +11,7 @@ public class WoodenChestBlock extends ChestBlock implements BlockEntityProvider 
     public final ModelType modelType;
 
     public WoodenChestBlock(ModelType modelType, Settings settings) {
-        super(settings, () -> CrumbsBlockEntityTypes.WOODEN_CHEST.get());
-
+        super(settings, () -> CrumbsBlockEntityTypes.WOODEN_CHEST);
         this.modelType = modelType;
     }
 

@@ -10,6 +10,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -49,7 +50,8 @@ public class WoodenBarrelBlock extends BarrelBlock {
         double x = blockEntity.getPos().getX() + 0.5D + (double)vec3i.getX() / 2.0D;
         double y = blockEntity.getPos().getY() + 0.5D + (double)vec3i.getY() / 2.0D;
         double z = blockEntity.getPos().getZ() + 0.5D + (double)vec3i.getZ() / 2.0D;
-        blockEntity.getWorld().playSound(
+        World world = blockEntity.getWorld();
+        if (world != null) world.playSound(
                 null,
                 x, y, z,
                 SoundEvents.BLOCK_BARREL_CLOSE,

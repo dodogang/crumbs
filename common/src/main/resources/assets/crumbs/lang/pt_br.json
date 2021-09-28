@@ -1,7 +1,5 @@
 {
-    "mod.crumbs.name": "Crumbs",
     "mod.crumbs.description": "Por que madeira tão quebradiça?",
-    "itemGroup.crumbs.item_group": "Crumbs",
 
     "block.crumbs.oak_bundled_log": "Feixe de carvalho",
     "block.crumbs.spruce_bundled_log": "Feixe de pinheiro",

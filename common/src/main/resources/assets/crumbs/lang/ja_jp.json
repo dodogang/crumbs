@@ -1,9 +1,4 @@
 {
-    "mod.crumbs.name": "Crumbs",
-    "mod.crumbs.description": "Why wood crumby?",
-    "crumbs.discord": "Discord",
-    "itemGroup.crumbs.item_group": "Crumbs",
-
     "block.crumbs.oak_bundled_log": "オークの束ねた原木",
     "block.crumbs.spruce_bundled_log": "マツの束ねた原木",
     "block.crumbs.birch_bundled_log": "シラカバの束ねた原木",

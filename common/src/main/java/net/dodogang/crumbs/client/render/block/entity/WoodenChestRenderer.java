@@ -10,6 +10,8 @@ import net.dodogang.crumbs.client.model.ChestModel;
 import net.dodogang.crumbs.client.model.DoubleChestModel;
 import net.dodogang.crumbs.client.model.SingleChestModel;
 import net.dodogang.crumbs.client.render.CrumbsAtlasTextures;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ChestBlock;
@@ -23,10 +25,11 @@ import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.LightmapCoordinatesRetriever;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Vec3f;
 
+@Environment(EnvType.CLIENT)
 public class WoodenChestRenderer extends BlockEntityRenderer<WoodenChestBlockEntity> {
     private static final ImmutableMap<Pair<WoodenChestBlock.ModelType, ChestType>, ChestModel> MODELS;
 
@@ -71,9 +74,7 @@ public class WoodenChestRenderer extends BlockEntityRenderer<WoodenChestBlockEnt
 
             ChestModel model = MODELS.get(new Pair<>(modelType, chestType));
             if (model == null) {
-                Crumbs.LOGGER.error(
-                        String.format("Missing model definition for ModelType: %s, ChestType: %s", modelType, chestType)
-                );
+                Crumbs.LOGGER.error("Missing model definition for ModelType: {}, ChestType: {}", modelType, chestType);
                 return;
             }
 
@@ -81,7 +82,7 @@ public class WoodenChestRenderer extends BlockEntityRenderer<WoodenChestBlockEnt
 
             matrices.translate(0.5d, 0.5d, 0.5d);
             matrices.multiply(
-                    Vector3f.POSITIVE_Y.getDegreesQuaternion(-state.get(Properties.HORIZONTAL_FACING).asRotation())
+                    Vec3f.POSITIVE_Y.getDegreesQuaternion(-state.get(Properties.HORIZONTAL_FACING).asRotation())
             );
             matrices.translate(-0.5d, -0.5d, -0.5d);
 
@@ -117,38 +118,38 @@ public class WoodenChestRenderer extends BlockEntityRenderer<WoodenChestBlockEnt
     private Identifier getTexture(Block block, ChestType chestType) {
         switch (chestType) {
             case SINGLE:
-                if (block == CrumbsBlocks.OAK_CHEST.get())
+                if (block == CrumbsBlocks.OAK_CHEST)
                     return CrumbsAtlasTextures.OAK_CHEST;
-                else if (block == CrumbsBlocks.SPRUCE_CHEST.get())
+                else if (block == CrumbsBlocks.SPRUCE_CHEST)
                     return CrumbsAtlasTextures.SPRUCE_CHEST;
-                else if (block == CrumbsBlocks.BIRCH_CHEST.get())
+                else if (block == CrumbsBlocks.BIRCH_CHEST)
                     return CrumbsAtlasTextures.BIRCH_CHEST;
-                else if (block == CrumbsBlocks.JUNGLE_CHEST.get())
+                else if (block == CrumbsBlocks.JUNGLE_CHEST)
                     return CrumbsAtlasTextures.JUNGLE_CHEST;
-                else if (block == CrumbsBlocks.ACACIA_CHEST.get())
+                else if (block == CrumbsBlocks.ACACIA_CHEST)
                     return CrumbsAtlasTextures.ACACIA_CHEST;
-                else if (block == CrumbsBlocks.DARK_OAK_CHEST.get())
+                else if (block == CrumbsBlocks.DARK_OAK_CHEST)
                     return CrumbsAtlasTextures.DARK_OAK_CHEST;
-                else if (block == CrumbsBlocks.CRIMSON_CHEST.get())
+                else if (block == CrumbsBlocks.CRIMSON_CHEST)
                     return CrumbsAtlasTextures.CRIMSON_CHEST;
-                else if (block == CrumbsBlocks.WARPED_CHEST.get())
+                else if (block == CrumbsBlocks.WARPED_CHEST)
                     return CrumbsAtlasTextures.WARPED_CHEST;
             case RIGHT:
-                if (block == CrumbsBlocks.OAK_CHEST.get())
+                if (block == CrumbsBlocks.OAK_CHEST)
                     return CrumbsAtlasTextures.OAK_DOUBLE_CHEST;
-                else if (block == CrumbsBlocks.SPRUCE_CHEST.get())
+                else if (block == CrumbsBlocks.SPRUCE_CHEST)
                     return CrumbsAtlasTextures.SPRUCE_DOUBLE_CHEST;
-                else if (block == CrumbsBlocks.BIRCH_CHEST.get())
+                else if (block == CrumbsBlocks.BIRCH_CHEST)
                     return CrumbsAtlasTextures.BIRCH_DOUBLE_CHEST;
-                else if (block == CrumbsBlocks.JUNGLE_CHEST.get())
+                else if (block == CrumbsBlocks.JUNGLE_CHEST)
                     return CrumbsAtlasTextures.JUNGLE_DOUBLE_CHEST;
-                else if (block == CrumbsBlocks.ACACIA_CHEST.get())
+                else if (block == CrumbsBlocks.ACACIA_CHEST)
                     return CrumbsAtlasTextures.ACACIA_DOUBLE_CHEST;
-                else if (block == CrumbsBlocks.DARK_OAK_CHEST.get())
+                else if (block == CrumbsBlocks.DARK_OAK_CHEST)
                     return CrumbsAtlasTextures.DARK_OAK_DOUBLE_CHEST;
-                else if (block == CrumbsBlocks.CRIMSON_CHEST.get())
+                else if (block == CrumbsBlocks.CRIMSON_CHEST)
                     return CrumbsAtlasTextures.CRIMSON_DOUBLE_CHEST;
-                else if (block == CrumbsBlocks.WARPED_CHEST.get())
+                else if (block == CrumbsBlocks.WARPED_CHEST)
                     return CrumbsAtlasTextures.WARPED_DOUBLE_CHEST;
         }
         return CrumbsAtlasTextures.SPRUCE_CHEST;

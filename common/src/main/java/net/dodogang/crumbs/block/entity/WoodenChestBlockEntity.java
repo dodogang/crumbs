@@ -8,11 +8,11 @@ public class WoodenChestBlockEntity extends ChestBlockEntity {
     public final Block block;
 
     public WoodenChestBlockEntity() {
-        this(CrumbsBlocks.SPRUCE_CHEST.getInitialValue());
+        this(CrumbsBlocks.SPRUCE_CHEST);
     }
 
     public WoodenChestBlockEntity(Block block) {
-        super(CrumbsBlockEntityTypes.WOODEN_CHEST.getInitialValue());
+        super(CrumbsBlockEntityTypes.WOODEN_CHEST);
         this.block = block;
     }
 }

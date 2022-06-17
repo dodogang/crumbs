@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "mixin": [
+    "crumbs.mixins.json",
+    "crumbs-common.mixins.json"
+  ],
+  "quilt_loader": {
+    "group": "${group}",
+    "id": "crumbs",
+    "version": "${version}",
+    "metadata": {
+      "name": "Crumbs",
+      "description": "Building mod which adds various blocks tuned to fit with vanilla minecraft.",
+      "contributors": {
+        "Dodo Gang": "Owner"
+      },
+      "contact": {
+        "homepage": "https://modrinth.com/mod/crumbs",
+        "issues": "https://github.com/dodogang/crumbs/issues",
+        "sources": "https://github.com/dodogang/crumbs"
+      },
+      "license": "MIT",
+      "icon": "assets/crumbs/icon.png"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "environment": "*",
+    "entrypoints": {
+      "init": [
+        "net.dodogang.crumbs.quilt.CrumbsQuilt"
+      ],
+      "client_init": [
+        "net.dodogang.crumbs.client.quilt.CrumbsClientQuilt"
+      ]
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "version": "*"
+      },
+      {
+        "id": "quilt_base",
+        "version": "*"
+      },
+      {
+        "id": "minecraft",
+        "version": ">=1.19"
+      }
+    ]
+  }
+}

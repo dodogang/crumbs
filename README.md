@@ -1,22 +1,15 @@
-# Crumbs
+![](https://i.imgur.com/rvMrevP.png)
 
-[![FAPI](https://img.shields.io/badge/api-fabric-orange.svg?style=flat-square)](https://www.curseforge.com/minecraft/mc-mods/fabric-api/files)
-[![GitHub Releases](https://img.shields.io/github/v/release/dodogang/crumbs?include_prereleases&style=flat-square)](https://github.com/dodogang/crumbs/releases)
-[![Discord Server](https://img.shields.io/discord/600399933476044801.svg?color=blueviolet&style=flat-square)](https://discord.gg/APPWa6s)
-![Check Builds for Errors](https://github.com/dodogang/crumbs/workflows/Check%20Builds%20for%20Errors/badge.svg?branch=fabric%2F1.16.3)
+[![](http://cf.way2muchnoise.eu/full_415747_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/crumbs)
+[![](https://modrinth-utils.vercel.app/api/badge/downloads/?id=crumbs&logo=true)](https://modrinth.com/mod/crumbs)
+[![](http://cf.way2muchnoise.eu/versions/415747.svg)](https://www.curseforge.com/minecraft/mc-mods/crumbs)
 
-Crumbs is a 'small' Minecraft mod that adds a set of new simple building blocks.
+## What does this mod do?
 
-## Contributing
-- You can contribute ideas at [our Discord](https://discord.gg/APPWa6s) or through [issues](https://github.com/dodogang/crumbs/issues) and [pull requests](https://github.com/dodogang/crumbs/pulls).
+Building mod which adds various blocks tuned to fit with vanilla minecraft.
 
-## License
+## Other Information:
 
-All assets found in the following directories are licensed under All Rights Reserved.
-- ./common/src/main/resources/assets/
-- ./fabric/src/main/resources/assets/
-- ./forge/src/main/resources/assets/
-
-Everything else is licensed under MIT.
-
-Want clarification or explicit permission? Contact us on [Discord](https://discord.gg/APPWa6s).
+- Report Bugs to https://github.com/dodogang/crumbs/issues
+- Join our discord: https://discord.gg/APPWa6s
+- You can include this mod in your modpack as long as you don't claim the mod as your own.

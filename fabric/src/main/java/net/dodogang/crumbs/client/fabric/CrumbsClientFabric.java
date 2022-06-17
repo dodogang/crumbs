@@ -7,6 +7,5 @@ public class CrumbsClientFabric implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         CrumbsClient.initialize();
-        CrumbsClient.setup();
     }
 }

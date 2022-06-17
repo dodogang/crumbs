@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab_top",
-    "textures": {
-        "bottom": "crumbs:block/blue_nether_bricks",
-        "top": "crumbs:block/blue_nether_bricks",
-        "side": "crumbs:block/blue_nether_bricks"
-    }
-}

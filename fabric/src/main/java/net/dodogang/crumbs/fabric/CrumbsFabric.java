@@ -7,6 +7,5 @@ public class CrumbsFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         Crumbs.initialize();
-        Crumbs.setup();
     }
 }

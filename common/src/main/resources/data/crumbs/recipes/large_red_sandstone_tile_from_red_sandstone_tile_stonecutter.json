@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "crumbs:red_sandstone_tile"
-    },
-    "result": "crumbs:large_red_sandstone_tile",
-    "count": 1
-}

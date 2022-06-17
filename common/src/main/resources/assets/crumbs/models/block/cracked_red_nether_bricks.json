@@ -1,6 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "crumbs:block/cracked_red_nether_bricks"
-    }
-}

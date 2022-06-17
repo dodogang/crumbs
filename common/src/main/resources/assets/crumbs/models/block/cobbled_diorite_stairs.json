@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "crumbs:block/cobbled_diorite",
-        "top": "crumbs:block/cobbled_diorite",
-        "side": "crumbs:block/cobbled_diorite"
-    }
-}

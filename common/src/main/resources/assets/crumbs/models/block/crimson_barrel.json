@@ -1,8 +1,0 @@
-{
-    "parent": "block/cube_bottom_top",
-    "textures": {
-        "bottom": "crumbs:block/crimson_barrel_bottom",
-        "top": "crumbs:block/crimson_barrel_top",
-        "side": "crumbs:block/crimson_barrel_side"
-    }
-}

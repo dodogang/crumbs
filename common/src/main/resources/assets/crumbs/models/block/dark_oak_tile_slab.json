@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "crumbs:block/dark_oak_tile",
-        "top": "crumbs:block/dark_oak_tile",
-        "side": "crumbs:block/dark_oak_tile"
-    }
-}

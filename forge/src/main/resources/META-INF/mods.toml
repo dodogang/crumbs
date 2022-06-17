@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[36,)"
+loaderVersion = "[41,)"
 issueTrackerURL = "https://github.com/dodogang/crumbs/issues"
 license = "MIT; Assets licensed as All Rights Reserved"
 
@@ -7,32 +7,22 @@ license = "MIT; Assets licensed as All Rights Reserved"
 modId = "crumbs"
 version = "${version}"
 displayName = "Crumbs"
-#updateJSONURL = ""
-displayURL = "https://github.com/dodogang/crumbs"
-credits = "Translations: PandaClod (Spanish), Shadew: (Dutch), ro-mod-dev (French), linzexin022 (Chinese)"
 authors = "Dodo Gang"
 description = '''
 Building mod which adds various blocks tuned to fit with vanilla minecraft.
 '''
-logoFile = "icon.png"
+#logoFile = ""
 
 [[dependencies.crumbs]]
 modId = "forge"
 mandatory = true
-versionRange = "[36,)"
+versionRange = "[41,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.crumbs]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.16.2,)"
-ordering = "NONE"
-side = "BOTH"
-
-[[dependencies.crumbs]]
-modId = "plume"
-mandatory = true
-versionRange = "[0.3.1,)"
+versionRange = "[1.19,)"
 ordering = "NONE"
 side = "BOTH"

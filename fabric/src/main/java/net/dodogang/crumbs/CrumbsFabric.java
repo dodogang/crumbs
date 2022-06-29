@@ -1,6 +1,5 @@
-package net.dodogang.crumbs.fabric;
+package net.dodogang.crumbs;
 
-import net.dodogang.crumbs.Crumbs;
 import net.fabricmc.api.ModInitializer;
 
 public class CrumbsFabric implements ModInitializer {

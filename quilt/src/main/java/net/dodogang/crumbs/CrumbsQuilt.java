@@ -1,6 +1,5 @@
-package net.dodogang.crumbs.quilt;
+package net.dodogang.crumbs;
 
-import net.dodogang.crumbs.Crumbs;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 

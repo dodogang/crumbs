@@ -6,10 +6,9 @@
 
 ## What does this mod do?
 
-Building mod which adds various blocks tuned to fit with vanilla minecraft.
+Building mod which adds various blocks tuned to fit with vanilla Minecraft.
 
 ## Other Information:
-
 - Report Bugs to https://github.com/dodogang/crumbs/issues
 - Join our discord: https://discord.gg/APPWa6s
 - You can include this mod in your modpack as long as you don't claim the mod as your own.

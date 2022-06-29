@@ -1,6 +1,4 @@
-package net.dodogang.crumbs.client.forge;
-
-import net.dodogang.crumbs.client.CrumbsClient;
+package net.dodogang.crumbs.client;
 
 public class CrumbsClientForge {
     public CrumbsClientForge() {

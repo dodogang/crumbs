@@ -1,6 +1,5 @@
-package net.dodogang.crumbs.client.fabric;
+package net.dodogang.crumbs.client;
 
-import net.dodogang.crumbs.client.CrumbsClient;
 import net.fabricmc.api.ClientModInitializer;
 
 public class CrumbsClientFabric implements ClientModInitializer {

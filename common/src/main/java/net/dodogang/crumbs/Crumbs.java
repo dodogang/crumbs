@@ -1,5 +1,6 @@
 package net.dodogang.crumbs;
 
+import net.dodogang.TestRegistry;
 import net.dodogang.ash.loader.api.ModLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,5 +15,13 @@ public class Crumbs {
         LOGGER.info("isDevelopmentEnvironment: " + ModLoader.isDevelopmentEnvironment());
         LOGGER.info("getGameDir: " + ModLoader.getGameDir());
         LOGGER.info("getConfigDir: " + ModLoader.getConfigDir());
+    }
+
+    public static void commonSetup() {
+        TestRegistry.BLOCKS.register();
+    }
+
+    public static void postCommonSetup() {
+
     }
 }

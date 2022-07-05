@@ -6,22 +6,15 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 
 public class CreativeModeTabBuilderImpl extends CreativeModeTabBuilder {
-    @Override
-    protected Builder createImpl(ResourceLocation resLoc) {
-        return new BuilderImpl(resLoc);
+    public CreativeModeTabBuilderImpl(ResourceLocation resLoc) {
+        super(resLoc);
     }
 
-    private static class BuilderImpl extends Builder {
-        private BuilderImpl(ResourceLocation resLoc) {
-            super(resLoc);
-        }
-
-        @Override
-        public CreativeModeTab build() {
-            return FabricItemGroupBuilder.create(resLoc)
-                    .icon(iconSupplier)
-                    .appendItems(stacksForDisplay)
-                    .build();
-        }
+    @Override
+    public CreativeModeTab build() {
+        return FabricItemGroupBuilder.create(resLoc)
+                .icon(iconSupplier)
+                .appendItems(stacksForDisplay)
+                .build();
     }
 }

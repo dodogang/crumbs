@@ -10,7 +10,7 @@ public abstract class ResourceBatch<T> {
     /**
      * Creates a {@link ResourceBatch} for a specific {@link Registry}.
      * Resources can be added to the batch by calling
-     * {@link ResourceBatch#register(String, Supplier)} and the resources can all
+     * {@link ResourceBatch#add(String, Supplier)} and the resources can all
      * be registered to the game by calling {@link ResourceBatch#register()}.
      *
      * @param registry the registry to add resources to
@@ -47,7 +47,7 @@ public abstract class ResourceBatch<T> {
      * @return a supplier which can provide the registered resource
      * @param <R> the resource type
      */
-    public abstract <R extends T> Supplier<R> register(String name, Supplier<R> resource);
+    public abstract <R extends T> Supplier<R> add(String name, Supplier<R> resource);
 
     /**
      * Registers all resources added to the batch. Can only be called once per

@@ -16,7 +16,7 @@ public class ResourceBatchImpl<T> extends ResourceBatch<T> {
     }
 
     @Override
-    public <R extends T> Supplier<R> register(String name, Supplier<R> resource) {
+    public <R extends T> Supplier<R> add(String name, Supplier<R> resource) {
         return this.deferredRegister.register(name, resource);
     }
 

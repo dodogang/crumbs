@@ -12,7 +12,7 @@ public class ResourceBatchImpl<T> extends ResourceBatch<T> {
     }
 
     @Override
-    public <R extends T> Supplier<R> register(String name, Supplier<R> resource) {
+    public <R extends T> Supplier<R> add(String name, Supplier<R> resource) {
         // registeredEntry is computed outside the lambda so that the entry is
         // not registered repeatedly every time the `get() is run.
         R registeredEntry = Registry.register(

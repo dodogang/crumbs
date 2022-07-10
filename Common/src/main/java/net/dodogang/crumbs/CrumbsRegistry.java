@@ -14,11 +14,11 @@ public class CrumbsRegistry {
     public static final ResourceBatch<Block> BLOCKS = ResourceBatch.create(Registry.BLOCK, Crumbs.MOD_ID);
     public static final ResourceBatch<Item> ITEMS = ResourceBatch.create(Registry.ITEM, Crumbs.MOD_ID);
 
-    public static final Supplier<Block> TEST_BLOCK = BLOCKS.register(
+    public static final Supplier<Block> TEST_BLOCK = BLOCKS.add(
             "test_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE))
     );
-    public static final Supplier<Item> TEST_BLOCK_ITEM = ITEMS.register(
+    public static final Supplier<Item> TEST_BLOCK_ITEM = ITEMS.add(
             "test_block",
             () -> new BlockItem(TEST_BLOCK.get(), new Item.Properties().tab(Crumbs.CRUMBS_TAB))
     );

@@ -1,8 +1,6 @@
 package net.dodogang.crumbs;
 
-import net.dodogang.TestRegistry;
 import net.dodogang.ash.item.api.CreativeModeTabBuilder;
-import net.dodogang.ash.loader.api.ModLoader;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -20,19 +18,11 @@ public class Crumbs {
             .appendItems(stacksForDisplay -> stacksForDisplay.add(new ItemStack(Blocks.MANGROVE_LOG)))
             .build();
 
-    public static void initialize() {
-        LOGGER.info("getName: " + ModLoader.getName());
-        LOGGER.info("isModLoaded('fabric'): " + ModLoader.isModLoaded("fabric"));
-        LOGGER.info("isDevelopmentEnvironment: " + ModLoader.isDevelopmentEnvironment());
-        LOGGER.info("getGameDir: " + ModLoader.getGameDir());
-        LOGGER.info("getConfigDir: " + ModLoader.getConfigDir());
+    public static void init() {
+        CrumbsRegistry.register();
     }
 
-    public static void commonSetup() {
-        TestRegistry.BLOCKS.register();
-    }
-
-    public static void postCommonSetup() {
-
+    public static void postInit() {
+        // Post-initialization code goes here:
     }
 }

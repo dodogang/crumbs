@@ -6,6 +6,16 @@ import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 public class CrumbsQuilt implements ModInitializer {
     @Override
     public void onInitialize(ModContainer mod) {
-        Crumbs.initialize();
+        Crumbs.init();
+
+        // Initialization code goes here
+
+        this.setup();
+    }
+
+    private void setup() {
+        Crumbs.postInit();
+
+        // Post-initialization code goes here
     }
 }

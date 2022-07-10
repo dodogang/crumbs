@@ -6,6 +6,16 @@ import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
 public class CrumbsClientQuilt implements ClientModInitializer {
     @Override
     public void onInitializeClient(ModContainer mod) {
-        CrumbsClient.clientSetup();
+        CrumbsClient.init();
+
+        // Initialization code goes here
+
+        this.setup();
+    }
+
+    private void setup() {
+        CrumbsClient.postInit();
+
+        // Post-initialization code goes here
     }
 }

@@ -56,7 +56,7 @@ public abstract class ResourceBatch<T> {
     public void register() {
         if (this.registered) {
             throw new IllegalStateException(String.format(
-                    "Attempted to register ResourceBatch of registry %s for mod %s.",
+                    "Attempted to register ResourceBatch of registry %s for mod %s twice.",
                     this.registry,
                     this.modId
             ));

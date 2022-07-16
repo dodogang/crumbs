@@ -1,0 +1,8 @@
+{
+	"type": "crumbs:carpentry_table",
+	"count": 1,
+	"ingredient": {
+		"item": "minecraft:mangrove_planks"
+	},
+	"result": "minecraft:mangrove_trapdoor"
+}

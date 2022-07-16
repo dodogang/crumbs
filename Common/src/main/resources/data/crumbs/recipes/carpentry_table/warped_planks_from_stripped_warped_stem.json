@@ -1,0 +1,8 @@
+{
+	"type": "crumbs:carpentry_table",
+	"count": 6,
+	"ingredient": {
+		"item": "minecraft:stripped_warped_stem"
+	},
+	"result": "minecraft:warped_planks"
+}

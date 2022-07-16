@@ -1,0 +1,37 @@
+{
+    "schemaVersion": 1,
+    "id": "crumbs",
+    "version": "${version}",
+    "name": "Crumbs",
+    "description": "Building mod which adds various blocks tuned to fit with vanilla Minecraft.",
+    "authors": [
+        "Dodo Gang"
+    ],
+    "contact": {
+        "homepage": "https://modrinth.com/mod/crumbs",
+        "sources": "https://github.com/dodogang/crumbs",
+        "issues": "https://github.com/dodogang/crumbs/issues"
+    },
+    "license": "MIT",
+    "icon": "assets/crumbs/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "net.dodogang.crumbs.CrumbsFabric"
+        ],
+        "client": [
+            "net.dodogang.crumbs.client.CrumbsClientFabric"
+        ]
+    },
+    "mixins": [
+        "crumbs.mixins.json",
+        "crumbs-fabric.mixins.json"
+    ],
+    "depends": {
+      "fabricloader": ">=0.14",
+      "fabric": "*",
+      "minecraft": ">=1.19",
+      "java": ">=17"
+    }
+  }
+  

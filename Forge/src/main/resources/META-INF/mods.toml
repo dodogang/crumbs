@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[41,)"
+license="MIT"
+issueTrackerURL="https://github.com/dodogang/crumbs/issues"
+
+[[mods]]
+modId="crumbs"
+version="${file.jarVersion}"
+displayName="Crumbs"
+#updateJSONURL="https://change.me.example.invalid/updates.json"
+displayURL="https://modrinth.com/mod/crumbs"
+logoFile="assets/crumbs/icon.png"
+credits=""
+authors="Dodo Gang"
+description='''
+Building mod which adds various blocks tuned to fit with vanilla Minecraft.
+'''
+
+[[dependencies.crumbs]]
+    modId="forge"
+    mandatory=true
+    versionRange="[41,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.crumbs]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19,)"
+    ordering="NONE"
+    side="BOTH"

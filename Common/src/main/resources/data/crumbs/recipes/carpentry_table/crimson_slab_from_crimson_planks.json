@@ -1,8 +1,0 @@
-{
-	"type": "crumbs:carpentry_table",
-	"count": 2,
-	"ingredient": {
-		"item": "minecraft:crimson_planks"
-	},
-	"result": "minecraft:crimson_slab"
-}

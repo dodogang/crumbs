@@ -1,8 +1,0 @@
-{
-	"type": "crumbs:carpentry_table",
-	"count": 6,
-	"ingredient": {
-		"item": "minecraft:jungle_log"
-	},
-	"result": "minecraft:jungle_planks"
-}

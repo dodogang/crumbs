@@ -1,8 +1,0 @@
-{
-	"type": "crumbs:carpentry_table",
-	"count": 1,
-	"ingredient": {
-		"item": "minecraft:spruce_planks"
-	},
-	"result": "minecraft:spruce_fence_gate"
-}

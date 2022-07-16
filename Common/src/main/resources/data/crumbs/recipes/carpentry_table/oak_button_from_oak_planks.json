@@ -1,8 +1,0 @@
-{
-	"type": "crumbs:carpentry_table",
-	"count": 4,
-	"ingredient": {
-		"item": "minecraft:oak_planks"
-	},
-	"result": "minecraft:oak_button"
-}

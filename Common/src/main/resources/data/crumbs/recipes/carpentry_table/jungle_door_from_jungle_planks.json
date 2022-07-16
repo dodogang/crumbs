@@ -1,8 +1,0 @@
-{
-	"type": "crumbs:carpentry_table",
-	"count": 1,
-	"ingredient": {
-		"item": "minecraft:jungle_planks"
-	},
-	"result": "minecraft:jungle_door"
-}

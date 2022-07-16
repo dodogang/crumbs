@@ -1,8 +1,0 @@
-{
-	"type": "crumbs:carpentry_table",
-	"count": 2,
-	"ingredient": {
-		"item": "minecraft:acacia_planks"
-	},
-	"result": "minecraft:acacia_pressure_plate"
-}

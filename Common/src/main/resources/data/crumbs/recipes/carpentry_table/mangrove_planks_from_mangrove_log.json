@@ -1,8 +1,0 @@
-{
-	"type": "crumbs:carpentry_table",
-	"count": 6,
-	"ingredient": {
-		"item": "minecraft:mangrove_log"
-	},
-	"result": "minecraft:mangrove_planks"
-}

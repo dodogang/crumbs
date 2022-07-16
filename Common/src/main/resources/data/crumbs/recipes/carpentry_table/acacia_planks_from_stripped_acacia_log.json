@@ -1,8 +1,0 @@
-{
-	"type": "crumbs:carpentry_table",
-	"count": 6,
-	"ingredient": {
-		"item": "minecraft:stripped_acacia_log"
-	},
-	"result": "minecraft:acacia_planks"
-}

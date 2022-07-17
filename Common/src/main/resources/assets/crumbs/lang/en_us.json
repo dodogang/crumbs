@@ -1,5 +1,23 @@
 {
     "itemGroup.crumbs.crumbs": "Crumbs",
     "block.crumbs.carpentry_table": "Carpentry Table",
+    "block.crumbs.oak_post": "Oak Post",
+    "block.crumbs.spruce_post": "Spruce Post",
+    "block.crumbs.birch_post": "Birch Post",
+    "block.crumbs.jungle_post": "Jungle Post",
+    "block.crumbs.acacia_post": "Acacia Post",
+    "block.crumbs.dark_oak_post": "Dark Oak Post",
+    "block.crumbs.mangrove_post": "Mangrove Post",
+    "block.crumbs.crimson_post": "Crimson Post",
+    "block.crumbs.warped_post": "Warped Post",
+    "block.crumbs.stripped_oak_post": "Stripped Oak Post",
+    "block.crumbs.stripped_spruce_post": "Stripped Spruce Post",
+    "block.crumbs.stripped_birch_post": "Stripped Birch Post",
+    "block.crumbs.stripped_jungle_post": "Stripped Jungle Post",
+    "block.crumbs.stripped_acacia_post": "Stripped Acacia Post",
+    "block.crumbs.stripped_dark_oak_post": "Stripped Dark Oak Post",
+    "block.crumbs.stripped_mangrove_post": "Stripped Mangrove Post",
+    "block.crumbs.stripped_crimson_post": "Stripped Crimson Post",
+    "block.crumbs.stripped_warped_post": "Stripped Warped Post",
     "container.carpentry_table": "Carpentry Table"
 }

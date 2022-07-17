@@ -1,0 +1,8 @@
+{
+	"type": "crumbs:carpentry_table",
+	"count": 1,
+	"ingredient": {
+		"item": "minecraft:stripped_crimson_stem"
+	},
+	"result": "crumbs:stripped_crimson_post"
+}

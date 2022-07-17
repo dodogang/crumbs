@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "crumbs:wooden_post",
+	"key": {
+		"#": {
+			"item": "minecraft:birch_log"
+		}
+	},
+	"pattern": [
+		"###",
+		"###"
+	],
+	"result": {
+		"item": "crumbs:birch_post",
+		"count": 6
+	}
+}

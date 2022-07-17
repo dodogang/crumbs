@@ -31,6 +31,7 @@ public abstract class MenuToScreenRegistry {
             ScreenConstructor<M, U> screenConstructor
     );
 
+    @FunctionalInterface
     public interface ScreenConstructor<T extends AbstractContainerMenu, U extends Screen & MenuAccess<T>> {
         U create(T abstractContainerMenu, Inventory inventory, Component component);
     }

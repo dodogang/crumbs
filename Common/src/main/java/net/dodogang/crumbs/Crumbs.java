@@ -1,7 +1,10 @@
 package net.dodogang.crumbs;
 
+import net.dodogang.ash.event.api.InteractionEvents;
+import net.dodogang.ash.impl.ImplLoader;
 import net.dodogang.ash.item.api.CreativeModeTabBuilder;
 import net.dodogang.crumbs.block.CrumbsBlocks;
+import net.dodogang.crumbs.event.StripLogsHandler;
 import net.dodogang.crumbs.inventory.CrumbsMenuTypes;
 import net.dodogang.crumbs.item.crafting.CrumbsRecipeSerializers;
 import net.dodogang.crumbs.item.crafting.CrumbsRecipeTypes;
@@ -25,6 +28,8 @@ public class Crumbs {
         CrumbsRecipeSerializers.register();
         CrumbsRecipeTypes.register();
         CrumbsMenuTypes.register();
+
+        InteractionEvents.rightClickBlock(StripLogsHandler::stripLogs);
     }
 
     public static void postInit() {

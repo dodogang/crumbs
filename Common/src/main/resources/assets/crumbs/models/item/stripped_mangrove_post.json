@@ -1,0 +1,8 @@
+{
+    "parent": "crumbs:block/template_post_inventory",
+    "textures": {
+        "post": "minecraft:block/stripped_mangrove_log",
+        "side": "crumbs:block/stripped_mangrove_post_side",
+        "top": "crumbs:block/stripped_mangrove_post_top"
+    }
+}

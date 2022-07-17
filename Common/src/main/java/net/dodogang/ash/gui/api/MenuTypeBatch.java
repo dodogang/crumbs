@@ -66,6 +66,7 @@ public abstract class MenuTypeBatch {
 
     protected abstract void registerImpl();
 
+    @FunctionalInterface
     public interface MenuSupplier<T extends AbstractContainerMenu> {
         T create(int syncId, Inventory inventory);
     }

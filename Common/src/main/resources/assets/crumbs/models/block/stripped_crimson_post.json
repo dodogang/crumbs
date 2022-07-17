@@ -1,0 +1,7 @@
+{
+    "parent": "crumbs:block/template_post",
+    "textures": {
+        "post": "minecraft:block/stripped_crimson_stem",
+        "top": "crumbs:block/stripped_crimson_post_top"
+    }
+}

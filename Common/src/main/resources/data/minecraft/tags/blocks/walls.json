@@ -1,0 +1,23 @@
+{
+    "replace": false,
+    "values": [
+        "crumbs:oak_post",
+        "crumbs:spruce_post",
+        "crumbs:birch_post",
+        "crumbs:jungle_post",
+        "crumbs:acacia_post",
+        "crumbs:dark_oak_post",
+        "crumbs:mangrove_post",
+        "crumbs:crimson_post",
+        "crumbs:warped_post",
+        "crumbs:stripped_oak_post",
+        "crumbs:stripped_spruce_post",
+        "crumbs:stripped_birch_post",
+        "crumbs:stripped_jungle_post",
+        "crumbs:stripped_acacia_post",
+        "crumbs:stripped_dark_oak_post",
+        "crumbs:stripped_mangrove_post",
+        "crumbs:stripped_crimson_post",
+        "crumbs:stripped_warped_post"
+    ]
+}

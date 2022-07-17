@@ -1,0 +1,8 @@
+{
+    "parent": "crumbs:block/template_post_inventory",
+    "textures": {
+        "post": "minecraft:block/oak_log",
+        "side": "crumbs:block/oak_post_side",
+        "top": "crumbs:block/oak_post_top"
+    }
+}

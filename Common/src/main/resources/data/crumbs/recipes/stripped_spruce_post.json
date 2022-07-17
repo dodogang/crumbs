@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "crumbs:stripped_wooden_post",
+	"key": {
+		"#": {
+			"item": "minecraft:stripped_spruce_log"
+		}
+	},
+	"pattern": [
+		"###",
+		"###"
+	],
+	"result": {
+		"item": "crumbs:stripped_spruce_post",
+		"count": 6
+	}
+}

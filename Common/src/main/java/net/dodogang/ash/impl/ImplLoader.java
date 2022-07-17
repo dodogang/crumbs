@@ -54,11 +54,7 @@ public class ImplLoader {
      * @param <T> the class
      */
     public static <T> T load(Class<T> clazz, Class[] parameterTypes, Object... args){
-        return load(
-                clazz.getName().replace(".api.", ".impl.") + "Impl",
-                parameterTypes,
-                args
-        );
+        return load(getImplClassName(clazz.getName()), parameterTypes, args);
     }
 
     /**
@@ -95,6 +91,17 @@ public class ImplLoader {
      * @param <T> the class
      */
     public static <T> T load(Class<T> clazz, Object... args){
-        return load(clazz.getName().replace(".api.", ".impl.") + "Impl", args);
+        return load(getImplClassName(clazz.getName()), args);
+    }
+
+    private static String getImplClassName(String apiClassName) {
+        int $index = apiClassName.indexOf("$");
+        if ($index == -1) {
+            return apiClassName.replace(".api.", ".impl.") + "Impl";
+        } else {
+            String result = apiClassName.substring(0, $index).replace(".api.", ".impl.");
+            result += "Impl" + apiClassName.substring($index) + "Impl";
+            return result;
+        }
     }
 }
